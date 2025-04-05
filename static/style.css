@@ -1,886 +1,233 @@
-/* templates/static/style.css - High-Fidelity Casper Theme Emulation */
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
-/* --- Variables (Customize Fonts/Accent Color Here) --- */
+/* Variables (Optional but good practice) */
 :root {
-    /* Fonts (Replace with specific web fonts for best results) */
-    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    --font-serif: Georgia, Times, "Times New Roman", serif; /* Or 'Libre Baskerville', 'Playfair Display' */
-    --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-
-    /* Colors */
-    --color-primary: #1a1a1a;        /* Near black for text */
-    --color-secondary: #737373;      /* Medium gray for meta */
-    --color-tertiary: #999;         /* Lighter gray */
-    --color-ghost: #e5eff5;         /* Very light background tint (used sparingly) */
-    --color-accent: #007bff;         /* Link/Accent color (CHANGE THIS TO YOUR BRAND) */
-    --color-accent-hover: #0056b3;   /* Link hover */
-    --color-border: #ebebeb;         /* Light border */
-    --color-bg: #ffffff;             /* White background */
-    --color-bg-alt: #f8f8f8;        /* Off-white for code blocks */
-
-    /* Layout */
-    --width-content: 720px;          /* Standard text width */
-    --width-wide: 1040px;         /* Wider elements like images */
-    --width-full: 1200px;         /* Fullest container width */
-    --spacing-base: 1.6rem;          /* Base spacing unit (~24px-26px) */
+    --primary-color: #0d6efd; /* Bootstrap primary blue */
+    --secondary-color: #6c757d; /* Bootstrap secondary grey */
+    --light-grey: #f8f9fa;
+    --dark-grey: #343a40;
+    --border-color: #dee2e6;
+    --card-border-color: #e9ecef;
+    --body-font: 'Poppins', sans-serif;
+    --header-border-color: #e5e5e5;
+    --button-hover-bg: #0b5ed7;
+    --button-hover-border: #0a58ca;
 }
 
-/* --- Reset & Base Styles --- */
-*, *::before, *::after {
-    box-sizing: border-box;
-}
-
-html {
-    font-size: 62.5%; /* Set 1rem = 10px for easier rem calculations */
-    scroll-behavior: smooth;
-    -webkit-text-size-adjust: 100%;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
+/* Body and Global Styles */
 body {
-    margin: 0;
-    padding: 0;
-    font-family: var(--font-sans);
-    font-size: 1.7rem; /* Base font size (17px) */
-    line-height: 1.7;
-    color: var(--color-primary);
-    background-color: var(--color-bg);
+    font-family: var(--body-font);
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 100vh; /* Ensure footer sticks to bottom */
+    background-color: #fdfdff; /* Very light off-white */
 }
 
-/* --- RTL Base --- */
-html[dir="rtl"] body {
-    text-align: right;
-}
-html[dir="rtl"] * { /* Basic RTL adjustments */
-    direction: rtl;
-}
-
-/* --- Links --- */
-a {
-    color: var(--color-accent);
-    text-decoration: none;
-    transition: color 0.2s ease-in-out, opacity 0.2s ease-in-out;
-}
-a:hover {
-    color: var(--color-accent-hover);
-    text-decoration: none; /* Casper often removes underline on hover */
-    opacity: 0.9;
-}
-
-/* --- Typography --- */
-p, ul, ol, dl {
-    margin: 0 0 calc(var(--spacing-base) * 1.5) 0;
-    font-size: inherit; /* Ensure paragraphs inherit body size */
-    line-height: inherit;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-serif);
-    color: var(--color-primary);
-    font-weight: 700;
-    line-height: 1.25;
-    margin: calc(var(--spacing-base) * 3) 0 calc(var(--spacing-base) * 1) 0;
-    text-rendering: optimizeLegibility;
-}
-h1 { font-size: 4.2rem; }
-h2 { font-size: 3.4rem; }
-h3 { font-size: 2.8rem; }
-h4 { font-size: 2.4rem; }
-h5 { font-size: 2.1rem; }
-h6 { font-size: 1.8rem; } /* Slightly larger than body text */
-
-/* Adjust spacing for headings following headings */
-h1 + h2, h2 + h3, h3 + h4, h4 + h5, h5 + h6 {
-    margin-top: calc(var(--spacing-base) * 1.5);
-}
-
-strong { font-weight: 600; }
-em { font-style: italic; }
-
-/* --- Site Header (Simple Post Header Style) --- */
-.site-header-container {
-    max-width: var(--width-full);
-    margin: 0 auto;
-    padding: 0 calc(var(--spacing-base) * 2);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-header.main-header {
-    padding: calc(var(--spacing-base) * 1.5) 0;
-    border-bottom: 1px solid var(--color-border);
-    background-color: var(--color-bg); /* Ensure background */
-}
-
-/* Site Title */
-header .blog-title {
-    flex-shrink: 0; /* Prevent shrinking */
-    margin-right: var(--spacing-base); /* LTR */
-}
-html[dir="rtl"] header .blog-title {
-    margin-right: 0;
-    margin-left: var(--spacing-base); /* RTL */
-}
-header .blog-title a {
-    color: var(--color-primary);
-    font-size: 2.2rem;
-    font-weight: 700;
-    line-height: 1;
-    text-decoration: none;
-    font-family: var(--font-sans); /* Casper often uses sans-serif for header title */
-}
-header .blog-title a:hover {
-    color: var(--color-primary); /* No color change on hover */
-    opacity: 0.8;
-}
-
-/* Navigation */
-header nav {
-    flex-grow: 1; /* Allow nav to take space */
-    display: flex;
-    justify-content: flex-end;
-}
-header nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    align-items: center;
-}
-header nav li {
-    margin-left: calc(var(--spacing-base) * 1.5); /* LTR */
-    position: relative;
-    line-height: 1; /* Align text better */
-}
-html[dir="rtl"] header nav li {
-    margin-left: 0;
-    margin-right: calc(var(--spacing-base) * 1.5); /* RTL */
-}
-header nav a {
-    color: var(--color-secondary);
-    text-decoration: none;
-    font-size: 1.5rem;
-    font-weight: 500;
-    padding: 8px 0; /* Vertical padding for larger click target */
-    white-space: nowrap;
-}
-header nav a:hover {
-    color: var(--color-primary);
-    opacity: 1.0;
-}
-
-/* --- Main Content Area --- */
 main {
-    flex-grow: 1;
-    width: 100%;
-    padding: calc(var(--spacing-base) * 2) 0; /* Vertical padding for main */
+    flex-grow: 1; /* Allow main content to push footer down */
 }
 
-/* Centered container for most content */
-.content-container {
-    max-width: var(--width-content);
-    margin: 0 auto;
-    padding: 0 calc(var(--spacing-base) * 2); /* Side padding */
+/* Header Styling */
+.site-header {
+    background-color: #ffffff;
+    border-bottom: 1px solid var(--header-border-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
 }
 
-/* --- Index Page - Post List --- */
-.post-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: grid;
-    grid-template-columns: 1fr; /* Default single column */
-    gap: calc(var(--spacing-base) * 3.5);
+.site-header .navbar-brand {
+    color: var(--dark-grey);
+    transition: color 0.2s ease;
+}
+.site-header .navbar-brand:hover {
+    color: var(--primary-color);
 }
 
-/* Basic card structure for list items */
-.post-list-item {
-    padding: 0;
-    margin: 0;
-    border: none; /* Remove previous borders */
-    background-color: var(--color-bg);
-    display: flex;
-    flex-direction: column;
-}
-
-/* Featured image on index card */
-.post-list-item .thumbnail {
-    display: block;
-    width: 100%;
-    height: 200px; /* Fixed height for consistency */
-    object-fit: cover; /* Cover the area */
-    border-radius: 3px;
-    margin-bottom: calc(var(--spacing-base) * 1);
-    background-color: var(--color-border); /* Placeholder bg */
-}
-
-/* Post title on index */
-.post-list-item h2 {
-    margin: 0 0 calc(var(--spacing-base) * 0.5);
-    font-size: 2.6rem; /* Prominent title */
-    line-height: 1.3;
-    font-family: var(--font-serif); /* Use serif */
-}
-.post-list-item h2 a {
-    color: var(--color-primary);
-    text-decoration: none;
-}
-.post-list-item h2 a:hover {
-    color: var(--color-accent);
-}
-
-/* Post meta on index */
-.post-list-item .post-meta {
-    color: var(--color-secondary);
-    font-size: 1.3rem; /* Smaller meta */
-    font-weight: 500;
-    margin: 0;
-    line-height: 1.4;
-}
-.post-list-item .post-meta time {
-    margin-right: 5px; /* LTR */
-}
-html[dir="rtl"] .post-list-item .post-meta time {
-    margin-right: 0;
-    margin-left: 5px; /* RTL */
-}
-
-/* Optional excerpt styling */
-.post-list-item .post-excerpt p {
-    margin: calc(var(--spacing-base) * 0.8) 0 0 0;
-    font-size: 1.6rem;
-    color: var(--color-secondary);
-    line-height: 1.6;
-}
-
-/* Index Grid Layout for wider screens */
-@media (min-width: 768px) {
-    .post-list {
-        grid-template-columns: repeat(2, 1fr);
-        gap: calc(var(--spacing-base) * 3);
-    }
-    .post-list-item .thumbnail {
-         height: 220px;
-    }
-}
-@media (min-width: 1040px) {
-    .post-list {
-        grid-template-columns: repeat(3, 1fr);
-         gap: calc(var(--spacing-base) * 3.5);
-    }
-     .post-list-item .thumbnail {
-         height: 250px;
-    }
-}
-
-
-/* --- Single Post Page --- */
-.post-full { /* This class should be on <main> or a wrapper inside <main> */
-    /* Use the main padding */
-}
-
-.post-full article {
-    padding: 0;
-    border: none;
-    margin: 0 auto; /* Center the article */
-    max-width: var(--width-content); /* Constrain text */
-}
-
-/* Post Header within Article */
-.post-full header {
-    text-align: center;
-    margin-bottom: calc(var(--spacing-base) * 2.5);
-}
-
-/* Very large, centered post title */
-.post-full h1 {
-    font-size: 4.8rem; /* Very large */
-    margin: calc(var(--spacing-base) * 2) 0 calc(var(--spacing-base) * 1.5) 0;
-    line-height: 1.15;
-    font-family: var(--font-serif); /* Serif title */
-}
-
-/* Centered post meta */
-.post-full .post-meta {
-    color: var(--color-secondary);
-    font-size: 1.4rem;
-    line-height: 1.4;
-    font-weight: 500;
-    margin: 0;
-}
-
-/* Featured image styling */
-.post-full .featured-image {
-    margin: calc(var(--spacing-base) * 3) auto calc(var(--spacing-base) * 3) auto; /* Centered with space */
-    display: block; /* Block element */
-    max-width: var(--width-wide); /* Allow wide images */
-    width: calc(100% + 4vw); /* Slightly wider than text */
-    transform: translateX(-2vw); /* Center the wider element */
-    border-radius: 3px;
-}
-.post-full .featured-image img {
-    display: block; /* Ensure img is block inside figure */
-    width: 100%;
-    height: auto;
-    border-radius: 3px;
-    background-color: var(--color-border); /* Placeholder */
-}
-
-
-/* --- Post Content Specific Styling --- */
-.post-content {
-    font-size: 1.8rem; /* Slightly larger content font */
-    line-height: 1.75;
-    color: var(--color-primary);
-}
-
-.post-content > p:first-child {
-    /* Optional: Larger first paragraph */
-    /* font-size: 2.1rem; */
-    /* line-height: 1.6; */
-}
-
-/* Images within content */
-.post-content img,
-.post-content figure {
-    margin: calc(var(--spacing-base) * 2.5) auto;
-    display: block;
-    max-width: 100%; /* Default to content width */
-    height: auto;
-    border-radius: 3px;
-}
-.post-content figure { /* Handle figure margins correctly */
-    padding: 0;
-    max-width: var(--width-wide); /* Allow figures to be wide */
-    width: calc(100% + 4vw); /* Make figure wider */
-    transform: translateX(-2vw); /* Center it */
-}
-.post-content figure img {
-    margin: 0; /* Reset image margin inside figure */
-    width: 100%;
-}
-
-/* Optional: figcaption styling */
-.post-content figcaption {
-    text-align: center;
-    margin-top: calc(var(--spacing-base) * 0.5);
-    font-size: 1.3rem;
-    line-height: 1.5;
-    color: var(--color-secondary);
-}
-
-/* Blockquotes */
-.post-content blockquote {
-    margin: calc(var(--spacing-base) * 2.5) 0;
-    padding: 0 0 0 calc(var(--spacing-base) * 1.8); /* Padding left (LTR) */
-    border-left: 3px solid var(--color-border); /* Subtle border */
-    font-size: 1.9rem; /* Slightly larger quote */
-    font-style: italic;
-    font-weight: 400;
-    color: var(--color-secondary); /* Gray quote text */
-    background-color: transparent;
-}
-html[dir="rtl"] .post-content blockquote {
-    padding: 0 calc(var(--spacing-base) * 1.8) 0 0; /* Padding right (RTL) */
-    border-left: none;
-    border-right: 3px solid var(--color-border);
-}
-.post-content blockquote p {
-    margin-bottom: 0; /* Remove paragraph margin inside quote */
-}
-
-/* Code Blocks */
-.post-content pre {
-    margin: calc(var(--spacing-base) * 2.5) 0;
-    padding: calc(var(--spacing-base) * 1.2);
-    background-color: var(--color-bg-alt); /* Off-white background */
-    border-radius: 4px;
-    overflow-x: auto; /* Handle long code lines */
-    font-family: var(--font-mono);
-    font-size: 1.4rem; /* Smaller monospace */
-    line-height: 1.5;
-    white-space: pre;
-    color: var(--color-primary);
-}
-.post-content code { /* Inline code */
-    font-family: var(--font-mono);
-    font-size: 0.9em; /* Relative to surrounding text */
-    background-color: var(--color-ghost); /* Very subtle bg */
-    padding: 0.15em 0.4em;
-    border-radius: 3px;
-    color: inherit; /* Inherit surrounding color */
-    word-break: break-word;
-}
-.post-content pre code { /* Code inside pre */
-    background: none;
-    padding: 0;
-    font-size: inherit;
-    line-height: inherit;
-    color: inherit;
-}
-
-/* Horizontal Rules */
-.post-content hr {
-    margin: calc(var(--spacing-base) * 3.5) 0;
-    border: 0;
-    height: 1px;
-    background: var(--color-border);
-}
-
-/* Lists */
-.post-content ul, .post-content ol {
-    padding-left: calc(var(--spacing-base) * 1.8); /* LTR */
-}
-html[dir="rtl"] .post-content ul, html[dir="rtl"] .post-content ol {
-    padding-left: 0;
-    padding-right: calc(var(--spacing-base) * 1.8); /* RTL */
-}
-.post-content li {
-    margin-bottom: calc(var(--spacing-base) * 0.5);
-}
-.post-content li > p { /* Remove margin from paragraphs directly inside list items */
-    margin-bottom: 0;
-}
-
-/* --- Related Posts --- */
-.related-posts {
-    margin: calc(var(--spacing-base) * 4) auto 0 auto; /* More margin top, centered */
-    padding: calc(var(--spacing-base) * 3) 0 0 0;
-    border-top: 1px solid var(--color-border);
-    max-width: var(--width-full); /* Allow related section to be wide */
-}
-.related-posts h3 {
-    text-align: center;
-    font-size: 1.6rem;
-    margin: 0 0 calc(var(--spacing-base) * 2.5) 0;
-    color: var(--color-secondary);
-    font-weight: 500;
-    font-family: var(--font-sans); /* Sans-serif for this heading */
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-.related-posts ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: calc(var(--spacing-base) * 2.5);
-}
-.related-posts li { /* Style list items like minimal cards */
-    padding: 0;
-    background: none;
-    border: none;
-    text-align: left; /* LTR */
-    display: flex;
-    flex-direction: column;
-}
-html[dir="rtl"] .related-posts li {
-    text-align: right; /* RTL */
-}
-.related-posts li a { /* The main link wrapping title */
-    font-family: var(--font-serif);
-    font-size: 1.9rem;
-    line-height: 1.4;
-    font-weight: bold;
-    color: var(--color-primary);
-    margin-bottom: calc(var(--spacing-base) * 0.3);
-    display: block; /* Ensure it takes space */
-}
-.related-posts li a:hover {
-    color: var(--color-accent);
-}
-.related-posts li span.related-meta { /* Optional meta */
-     color: var(--color-secondary);
-     font-size: 1.3rem;
-     display: block;
-}
-
-
-/* --- Site Footer --- */
-footer.main-footer {
-    padding: calc(var(--spacing-base) * 2.5) calc(var(--spacing-base) * 2);
-    margin-top: calc(var(--spacing-base) * 4); /* Space above footer */
-    border-top: 1px solid var(--color-border);
-    color: var(--color-secondary);
-    text-align: center;
-    font-size: 1.3rem;
-    background-color: var(--color-bg);
-}
-footer.main-footer a {
-    color: var(--color-primary); /* Use primary color for footer links */
-    text-decoration: none;
-}
-footer.main-footer a:hover {
-    color: var(--color-accent);
-    text-decoration: underline;
-}
-
-/* --- Responsive Adjustments --- */
-
-/* Tablet */
-@media (max-width: 1040px) {
-    :root {
-        --width-wide: 900px;
-        --width-full: 960px;
-    }
-    .post-full h1 { font-size: 4.4rem; }
-    .post-content { font-size: 1.7rem; }
-    .post-content figure {
-        width: 100%; /* Reset width */
-        transform: none; /* Reset transform */
-        max-width: var(--width-wide); /* Use variable */
-    }
-     .post-full .featured-image {
-         width: 100%;
-         transform: none;
-         max-width: var(--width-wide);
-     }
-}
-
-/* Mobile */
-@media (max-width: 767px) {
-    html {
-        font-size: 58%; /* Slightly smaller base on mobile */
-    }
-    body {
-        font-size: 1.6rem; /* Adjust body font size */
-        line-height: 1.65;
-    }
-    :root {
-        --width-content: auto; /* Let content flow */
-        --width-wide: auto;
-        --width-full: auto;
-        --spacing-base: 1.4rem; /* Reduce base spacing */
-    }
-
-    .content-container {
-        padding: 0 calc(var(--spacing-base) * 1.8);
-    }
-     main {
-         padding: calc(var(--spacing-base) * 1) 0;
-     }
-
-    /* Header adjustments */
-    .site-header-container {
-        padding: 0 calc(var(--spacing-base) * 1.8);
-        flex-wrap: wrap; /* Allow wrapping */
-        justify-content: center; /* Center items */
-    }
-    header .blog-title {
-        font-size: 2rem;
-        margin: 0 0 calc(var(--spacing-base) * 1) 0; /* Margin below */
-        text-align: center;
-        width: 100%; /* Take full width */
-    }
-    header nav {
-        width: 100%;
-        justify-content: center;
-        margin-top: calc(var(--spacing-base) * 0.5);
-    }
-     header nav li {
-         margin: 0 calc(var(--spacing-base) * 1); /* Adjust nav spacing */
-     }
-     html[dir="rtl"] header nav li {
-         margin: 0 calc(var(--spacing-base) * 1);
-     }
-
-    /* Index page adjustments */
-    .post-list {
-        grid-template-columns: 1fr; /* Force single column */
-        gap: calc(var(--spacing-base) * 3);
-    }
-    .post-list-item .thumbnail {
-         height: 180px;
-    }
-     .post-list-item h2 {
-         font-size: 2.2rem;
-     }
-
-
-    /* Post page adjustments */
-    .post-full article {
-        /* Already handled by content-container padding */
-    }
-    .post-full h1 {
-        font-size: 3.2rem; /* Smaller title on mobile */
-        margin-top: 0;
-    }
-    .post-full .post-meta {
-        font-size: 1.3rem;
-    }
-    .post-full .featured-image,
-    .post-content figure,
-    .post-content img { /* Make images/figures edge-to-edge */
-        margin-left: calc(-1 * var(--spacing-base) * 1.8);
-        margin-right: calc(-1 * var(--spacing-base) * 1.8);
-        max-width: calc(100% + var(--spacing-base) * 3.6);
-        width: calc(100% + var(--spacing-base) * 3.6);
-        border-radius: 0; /* Remove radius for edge-to-edge */
-    }
-     .post-full .featured-image img,
-     .post-content figure img {
-         border-radius: 0;
-     }
-     .post-content figcaption {
-         padding: 0 calc(var(--spacing-base) * 1.8); /* Add padding back to caption */
-     }
-
-
-    .post-content { font-size: 1.6rem; }
-    .post-content blockquote {
-         padding-left: var(--spacing-base); /* LTR */
-         margin-left: calc(-1 * var(--spacing-base) * 1.8); /* Bleed slightly */
-         padding-right: var(--spacing-base);
-         border-width: 2px;
-         font-size: 1.7rem;
-    }
-     html[dir="rtl"] .post-content blockquote {
-         padding-right: var(--spacing-base); /* RTL */
-         margin-right: calc(-1 * var(--spacing-base) * 1.8); /* Bleed slightly */
-         padding-left: var(--spacing-base);
-     }
-
-     .related-posts ul {
-         grid-template-columns: 1fr; /* Stack */
-         gap: calc(var(--spacing-base) * 2);
-     }
-
-     footer.main-footer {
-         padding: calc(var(--spacing-base) * 2) calc(var(--spacing-base) * 1.8);
-         font-size: 1.2rem;
-         margin-top: calc(var(--spacing-base) * 2.5);
-     }
-}
-/* templates/static/style.css - Additions for JavaScript Features */
-
-/* --- Dark Mode Theme Variables --- */
-:root {
-    /* Light Theme (Default) variables already defined */
-    color-scheme: light;
-}
-
-html[data-theme="dark"] {
-    --color-primary: #ededed;        /* Light text on dark */
-    --color-secondary: #a1a1a1;      /* Lighter gray meta */
-    --color-tertiary: #7a7a7a;
-    --color-ghost: #2a2a2a;
-    /* --color-accent: #3eb0ef; */      /* Adjust accent for dark if needed */
-    /* --color-accent-hover: #6fcfff; */
-    --color-border: #3a3a3a;         /* Darker border */
-    --color-bg: #1a1a1a;             /* Near black background */
-    --color-bg-alt: #252525;        /* Darker off-background */
-    color-scheme: dark;
-}
-
-/* Apply transitions for smooth theme changes */
-body, header.main-header, .post-list-item, footer.main-footer, .post-content pre, .post-content code {
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-}
-
-/* --- Theme Toggle Button --- */
-.theme-toggle-button {
-    background: none;
-    border: none;
-    padding: 0;
-    margin: 0;
-    cursor: pointer;
-    color: inherit; /* Inherit color from nav links */
-    line-height: 1; /* Align icon better */
-    opacity: 0.7;
-    transition: opacity 0.2s ease;
-}
-.theme-toggle-button:hover {
-    opacity: 1.0;
-}
-.theme-toggle-button svg {
+/* Menu Button Styling */
+.menu-button {
     display: inline-block;
-    vertical-align: middle; /* Align icon nicely */
-}
-/* Hide one icon based on theme (JS handles this) */
-html[data-theme="light"] .theme-toggle-button .icon-moon { display: none; }
-html[data-theme="dark"] .theme-toggle-button .icon-sun { display: none; }
-
-
-/* --- Responsive Navigation --- */
-.menu-toggle-button {
-    background: none;
-    border: none;
-    padding: 8px; /* Click area */
-    margin: 0;
+    padding: 0.5rem 1.1rem; /* Adjust padding for button look */
+    margin: 0.25rem 0.3rem; /* Spacing between buttons */
+    font-size: 0.95rem;
+    font-weight: 400;
+    text-align: center;
+    text-decoration: none;
     cursor: pointer;
-    color: inherit;
-    display: none; /* Hidden by default, shown on mobile */
-    z-index: 101; /* Above nav */
-    opacity: 0.7;
-    transition: opacity 0.2s ease;
-}
-.menu-toggle-button:hover {
-    opacity: 1.0;
-}
-.menu-toggle-button svg {
-    display: block; /* Prevent extra space below icon */
+    border: 1px solid var(--border-color);
+    border-radius: 50px; /* Fully rounded borders */
+    color: var(--secondary-color);
+    background-color: transparent;
+    transition: all 0.2s ease-in-out;
 }
 
-/* Mobile Navigation Styles */
-@media (max-width: 767px) {
-    .menu-toggle-button {
-        display: block; /* Show toggle on mobile */
-        position: absolute; /* Position relative to header container */
-        top: calc(var(--spacing-base) * 1.2); /* Adjust vertical position */
-        right: calc(var(--spacing-base) * 1.8); /* Adjust horizontal position */
-        /* Adjust LTR/RTL positioning */
-        html[dir="ltr"] & { right: calc(var(--spacing-base) * 1.8); left: auto; }
-        html[dir="rtl"] & { left: calc(var(--spacing-base) * 1.8); right: auto; }
-    }
-
-    header nav ul#main-navigation {
-        /* Hide nav off-screen or collapsed */
-        display: none; /* Start hidden */
-        position: absolute;
-        top: 100%; /* Position below header */
-        left: 0;
-        right: 0;
-        background-color: var(--color-bg);
-        border-top: 1px solid var(--color-border);
-        border-bottom: 1px solid var(--color-border);
-        padding: var(--spacing-base) 0;
-        margin: 0;
-        flex-direction: column; /* Stack items vertically */
-        align-items: center;
-        z-index: 100;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-        /* Transition for smooth open/close (optional - using display:none is simpler) */
-        /* max-height: 0; */
-        /* overflow: hidden; */
-        /* transition: max-height 0.3s ease-out; */
-    }
-
-    header nav ul#main-navigation.nav-open {
-        display: flex; /* Show nav when class is added */
-        /* max-height: 500px; */ /* Use if using max-height transition */
-    }
-
-    header nav ul#main-navigation li {
-        margin: 0; /* Reset margins */
-        padding: calc(var(--spacing-base) * 0.8) 0; /* Vertical spacing */
-        width: 100%;
-        text-align: center;
-    }
-    header nav ul#main-navigation li:not(:last-child) {
-       border-bottom: 1px solid var(--color-ghost); /* Separator */
-    }
-     html[data-theme="dark"] header nav ul#main-navigation li:not(:last-child) {
-        border-bottom-color: var(--color-border); /* Use darker border in dark mode */
-     }
-
-    header nav ul#main-navigation a,
-    header nav ul#main-navigation button { /* Include button in styling */
-        font-size: 1.6rem; /* Slightly larger mobile nav text */
-        width: 100%;
-        display: block; /* Make link take full width */
-        padding: 8px 20px;
-    }
-     .theme-toggle-button { /* Ensure theme toggle fits well */
-         display: inline-block;
-         width: auto;
-         padding: 8px;
-     }
+.menu-button:hover,
+.menu-button.active { /* Style for active page potentially */
+    color: #ffffff;
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    text-decoration: none;
+    transform: translateY(-1px); /* Subtle lift */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-
-/* --- Header Scroll Effect --- */
-header.main-header {
-    /* Make header sticky */
-    position: sticky;
-    top: 0;
-    left: 0; /* or right: 0 for RTL? */
-    width: 100%;
-    z-index: 1000; /* Ensure header stays on top */
-    /* Add transitions for smooth effect */
-    transition: padding 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-    will-change: padding, background-color, box-shadow; /* Optimize transitions */
+/* Post Card Styling */
+.post-card {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    overflow: hidden; /* Keep image corners rounded */
 }
 
-header.main-header.site-header-scrolled {
-    padding-top: calc(var(--spacing-base) * 0.8);
-    padding-bottom: calc(var(--spacing-base) * 0.8);
-    background-color: var(--color-bg); /* Ensure bg color */
-    border-bottom-color: transparent; /* Hide border or keep it */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.07); /* Add subtle shadow */
+.post-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
-/* Optional: Hide header on scroll down (add .site-header-hidden class via JS) */
-header.main-header.site-header-hidden {
-    transform: translateY(-100%);
+.card-bordered {
+    border: 1px solid var(--card-border-color);
+     border-radius: 0.5rem; /* Slightly more rounded cards */
 }
 
+.post-card-image {
+    aspect-ratio: 16 / 10; /* Maintain aspect ratio */
+    object-fit: cover; /* Cover the area nicely */
+    border-bottom: 1px solid var(--card-border-color);
+}
+.post-card-image-small { /* For related posts */
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    border-bottom: 1px solid var(--card-border-color);
+}
 
-/* --- Simple Image Lightbox --- */
-.simple-lightbox-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(26, 26, 26, 0.9); /* Dark overlay */
+.post-card-image-placeholder,
+.post-card-image-placeholder-small {
+    aspect-ratio: 16 / 10;
+    background-color: var(--light-grey);
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 2000; /* Above everything */
-    padding: 20px;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+    color: var(--secondary-color);
+    font-size: 1rem;
+     border-bottom: 1px solid var(--card-border-color);
+}
+.post-card-image-placeholder-small {
+    font-size: 0.8rem;
 }
 
-.simple-lightbox-overlay.lightbox-active {
-    opacity: 1;
-    visibility: visible;
-    transition: opacity 0.3s ease, visibility 0s linear 0s;
+.post-card .card-title a {
+    color: var(--dark-grey);
+    font-weight: 600;
+}
+.post-card .card-title a:hover {
+    color: var(--primary-color);
+}
+.post-card .card-post-excerpt {
+    font-size: 0.9rem;
+    color: #555;
 }
 
-.simple-lightbox-image {
-    display: block;
-    max-width: 90%;
-    max-height: 90%;
-    width: auto;
+.small-card .card-title { font-size: 1rem; } /* Adjust title size for related cards */
+.small-card .card-body { padding: 0.75rem !important; }
+
+
+/* Post Page Styling */
+.blog-post-title {
+    color: var(--dark-grey);
+}
+
+.blog-post-meta {
+    font-size: 0.9em;
+}
+
+.featured-image {
+    border: 1px solid var(--border-color); /* Add border */
+    padding: 4px; /* Optional padding around image */
+    background-color: #fff; /* Background if padding is used */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    max-width: 100%; /* Ensure it's responsive */
     height: auto;
-    object-fit: contain; /* Ensure image fits without distortion */
-    border-radius: 3px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
-.simple-lightbox-close {
-    position: absolute;
-    top: 20px;
-    right: 30px; /* LTR */
-    background: none;
-    border: none;
-    font-size: 3.5rem;
-    font-weight: bold;
-    color: #fff;
-    cursor: pointer;
-    line-height: 1;
-    padding: 5px;
-    opacity: 0.8;
-    transition: opacity 0.2s ease;
-}
-.simple-lightbox-close:hover {
-    opacity: 1;
-}
-html[dir="rtl"] .simple-lightbox-close {
-    right: auto;
-    left: 30px; /* RTL */
+.post-content {
+    font-size: 1.05rem; /* Slightly larger font for readability */
+    line-height: 1.7;
+    color: #333;
 }
 
-/* Add zoom-in cursor to images handled by JS */
-.post-content img[style*="cursor: zoom-in"] {
-    /* Already applied inline by JS, but can be defined here too */
-    cursor: zoom-in;
+/* Style all images within the post content */
+.post-content img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Center images with margin auto */
+    margin: 1.5em auto;
+    border: 1px solid var(--border-color); /* Add border */
+    border-radius: 4px; /* Slightly rounded corners */
+    padding: 3px; /* Optional padding */
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Add more styles for blockquotes, code blocks etc. if needed */
+.post-content blockquote {
+    border-left: 4px solid var(--primary-color);
+    padding-left: 1rem;
+    margin-left: 0;
+    font-style: italic;
+    color: #555;
+    background-color: var(--light-grey);
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-right: 1rem;
+    border-radius: 0 4px 4px 0;
+}
+
+.post-content pre {
+    background-color: #282c34; /* Darker background for code */
+    color: #abb2bf; /* Light text */
+    padding: 1em;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9em;
+}
+.post-content code {
+     font-family: 'Courier New', Courier, monospace;
+     background-color: rgba(0,0,0,0.05);
+     padding: 0.2em 0.4em;
+     border-radius: 3px;
+     font-size: 0.9em;
+}
+.post-content pre code {
+    background-color: transparent;
+    padding: 0;
+}
+
+
+/* Footer Styling */
+.footer {
+    background-color: var(--light-grey);
+    border-top: 1px solid var(--border-color);
+    font-size: 0.9em;
+}
+
+/* RTL Adjustments */
+html[dir="rtl"] body {
+    text-align: right;
+}
+
+html[dir="rtl"] .site-header .container {
+    /* May need flex direction row-reverse on md+ if order matters */
+}
+
+html[dir="rtl"] .menu-button {
+    /* Adjust margins if needed */
+     margin: 0.25rem 0.3rem;
+}
+
+html[dir="rtl"] .post-content blockquote {
+    border-left: none;
+    border-right: 4px solid var(--primary-color);
+    padding-left: 1rem; /* Keep padding consistent */
+    padding-right: 1rem;
+    margin-left: auto; /* Reset margin */
+    margin-right: 0;
+    border-radius: 4px 0 0 4px;
 }

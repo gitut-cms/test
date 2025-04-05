@@ -1,109 +1,149 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" data-theme="light">
+<html lang="en" >
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Best php rapid application development tools - New Blog</title>
-    <link rel="stylesheet" href="https://monooa.github.io/test/static/style.css">
 
-    <meta property="og:title" content="Best php rapid application development tools" />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://monooa.github.io/test/posts/best-php-rapid-application-development-tools.html" />
-    <meta property="og:description" content="Web development has evolved significantly over the years, with an increasing demand for faster and more efficient ways to create robust and feature-rich..." />
-    <meta property="og:image" content="https://blogger.googleusercontent.com/img/a/AVvXsEjsP9xNMWkBqZw3lCEYulSJplclMaTPWOwQQkY9eH7CS-wrIbThrvFxUR1-spurjZQ8Pp5m-cFtWU1hnfzZ0I5nEiOQ6PQgY2bvrwaOTh1zFKcb1vkbTJdCTqvw90Bi-DZ8AoOIF8aHdgHP7bfj7obPSphv0w4RC9Mq89eTMNEEfYHbyg01yR_AHol9czo=s16000" />
-
+    <!-- SEO -->
+    <meta name="description" content="Web development has evolved significantly over the years, with an increasing demand for faster and more efficient ways to create robust and feature-rich..."> <!-- Basic Description -->
+    <link rel="canonical" href="https://monooa.github.io/test/posts/best-php-rapid-application-development-tools.html">
     <link rel="amphtml" href="https://monooa.github.io/test/amp/posts/best-php-rapid-application-development-tools.html">
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": "https://monooa.github.io/test/posts/best-php-rapid-application-development-tools.html"
-      },
-      "headline": "Best php rapid application development tools",
-      "image": [
-        "https://blogger.googleusercontent.com/img/a/AVvXsEjsP9xNMWkBqZw3lCEYulSJplclMaTPWOwQQkY9eH7CS-wrIbThrvFxUR1-spurjZQ8Pp5m-cFtWU1hnfzZ0I5nEiOQ6PQgY2bvrwaOTh1zFKcb1vkbTJdCTqvw90Bi-DZ8AoOIF8aHdgHP7bfj7obPSphv0w4RC9Mq89eTMNEEfYHbyg01yR_AHol9czo=s16000"
-       ],
-      "datePublished": "2023-08-28T19:28:00",
-      "dateModified": "2023-08-28T19:28:00",       "author": {
-        "@type": "Person",
-        "name": "noreply@blogger.com (Hatmech)"
-      },
-       "publisher": {
-        "@type": "Organization",
-        "name": "New Blog",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://monooa.github.io/test/static/logo.png"         }
-      },
-      "description": "Web development has evolved significantly over the years, with an increasing demand for faster and more efficient ways to create robust and feature-rich applications. This demand has given rise to Rapid Application Development (RAD) tools, which..."     }
-    </script>
+    <!-- External Libraries -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- No AOS needed on post page unless you want to animate elements here too -->
 
+    <!-- Google Fonts (Example: Poppins) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="https://monooa.github.io/test/static/style.css">
+
+    <!-- Add base tag if using a base URL -->
+    <base href="https://monooa.github.io/test/">
 
 </head>
 <body>
-    <header class="main-header" id="site-header">
-        <div class="site-header-container">
-            <div class="blog-title">
-                <a href="https://monooa.github.io/test/">New Blog</a>
-            </div>
-            <nav>
-                <button id="menu-toggle" class="menu-toggle-button" aria-label="Menu">
-                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-                </button>
 
-                <ul id="main-navigation">
-                    <li><a href="https://monooa.github.io/test/">Home</a></li>
-                     <li>
-                        <button id="theme-toggle" class="theme-toggle-button" aria-label="Toggle Theme">
-                            <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-                            <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-                        </button>
-                    </li>
-                </ul>
-            </nav>
-        </div>
+    <!-- Header -->
+    <header class="site-header sticky-top py-2">
+        <nav class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+             <a class="navbar-brand fw-bold fs-4 py-2" href="https://monooa.github.io/test/">
+                New Blog
+            </a>
+            <div class="menu-container d-flex flex-wrap justify-content-center py-2">
+                <!-- SAME Menu Items As index.html -->
+                <a class="menu-button" href="https://monooa.github.io/test/">Home</a>
+                <a class="menu-button" href="#">About</a>
+                <a class="menu-button" href="#">Contact</a>
+            </div>
+        </nav>
     </header>
 
-    <main class="content-container">     <article class="post-full">
-        <header>
-            <h1>Best php rapid application development tools</h1>
-            <span class="post-meta">
-                Published on August 28, 2023 at 19:28
- by noreply@blogger.com (Hatmech)            </span>
-        </header>
+    <!-- Main Content -->
+    <main class="container mt-4 mb-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-10">                 <article class="blog-post">
+                    <header class="mb-4">
+                        <h1 class="blog-post-title display-5 fw-bold">Best php rapid application development tools</h1>
+                        <p class="blog-post-meta text-muted">
+                            <i class="bi bi-calendar-event"></i> August 28, 2023
+ by <span class="fw-medium">noreply@blogger.com (Hatmech)</span>                        </p>
+                    </header>
 
-        <figure class="featured-image">
-            <img src="https://blogger.googleusercontent.com/img/a/AVvXsEjsP9xNMWkBqZw3lCEYulSJplclMaTPWOwQQkY9eH7CS-wrIbThrvFxUR1-spurjZQ8Pp5m-cFtWU1hnfzZ0I5nEiOQ6PQgY2bvrwaOTh1zFKcb1vkbTJdCTqvw90Bi-DZ8AoOIF8aHdgHP7bfj7obPSphv0w4RC9Mq89eTMNEEfYHbyg01yR_AHol9czo=s16000" alt="Best php rapid application development tools" loading="lazy">
-        </figure>
+                    <figure class="figure mb-4 text-center">
+                         <img src="https://blogger.googleusercontent.com/img/a/AVvXsEjsP9xNMWkBqZw3lCEYulSJplclMaTPWOwQQkY9eH7CS-wrIbThrvFxUR1-spurjZQ8Pp5m-cFtWU1hnfzZ0I5nEiOQ6PQgY2bvrwaOTh1zFKcb1vkbTJdCTqvw90Bi-DZ8AoOIF8aHdgHP7bfj7obPSphv0w4RC9Mq89eTMNEEfYHbyg01yR_AHol9czo=s16000" class="figure-img img-fluid rounded featured-image" alt="Featured image for Best php rapid application development tools">
+                    </figure>
 
-        <section class="post-content">
-            <br /><br /> Web development has evolved significantly over the years, with an increasing demand for faster and more efficient ways to create robust and feature-rich applications. This demand has given rise to Rapid Application Development (RAD) tools, which play a crucial role in accelerating the development process while maintaining code quality. In the realm of PHP, these tools have become indispensable for developers aiming to build web applications rapidly. In this article, we'll explore the world of PHP RAD tools, their benefits, key features, and popular options that empower developers to create dynamic web applications with speed and precision.<br /><br /><h2 style="text-align: left;">The Essence of PHP RAD Tools</h2><br />Rapid Application Development tools are frameworks, platforms, or libraries that offer a set of pre-built components, modules, and features that streamline the development of web applications. The primary goal of these tools is to expedite the coding process by providing ready-made solutions for common tasks, enabling developers to focus on the application's core logic and user experience.<br /><div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/a/AVvXsEjsP9xNMWkBqZw3lCEYulSJplclMaTPWOwQQkY9eH7CS-wrIbThrvFxUR1-spurjZQ8Pp5m-cFtWU1hnfzZ0I5nEiOQ6PQgY2bvrwaOTh1zFKcb1vkbTJdCTqvw90Bi-DZ8AoOIF8aHdgHP7bfj7obPSphv0w4RC9Mq89eTMNEEfYHbyg01yR_AHol9czo" style="margin-left: 1em; margin-right: 1em;"><img src="https://blogger.googleusercontent.com/img/a/AVvXsEjsP9xNMWkBqZw3lCEYulSJplclMaTPWOwQQkY9eH7CS-wrIbThrvFxUR1-spurjZQ8Pp5m-cFtWU1hnfzZ0I5nEiOQ6PQgY2bvrwaOTh1zFKcb1vkbTJdCTqvw90Bi-DZ8AoOIF8aHdgHP7bfj7obPSphv0w4RC9Mq89eTMNEEfYHbyg01yR_AHol9czo=s16000" /></a></div><br /><br /><h2 style="text-align: left;">Unveiling the Benefits</h2><br />Time-Efficiency: The foremost advantage of adopting PHP RAD tools is the remarkable reduction in development time. By utilizing pre-built components and templates, developers can bypass the laborious task of coding repetitive functionalities, enabling them to create applications in a fraction of the time.<div><br /><ul style="text-align: left;"><li>Enhanced Productivity: RAD tools empower developers to iterate rapidly and experiment freely. With a range of pre-existing features, they can prototype ideas, test functionalities, and make adjustments swiftly, ultimately enhancing their productivity.</li><li><b>Quality Assurance:</b> Many RAD tools adhere to industry best practices and coding standards. This adherence promotes code consistency and maintains high quality, reducing the risk of errors and bugs in the final application.</li><li><b>User-Friendly Interfaces: </b>RAD tools typically come equipped with intuitive interfaces that simplify the development process. This accessibility means that both seasoned developers and newcomers can navigate the tools with ease.</li><li><b>Smoother Deployment: </b>RAD tools often incorporate deployment features, making the transition from development to production seamless. This integration saves valuable time and effort during the deployment phase.</li></ul><br /><h2 style="text-align: left;">Exploring Noteworthy PHP RAD Tools</h2><div><br /></div><ul style="text-align: left;"><li><b>Laravel Spark:</b> A prominent extension of the Laravel framework, Laravel Spark provides a collection of out-of-the-box features for authentication, billing, team collaboration, and more. Particularly suitable for creating subscription-based SaaS applications, Laravel Spark expedites the process of building and launching such projects.</li><li><b>Symfony Panther:</b> This PHP library is specifically designed for web crawling and functional testing. Symfony Panther simplifies browser automation and allows developers to conduct efficient testing of web applications, contributing to a more robust final product.</li><li><b>Yii Framework: </b>Yii is a high-performance PHP framework that is well-regarded for its RAD capabilities. The framework offers a comprehensive suite of tools for rapidly building feature-rich applications. Additionally, Yii's code generation tool, Gii, simplifies the creation of repetitive code segments.</li><li>P<b>halcon: </b>Known for its exceptional speed and performance, Phalcon stands out as a full-stack PHP framework. Its unique compiled nature and extensive feature set make it a compelling option for developers seeking both speed and flexibility in their projects.</li><li><b>CodeIgniter:</b> As a lightweight PHP framework, CodeIgniter excels in simplicity and speed. It is an excellent choice for smaller to medium-sized projects where swift development is of utmost importance.</li></ul><br /><h2 style="text-align: left;">Embracing the Power of PHP RAD Tools</h2><br /><ul style="text-align: left;"><li><b>Selecting the Right Tool: </b>Carefully assess the nature of your project and the specific requirements before choosing a PHP RAD tool. Each tool has its strengths and specialties, and selecting the right one will significantly impact your development experience.</li><li><b>Learning and Mastery: </b>Once you've chosen a PHP RAD tool, invest time in learning its ins and outs. Understand its features, functionalities, and shortcuts. Mastery of the tool will unlock its full potential.</li><li><b>Prototyping and Testing: </b>Utilize the rapid iteration capabilities of RAD tools to your advantage. Prototype different features, experiment with user interfaces, and conduct thorough testing before finalizing your application.</li><li><b>Customization and Extensibility:</b> While RAD tools offer pre-built solutions, remember that customization is still possible. Tailor the components to match your application's unique requirements while taking advantage of the built-in features.</li></ul><br /><h2 style="text-align: left;">Conclusion</h2><br />PHP Rapid Application Development tools have revolutionized the way developers approach web development. By providing a toolkit of pre-built components and features, these tools enable developers to create dynamic applications quickly and efficiently. The advantages of time-saving, increased productivity, and code quality enhancement make them indispensable in the modern web development landscape. As you embark on your next web development project, consider exploring and integrating PHP RAD tools into your workflow to achieve faster development cycles, smoother deployments, and ultimately, a more impactful user experience.</div>         </section>
+                    <div class="post-content">
+                        <br /><br /> Web development has evolved significantly over the years, with an increasing demand for faster and more efficient ways to create robust and feature-rich applications. This demand has given rise to Rapid Application Development (RAD) tools, which play a crucial role in accelerating the development process while maintaining code quality. In the realm of PHP, these tools have become indispensable for developers aiming to build web applications rapidly. In this article, we'll explore the world of PHP RAD tools, their benefits, key features, and popular options that empower developers to create dynamic web applications with speed and precision.<br /><br /><h2 style="text-align: left;">The Essence of PHP RAD Tools</h2><br />Rapid Application Development tools are frameworks, platforms, or libraries that offer a set of pre-built components, modules, and features that streamline the development of web applications. The primary goal of these tools is to expedite the coding process by providing ready-made solutions for common tasks, enabling developers to focus on the application's core logic and user experience.<br /><div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/a/AVvXsEjsP9xNMWkBqZw3lCEYulSJplclMaTPWOwQQkY9eH7CS-wrIbThrvFxUR1-spurjZQ8Pp5m-cFtWU1hnfzZ0I5nEiOQ6PQgY2bvrwaOTh1zFKcb1vkbTJdCTqvw90Bi-DZ8AoOIF8aHdgHP7bfj7obPSphv0w4RC9Mq89eTMNEEfYHbyg01yR_AHol9czo" style="margin-left: 1em; margin-right: 1em;"><img src="https://blogger.googleusercontent.com/img/a/AVvXsEjsP9xNMWkBqZw3lCEYulSJplclMaTPWOwQQkY9eH7CS-wrIbThrvFxUR1-spurjZQ8Pp5m-cFtWU1hnfzZ0I5nEiOQ6PQgY2bvrwaOTh1zFKcb1vkbTJdCTqvw90Bi-DZ8AoOIF8aHdgHP7bfj7obPSphv0w4RC9Mq89eTMNEEfYHbyg01yR_AHol9czo=s16000" /></a></div><br /><br /><h2 style="text-align: left;">Unveiling the Benefits</h2><br />Time-Efficiency: The foremost advantage of adopting PHP RAD tools is the remarkable reduction in development time. By utilizing pre-built components and templates, developers can bypass the laborious task of coding repetitive functionalities, enabling them to create applications in a fraction of the time.<div><br /><ul style="text-align: left;"><li>Enhanced Productivity: RAD tools empower developers to iterate rapidly and experiment freely. With a range of pre-existing features, they can prototype ideas, test functionalities, and make adjustments swiftly, ultimately enhancing their productivity.</li><li><b>Quality Assurance:</b> Many RAD tools adhere to industry best practices and coding standards. This adherence promotes code consistency and maintains high quality, reducing the risk of errors and bugs in the final application.</li><li><b>User-Friendly Interfaces: </b>RAD tools typically come equipped with intuitive interfaces that simplify the development process. This accessibility means that both seasoned developers and newcomers can navigate the tools with ease.</li><li><b>Smoother Deployment: </b>RAD tools often incorporate deployment features, making the transition from development to production seamless. This integration saves valuable time and effort during the deployment phase.</li></ul><br /><h2 style="text-align: left;">Exploring Noteworthy PHP RAD Tools</h2><div><br /></div><ul style="text-align: left;"><li><b>Laravel Spark:</b> A prominent extension of the Laravel framework, Laravel Spark provides a collection of out-of-the-box features for authentication, billing, team collaboration, and more. Particularly suitable for creating subscription-based SaaS applications, Laravel Spark expedites the process of building and launching such projects.</li><li><b>Symfony Panther:</b> This PHP library is specifically designed for web crawling and functional testing. Symfony Panther simplifies browser automation and allows developers to conduct efficient testing of web applications, contributing to a more robust final product.</li><li><b>Yii Framework: </b>Yii is a high-performance PHP framework that is well-regarded for its RAD capabilities. The framework offers a comprehensive suite of tools for rapidly building feature-rich applications. Additionally, Yii's code generation tool, Gii, simplifies the creation of repetitive code segments.</li><li>P<b>halcon: </b>Known for its exceptional speed and performance, Phalcon stands out as a full-stack PHP framework. Its unique compiled nature and extensive feature set make it a compelling option for developers seeking both speed and flexibility in their projects.</li><li><b>CodeIgniter:</b> As a lightweight PHP framework, CodeIgniter excels in simplicity and speed. It is an excellent choice for smaller to medium-sized projects where swift development is of utmost importance.</li></ul><br /><h2 style="text-align: left;">Embracing the Power of PHP RAD Tools</h2><br /><ul style="text-align: left;"><li><b>Selecting the Right Tool: </b>Carefully assess the nature of your project and the specific requirements before choosing a PHP RAD tool. Each tool has its strengths and specialties, and selecting the right one will significantly impact your development experience.</li><li><b>Learning and Mastery: </b>Once you've chosen a PHP RAD tool, invest time in learning its ins and outs. Understand its features, functionalities, and shortcuts. Mastery of the tool will unlock its full potential.</li><li><b>Prototyping and Testing: </b>Utilize the rapid iteration capabilities of RAD tools to your advantage. Prototype different features, experiment with user interfaces, and conduct thorough testing before finalizing your application.</li><li><b>Customization and Extensibility:</b> While RAD tools offer pre-built solutions, remember that customization is still possible. Tailor the components to match your application's unique requirements while taking advantage of the built-in features.</li></ul><br /><h2 style="text-align: left;">Conclusion</h2><br />PHP Rapid Application Development tools have revolutionized the way developers approach web development. By providing a toolkit of pre-built components and features, these tools enable developers to create dynamic applications quickly and efficiently. The advantages of time-saving, increased productivity, and code quality enhancement make them indispensable in the modern web development landscape. As you embark on your next web development project, consider exploring and integrating PHP RAD tools into your workflow to achieve faster development cycles, smoother deployments, and ultimately, a more impactful user experience.</div>
+                    </div>
 
-    </article>
+                </article>
 
-    <aside class="related-posts">
-        <h3>Related Posts</h3>
-        <ul>
-            <li><a href="https://monooa.github.io/test/posts/building-the-ultimate-blogger-workflow-a-custom-python-app-for-static-sites-theming-and-github-sync.html">Building the Ultimate Blogger Workflow: A Custom Python App for Static Sites, Theming, and GitHub Sync</a></li>
-            <li><a href="https://monooa.github.io/test/posts/exploring-the-power-of-atom-editor-for-php-development.html">Exploring the Power of Atom Editor for PHP Development</a></li>
-            <li><a href="https://monooa.github.io/test/posts/phpstorm-download-for-windows-guide-to-downloading-and-installing-phpstorm-on-windows.html">Phpstorm Download for windows : Guide to Downloading and Installing PhpStorm on Windows</a></li>
-            <li><a href="https://monooa.github.io/test/posts/unleashing-the-power-of-netlify-supercharge-your-web-development-and-deployment.html">Unleashing the Power of Netlify: Supercharge Your Web Development and Deployment</a></li>
-        </ul>
-    </aside>
+                <!-- Related Posts Section (Optional) -->
+                <hr class="my-5">
+                <section class="related-posts">
+                    <h3 class="mb-4 text-center">You Might Also Like</h3>
+                    <div class="row g-3">
+                        <div class="col-md-4 col-sm-6">
+                            <div class="card post-card card-bordered h-100 small-card">
+                                <a href="https://monooa.github.io/test/posts/building-the-ultimate-blogger-workflow-a-custom-python-app-for-static-sites-theming-and-github-sync.html">
+                                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEguK1yH2bv8WxsUjuKdPcT1fBBVDCaun_Q3xP_Kvg-wBIcfYwS-2R1O8NBCJNhT_GqdmC_S0cICn5Qv8ZV6djAfSzOMlqR4JpR79mJMo0OfZrQMRcr4oO_xCJq1ASNyNnu3Gz_spvgQtYcRdQ4dH4XK-_Eb6WzlSUQM0F28wk9DD41ykZ5gGpRd3XDHX1k/s320/image.png" class="card-img-top post-card-image-small" alt="Building the Ultimate Blogger Workflow: A Custom Python App for Static Sites, Theming, and GitHub Sync">
+                                </a>
+                                <div class="card-body p-2">
+                                    <h6 class="card-title mb-1">
+                                        <a href="https://monooa.github.io/test/posts/building-the-ultimate-blogger-workflow-a-custom-python-app-for-static-sites-theming-and-github-sync.html" class="text-decoration-none text-body stretched-link">Building the Ultimate Blogger Workflow: A...</a>
+                                    </h6>
+                                    <small class="text-muted d-block">
+                                         <i class="bi bi-calendar-event"></i> Apr 05, 2025
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            <div class="card post-card card-bordered h-100 small-card">
+                                <a href="https://monooa.github.io/test/posts/exploring-the-power-of-atom-editor-for-php-development.html">
+                                    <img src="https://blogger.googleusercontent.com/img/a/AVvXsEgksg4QvRyVUSb6icC9Rodeyu1VmeZV4fcLL_BjpaIYWLQAOdqdNes5GzFQuncx3M6MYrOYT4BlDMPBTpY5VyOh_8NajQFOoBUeKkzAjkkq3hLcPlttUrstI6CBANxwu2lkcFtyXk5rqydUPXckEZeFTy__XW2V6LH8wTwjcCJgcRsOv3dYpD14mPkrR2Y=s16000" class="card-img-top post-card-image-small" alt="Exploring the Power of Atom Editor for PHP Development">
+                                </a>
+                                <div class="card-body p-2">
+                                    <h6 class="card-title mb-1">
+                                        <a href="https://monooa.github.io/test/posts/exploring-the-power-of-atom-editor-for-php-development.html" class="text-decoration-none text-body stretched-link">Exploring the Power of Atom Editor for PHP Development</a>
+                                    </h6>
+                                    <small class="text-muted d-block">
+                                         <i class="bi bi-calendar-event"></i> Aug 28, 2023
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            <div class="card post-card card-bordered h-100 small-card">
+                                <a href="https://monooa.github.io/test/posts/phpstorm-download-for-windows-guide-to-downloading-and-installing-phpstorm-on-windows.html">
+                                    <img src="https://blogger.googleusercontent.com/img/a/AVvXsEjdjUvPXw3MPX8Bgngnkz6BrNq2K4-alicH-OGoT0MEV1I4L7sjsltrvujvWwxcyofGXiT4hfEwf9d5CGWpAYaRkF3TPxr5_lwpBP7H1_yAQZqyVNB_lBiruC2kQD8GLbhRLdlJkrbfxBlgmEahxMTqcrBH2HL_JLnd-20d1vs2eyNGi7J6uFpA-gd9Hb8=s16000" class="card-img-top post-card-image-small" alt="Phpstorm Download for windows : Guide to Downloading and Installing PhpStorm on Windows">
+                                </a>
+                                <div class="card-body p-2">
+                                    <h6 class="card-title mb-1">
+                                        <a href="https://monooa.github.io/test/posts/phpstorm-download-for-windows-guide-to-downloading-and-installing-phpstorm-on-windows.html" class="text-decoration-none text-body stretched-link">Phpstorm Download for windows : Guide to...</a>
+                                    </h6>
+                                    <small class="text-muted d-block">
+                                         <i class="bi bi-calendar-event"></i> Aug 28, 2023
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            <div class="card post-card card-bordered h-100 small-card">
+                                <a href="https://monooa.github.io/test/posts/unleashing-the-power-of-netlify-supercharge-your-web-development-and-deployment.html">
+                                    <img src="https://blogger.googleusercontent.com/img/a/AVvXsEhNGtLapZ4y4RKJxmPLxZX002u8tjICe7lBxdSLLb00TizdMZSfixX3HaFQUM-Iu68FFpDlFLvAwO8S69Cw3CiVJBUbbaDi0ul51dHw8lYP1UUC-Mp1L-C_lXPdnnmdk_hVLuHddwrKReyLIF2H3GLBG4Cd7awSnuS-RFbgz4pxpg9dEONYqkV1RwakcBc=s16000" class="card-img-top post-card-image-small" alt="Unleashing the Power of Netlify: Supercharge Your Web Development and Deployment">
+                                </a>
+                                <div class="card-body p-2">
+                                    <h6 class="card-title mb-1">
+                                        <a href="https://monooa.github.io/test/posts/unleashing-the-power-of-netlify-supercharge-your-web-development-and-deployment.html" class="text-decoration-none text-body stretched-link">Unleashing the Power of Netlify: Supercharge...</a>
+                                    </h6>
+                                    <small class="text-muted d-block">
+                                         <i class="bi bi-calendar-event"></i> Aug 28, 2023
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
-    </main>
+            </div>         </div>     </main>
 
-    <footer class="main-footer">
-        <p><a href="https://monooa.github.io/test/">New Blog</a> © 2025</p>
-        <p>Generated by Blog Manager.</p>
+    <!-- Footer -->
+    <footer class="footer mt-auto py-3 bg-light">
+        <div class="container text-center">
+            <span class="text-muted">© 2025 New Blog. All rights reserved.</span>
+        </div>
     </footer>
 
-    <script src="https://monooa.github.io/test/static/script.js" defer></script>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
 </body>
 </html>
