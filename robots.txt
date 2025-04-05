@@ -1,7 +1,19 @@
-User-agent: *
-Allow: /
+# robots.txt for New Blog
+# Generated on: 2025-04-05 19:50:05 UTC
 
+User-agent: *
+# Allow crawling of all content by default
+Allow: /
+# Disallow specific paths if needed, e.g., admin areas, temp files
+# Disallow: /admin/
+# Disallow: /tmp/
+
+# Specify sitemap location (use absolute URL)
 Sitemap: https://monooa.github.io/test/sitemap.xml
 
-# Optional: Disallow specific paths if needed
-# Disallow: /private/
+# Optional: Specific rules for certain crawlers
+# User-agent: Googlebot
+# Allow: /
+
+# User-agent: Bingbot
+# Crawl-delay: 10 # Example: Wait 10 seconds between fetches for Bing

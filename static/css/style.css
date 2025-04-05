@@ -1,0 +1,191 @@
+/* Custom Styles for Bootstrap Default Theme */
+
+/* 1. Global & Typography */
+body {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #f8f9fa; /* Light grey background */
+    color: #343a40; /* Dark grey text */
+}
+
+h1, h2, h3, h4, h5, h6, .fw-bold, .navbar-brand {
+    font-weight: 600; /* Slightly bolder headings */
+}
+
+.display-4, .display-5 {
+    font-weight: 300 !important; /* Lighter display headings */
+}
+
+a {
+    /* color: #0d6efd; Bootstrap default */
+    transition: color 0.2s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+/* 2. Header & Navigation */
+.site-header {
+    /* Using Bootstrap classes: sticky-top py-2 bg-white border-bottom shadow-sm mb-4 */
+}
+.navbar-brand {
+    /* Styles in header.html */
+}
+.menu-button {
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+/* Simple Dropdown Animation */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.dropdown-menu.animate.slideIn {
+  animation: slideIn 0.25s ease forwards;
+}
+
+
+/* 3. Footer */
+.footer {
+    font-size: 0.9rem;
+    /* Uses Bootstrap classes: mt-auto py-3 bg-light border-top */
+}
+.footer .bi-heart-fill {
+    vertical-align: -0.1em; /* Align heart slightly better */
+}
+
+
+/* 4. Index Page - Post Cards */
+.blog-card {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    border: none; /* Remove default card border for cleaner look */
+}
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1) !important; /* Softer hover shadow */
+}
+
+.blog-card-img {
+    height: 200px; /* Fixed height for card images */
+    object-fit: cover; /* Crop images nicely */
+    border-bottom: 1px solid #eee;
+}
+.blog-card .card-title a {
+    color: inherit; /* Make title link inherit card text color */
+}
+.blog-card .card-title a:hover {
+    color: var(--bs-primary); /* Highlight title link on hover */
+}
+
+.tag-badge-link {
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    font-weight: 400;
+    padding: 0.3em 0.6em;
+}
+.tag-badge-link:hover {
+    background-color: var(--bs-primary) !important;
+    color: var(--bs-white) !important;
+}
+
+/* 5. Post Page */
+.blog-post h1 {
+    line-height: 1.3;
+}
+.post-meta {
+    font-size: 0.9em;
+}
+.featured-image {
+    max-height: 450px;
+    width: auto; /* Maintain aspect ratio */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.post-content {
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+.post-content img,
+.post-content amp-img { /* Style images within post content */
+    max-width: 100%;
+    height: auto;
+    margin: 1.5em auto; /* Center images */
+    display: block;
+    border-radius: 4px;
+    border: 1px solid #dee2e6;
+    background-color: #fff;
+    padding: 4px;
+    box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,.075);
+}
+.post-content blockquote {
+    font-size: 1rem;
+    font-style: italic;
+    color: #5a6268;
+    border-left: 4px solid #dee2e6;
+    padding: 0.5em 1em;
+    margin: 1.5em 0;
+    background-color: #f8f9fa;
+}
+.post-content pre {
+    background-color: #282c34; /* Dark background for code */
+    color: #abb2bf; /* Light text */
+    padding: 1em;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-family: 'Fira Code', monospace; /* Use a coding font if available */
+    font-size: 0.9em;
+    line-height: 1.5;
+    margin: 1.5em 0;
+}
+.post-content code { /* Inline code */
+    background-color: rgba(0, 123, 255, 0.07); /* Subtle primary background */
+    color: #5a6268;
+    padding: 0.2em 0.4em;
+    font-size: 0.9em;
+    border-radius: 3px;
+    font-family: 'Fira Code', monospace;
+}
+.post-content pre code { /* Reset inline style within pre */
+    background-color: transparent;
+    color: inherit;
+    padding: 0;
+    font-size: inherit;
+    border-radius: 0;
+}
+
+/* 6. Tag Pages */
+.tag-list-item {
+    transition: background-color 0.2s ease-in-out;
+}
+.tag-list-item:hover {
+    background-color: var(--bs-light);
+}
+
+/* 7. RTL Adjustments (Example) */
+html[dir="rtl"] .post-content blockquote {
+    border-left: none;
+    border-right: 4px solid #dee2e6;
+}
+html[dir="rtl"] .related-posts a::before {
+     content: ''; /* Remove default bullet */
+}
+html[dir="rtl"] .related-posts a::after {
+    content: ' «'; /* Add arrow after */
+    color: #999;
+    margin-right: 0.3em;
+}
+
+
+/* 8. Utility */
+.stretched-link::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    content: "";
+} /* Ensure Bootstrap's stretched-link works as expected */
