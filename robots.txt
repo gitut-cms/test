@@ -1,5 +1,5 @@
 # robots.txt for New Blog
-# Generated on: 2025-04-05 19:56:46 UTC
+# Generated on: 2025-04-05 19:58:24 UTC
 
 User-agent: *
 # Allow crawling of all content by default
