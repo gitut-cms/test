@@ -1,47 +1,162 @@
 <!doctype html>
-<html ⚡ lang="en" >
+<html ⚡ lang="en" dir="ltr">
 <head>
-  <meta charset="utf-8">
-  <title>Exploring the Power of Atom Editor for PHP Development</title>
-  <link rel="canonical" href="https://monooa.github.io/test/posts/exploring-the-power-of-atom-editor-for-php-development.html">
-  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-  <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <!-- Add AMP Components scripts if needed, e.g., amp-img -->
-   <script async custom-element="amp-img" src="https://cdn.ampproject.org/v0/amp-img-0.1.js"></script>
-  <style amp-custom>
-    /* Add your AMP-compatible CSS here */
-    body { font-family: sans-serif; padding: 10px; }
-    h1 a { text-decoration: none; color: inherit;}
-    header, footer { text-align: center; margin-bottom: 20px; }
-    main img, main amp-img { max-width: 100%; height: auto; }
-  </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <title>Exploring the Power of Atom Editor for PHP Development - New Blog</title>
+
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+
+    <link rel="canonical" href="https://monooa.github.io/test/posts/exploring-the-power-of-atom-editor-for-php-development.html">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://monooa.github.io/test/posts/exploring-the-power-of-atom-editor-for-php-development.html"       },
+      "headline": "Exploring the Power of Atom Editor for PHP Development",
+      "image": [
+        "https://blogger.googleusercontent.com/img/a/AVvXsEgksg4QvRyVUSb6icC9Rodeyu1VmeZV4fcLL_BjpaIYWLQAOdqdNes5GzFQuncx3M6MYrOYT4BlDMPBTpY5VyOh_8NajQFOoBUeKkzAjkkq3hLcPlttUrstI6CBANxwu2lkcFtyXk5rqydUPXckEZeFTy__XW2V6LH8wTwjcCJgcRsOv3dYpD14mPkrR2Y=s16000"
+       ],
+      "datePublished": "2023-08-28T19:40:00",
+      "dateModified": "2023-08-28T19:40:00",       "author": {
+        "@type": "Person",
+        "name": "noreply@blogger.com (Hatmech)"
+      },
+       "publisher": {
+        "@type": "Organization",
+        "name": "New Blog",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://monooa.github.io/test/static/logo.png"         }
+      },
+      "description": "In the world of coding, having the right tools can make all the difference. Atom, a highly customizable and feature-rich text editor, has emerged as a favorite among developers for its versatility and extensive plugin ecosystem. While it may not..."     }
+    </script>
+
+    <style amp-custom>
+        /* Minimal styles adapted from style.css - AVOID complex selectors/features */
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #6c757d;
+            --background-color: #ffffff;
+            --text-color: #212529;
+            --card-background: #f8f9fa;
+            --border-color: #dee2e6;
+            --link-color: var(--primary-color);
+            --link-hover-color: #0056b3;
+            --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            --content-max-width: 800px;
+            --header-height: 60px;
+        }
+        body {
+            font-family: var(--font-family);
+            margin: 0; padding: 0;
+            line-height: 1.6;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            display: flex; flex-direction: column; min-height: 100vh;
+        }
+        html[dir="rtl"] body { text-align: right; }
+        a { color: var(--link-color); text-decoration: none; }
+        a:hover { color: var(--link-hover-color); text-decoration: underline; }
+
+        header.main-header {
+            background-color: var(--text-color); color: var(--background-color);
+            padding: 0 20px; height: var(--header-height);
+            display: flex; align-items: center; justify-content: space-between;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+         header .blog-title a { color: var(--background-color); font-size: 1.5em; font-weight: bold; text-decoration: none; }
+        header nav ul { list-style: none; padding: 0; margin: 0; display: flex; }
+        header nav li { margin-left: 15px; }
+         html[dir="rtl"] header nav li { margin-left: 0; margin-right: 15px; }
+         header nav a { color: var(--background-color); text-decoration: none; }
+
+        main { max-width: var(--content-max-width); margin: 30px auto; padding: 0 20px; flex-grow: 1; width: 100%; box-sizing: border-box; }
+
+        .post-full h1 { margin-bottom: 10px; font-size: 2.5em; line-height: 1.2; }
+        .post-meta { color: var(--secondary-color); font-size: 0.9em; margin-bottom: 25px; display: block; }
+        html[dir="rtl"] .post-meta { text-align: right; }
+        .featured-image amp-img { border-radius: 8px; margin-bottom: 25px; }
+
+        .post-content { font-size: 1.1em; line-height: 1.7; }
+        .post-content p { margin-bottom: 1.5em; }
+        .post-content h2, .post-content h3, .post-content h4 { margin-top: 2em; margin-bottom: 1em; }
+        /* AMP handles image display, ensure Python script adds layout/width/height */
+        .post-content amp-img { margin: 1em auto; display: block; max-width: 100%; }
+
+        .post-content blockquote { border-left: 4px solid var(--primary-color); margin: 1.5em 0; padding: 0.5em 1em; background-color: var(--card-background); font-style: italic; }
+        html[dir="rtl"] .post-content blockquote { border-left: none; border-right: 4px solid var(--primary-color); }
+        .post-content pre { background-color: #eee; padding: 1em; border-radius: 4px; overflow-x: auto; font-family: monospace; }
+
+        .related-posts { margin-top: 40px; }
+        .related-posts h3 { border-bottom: 2px solid var(--border-color); padding-bottom: 10px; margin-bottom: 20px; }
+        .related-posts ul { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+        .related-posts li { background: var(--card-background); padding: 15px; border-radius: 5px; border: 1px solid var(--border-color); font-size: 0.95em; }
+        .related-posts li a { font-weight: bold; }
+
+        footer.main-footer { background-color: #f1f1f1; border-top: 1px solid var(--border-color); color: var(--secondary-color); text-align: center; padding: 20px; font-size: 0.9em; margin-top: auto; }
+
+         /* Basic Responsive - AMP handles much itself, but adjust layout if needed */
+        @media (max-width: 768px) {
+             main { margin: 20px auto; padding: 0 15px; }
+             .post-full h1 { font-size: 2em; }
+        }
+         @media (max-width: 480px) {
+             header.main-header { flex-direction: column; height: auto; padding: 10px; }
+             header .blog-title { margin-bottom: 10px; }
+             .post-full h1 { font-size: 1.8em; }
+             .related-posts ul { grid-template-columns: 1fr; }
+         }
+         /* AMP requires specific handling for elements like amp-img size attributes */
+    </style>
+
 </head>
 <body>
-    <header>
-        <h1><a href="https://monooa.github.io/test//index.html">New Blog</a></h1>
+    <header class="main-header">
+        <div class="blog-title">
+            <a href="https://monooa.github.io/test/">New Blog</a>         </div>
+        <nav>
+             <ul>
+                 <li><a href="https://monooa.github.io/test/">Home</a></li>              </ul>
+         </nav>
     </header>
-    <main>
-    <article>
-        <h1>Exploring the Power of Atom Editor for PHP Development</h1>
-        <p>Published on: August 28, 2023</p>
-        <amp-img src="https://blogger.googleusercontent.com/img/a/AVvXsEgksg4QvRyVUSb6icC9Rodeyu1VmeZV4fcLL_BjpaIYWLQAOdqdNes5GzFQuncx3M6MYrOYT4BlDMPBTpY5VyOh_8NajQFOoBUeKkzAjkkq3hLcPlttUrstI6CBANxwu2lkcFtyXk5rqydUPXckEZeFTy__XW2V6LH8wTwjcCJgcRsOv3dYpD14mPkrR2Y=s16000" alt="Exploring the Power of Atom Editor for PHP Development" width="600" height="400" layout="responsive"></amp-img>
-        <div>
-             <br/><br/><br/> In the world of coding, having the right tools can make all the difference. Atom, a highly customizable and feature-rich text editor, has emerged as a favorite among developers for its versatility and extensive plugin ecosystem. While it may not be purpose-built for PHP development, with the right setup and plugins, Atom can become an exceptional environment for crafting PHP applications. In this blog post, we'll delve into the capabilities of Atom Editor for PHP development, highlighting its key features, customization options, and how to harness its potential for efficient coding.<br/><br/><h2>Why Choose Atom Editor for PHP Development?</h2><br/><ul><li><div class="separator"><a href="https://blogger.googleusercontent.com/img/a/AVvXsEgksg4QvRyVUSb6icC9Rodeyu1VmeZV4fcLL_BjpaIYWLQAOdqdNes5GzFQuncx3M6MYrOYT4BlDMPBTpY5VyOh_8NajQFOoBUeKkzAjkkq3hLcPlttUrstI6CBANxwu2lkcFtyXk5rqydUPXckEZeFTy__XW2V6LH8wTwjcCJgcRsOv3dYpD14mPkrR2Y"><amp-img alt="" height="400" layout="responsive" src="https://blogger.googleusercontent.com/img/a/AVvXsEgksg4QvRyVUSb6icC9Rodeyu1VmeZV4fcLL_BjpaIYWLQAOdqdNes5GzFQuncx3M6MYrOYT4BlDMPBTpY5VyOh_8NajQFOoBUeKkzAjkkq3hLcPlttUrstI6CBANxwu2lkcFtyXk5rqydUPXckEZeFTy__XW2V6LH8wTwjcCJgcRsOv3dYpD14mPkrR2Y=s16000" width="600"></amp-img></a></div><b>Customization: </b>Atom's standout feature is its high level of customization. From themes and color schemes to keyboard shortcuts and layout, Atom can be tailored to match your preferred coding environment.</li><li><b>Package Ecosystem: </b>Atom boasts a vibrant community of developers who have created a multitude of packages (plugins) that extend the editor's functionality. These packages cover everything from code formatting and linting to version control integration.</li><li><b>Git Integration:</b> Git, a version control system, is crucial for collaborative coding. Atom offers seamless Git integration through plugins, allowing you to manage and commit changes directly from the editor.</li><li><b>Linting and Error Highlighting:</b> Atom can be equipped with linting plugins that analyze your PHP code for errors and style inconsistencies, helping you write clean and error-free code.</li><li><b>Autocompletion:</b> Autocompletion plugins in Atom make coding faster and more accurate. These plugins suggest code snippets, functions, and classes as you type, reducing the likelihood of typos and speeding up development.</li></ul><br/><h2>Essential Plugins for PHP Development</h2><br/><ul><li><b>php-integrator:</b> This plugin provides features like autocompletion, linting, and code navigation specifically for PHP development.</li><li><b>ide-php: </b>An integration of the PHP language server, ide-php offers features like real-time error checking, autocompletion, and code formatting.</li><li><b>linter-php:</b> Linting is crucial for identifying syntax errors and potential issues in your code. This plugin integrates PHP linting into Atom.</li><li><b>git-plus: </b>For version control, git-plus simplifies the process of committing, pushing, and pulling changes without leaving the editor.</li><li><b>php-cs-fixer:</b> Maintain consistent code formatting with php-cs-fixer. This plugin automates the process of applying coding standards to your PHP code.</li></ul><br/><h2>Setting Up Atom for PHP Development</h2><br/><ul><li><b>Installation:</b> Visit the Atom website and download the editor for your operating system. Once installed, open Atom.</li><li><b>Package Installation:</b> Navigate to Settings &gt; Install and search for the PHP-related packages mentioned earlier. Install the ones that align with your development needs.</li><li><b>Configuration:</b> Many plugins offer customization options. Access their settings through Settings &gt; Packages, and fine-tune them to your preferences.</li><li><b>Themes and Styles:</b> Customize the look and feel of Atom by selecting themes and color schemes that suit your taste. Explore the vast library of themes available within the editor.</li></ul><br/><h2>Optimizing Your Workflow with Atom</h2><div><div><ul><li><b>Keyboard Shortcuts:</b> Familiarize yourself with Atom's keyboard shortcuts to navigate and edit code efficiently.</li><li><b>Split Panes:</b> Use the split panes feature to view multiple files or sections of code simultaneously, enhancing your multitasking capabilities.</li><li><b>Project Management:</b> Organize your PHP projects using Atom's built-in project management features. Create projects, open folders, and manage files seamlessly.</li></ul></div></div><h2>Conclusion</h2><br/>Atom Editor's flexibility, vibrant community, and extensive plugin ecosystem make it a compelling choice for PHP development. With the right configuration and plugins, Atom can provide a robust environment for crafting PHP applications efficiently and with precision. By leveraging its customization options, integrating essential plugins, and familiarizing yourself with its features, you can unlock Atom's potential to become your go-to tool for PHP coding. Whether you're a seasoned PHP developer or just starting out, Atom Editor offers an inviting and adaptable platform that enhances your coding experience and helps you create high-quality PHP applications.
-        </div>
+
+    <main class="post-full">     <article>         <header>
+            <h1>Exploring the Power of Atom Editor for PHP Development</h1>
+            <span class="post-meta">
+                Published on August 28, 2023 at 19:40
+ by noreply@blogger.com (Hatmech)            </span>
+        </header>
+
+        <figure class="featured-image">
+             <amp-img src="https://blogger.googleusercontent.com/img/a/AVvXsEgksg4QvRyVUSb6icC9Rodeyu1VmeZV4fcLL_BjpaIYWLQAOdqdNes5GzFQuncx3M6MYrOYT4BlDMPBTpY5VyOh_8NajQFOoBUeKkzAjkkq3hLcPlttUrstI6CBANxwu2lkcFtyXk5rqydUPXckEZeFTy__XW2V6LH8wTwjcCJgcRsOv3dYpD14mPkrR2Y=s16000"
+                      width="600"                       height="400"                       layout="responsive"
+                      alt="Exploring the Power of Atom Editor for PHP Development">
+             </amp-img>
+         </figure>
+
+        <section class="post-content">
+            <br/><br/><br/> In the world of coding, having the right tools can make all the difference. Atom, a highly customizable and feature-rich text editor, has emerged as a favorite among developers for its versatility and extensive plugin ecosystem. While it may not be purpose-built for PHP development, with the right setup and plugins, Atom can become an exceptional environment for crafting PHP applications. In this blog post, we'll delve into the capabilities of Atom Editor for PHP development, highlighting its key features, customization options, and how to harness its potential for efficient coding.<br/><br/><h2>Why Choose Atom Editor for PHP Development?</h2><br/><ul><li><div class="separator"><a href="https://blogger.googleusercontent.com/img/a/AVvXsEgksg4QvRyVUSb6icC9Rodeyu1VmeZV4fcLL_BjpaIYWLQAOdqdNes5GzFQuncx3M6MYrOYT4BlDMPBTpY5VyOh_8NajQFOoBUeKkzAjkkq3hLcPlttUrstI6CBANxwu2lkcFtyXk5rqydUPXckEZeFTy__XW2V6LH8wTwjcCJgcRsOv3dYpD14mPkrR2Y"><amp-img alt="" height="400" layout="responsive" src="https://blogger.googleusercontent.com/img/a/AVvXsEgksg4QvRyVUSb6icC9Rodeyu1VmeZV4fcLL_BjpaIYWLQAOdqdNes5GzFQuncx3M6MYrOYT4BlDMPBTpY5VyOh_8NajQFOoBUeKkzAjkkq3hLcPlttUrstI6CBANxwu2lkcFtyXk5rqydUPXckEZeFTy__XW2V6LH8wTwjcCJgcRsOv3dYpD14mPkrR2Y=s16000" width="600"></amp-img></a></div><b>Customization: </b>Atom's standout feature is its high level of customization. From themes and color schemes to keyboard shortcuts and layout, Atom can be tailored to match your preferred coding environment.</li><li><b>Package Ecosystem: </b>Atom boasts a vibrant community of developers who have created a multitude of packages (plugins) that extend the editor's functionality. These packages cover everything from code formatting and linting to version control integration.</li><li><b>Git Integration:</b> Git, a version control system, is crucial for collaborative coding. Atom offers seamless Git integration through plugins, allowing you to manage and commit changes directly from the editor.</li><li><b>Linting and Error Highlighting:</b> Atom can be equipped with linting plugins that analyze your PHP code for errors and style inconsistencies, helping you write clean and error-free code.</li><li><b>Autocompletion:</b> Autocompletion plugins in Atom make coding faster and more accurate. These plugins suggest code snippets, functions, and classes as you type, reducing the likelihood of typos and speeding up development.</li></ul><br/><h2>Essential Plugins for PHP Development</h2><br/><ul><li><b>php-integrator:</b> This plugin provides features like autocompletion, linting, and code navigation specifically for PHP development.</li><li><b>ide-php: </b>An integration of the PHP language server, ide-php offers features like real-time error checking, autocompletion, and code formatting.</li><li><b>linter-php:</b> Linting is crucial for identifying syntax errors and potential issues in your code. This plugin integrates PHP linting into Atom.</li><li><b>git-plus: </b>For version control, git-plus simplifies the process of committing, pushing, and pulling changes without leaving the editor.</li><li><b>php-cs-fixer:</b> Maintain consistent code formatting with php-cs-fixer. This plugin automates the process of applying coding standards to your PHP code.</li></ul><br/><h2>Setting Up Atom for PHP Development</h2><br/><ul><li><b>Installation:</b> Visit the Atom website and download the editor for your operating system. Once installed, open Atom.</li><li><b>Package Installation:</b> Navigate to Settings &gt; Install and search for the PHP-related packages mentioned earlier. Install the ones that align with your development needs.</li><li><b>Configuration:</b> Many plugins offer customization options. Access their settings through Settings &gt; Packages, and fine-tune them to your preferences.</li><li><b>Themes and Styles:</b> Customize the look and feel of Atom by selecting themes and color schemes that suit your taste. Explore the vast library of themes available within the editor.</li></ul><br/><h2>Optimizing Your Workflow with Atom</h2><div><div><ul><li><b>Keyboard Shortcuts:</b> Familiarize yourself with Atom's keyboard shortcuts to navigate and edit code efficiently.</li><li><b>Split Panes:</b> Use the split panes feature to view multiple files or sections of code simultaneously, enhancing your multitasking capabilities.</li><li><b>Project Management:</b> Organize your PHP projects using Atom's built-in project management features. Create projects, open folders, and manage files seamlessly.</li></ul></div></div><h2>Conclusion</h2><br/>Atom Editor's flexibility, vibrant community, and extensive plugin ecosystem make it a compelling choice for PHP development. With the right configuration and plugins, Atom can provide a robust environment for crafting PHP applications efficiently and with precision. By leveraging its customization options, integrating essential plugins, and familiarizing yourself with its features, you can unlock Atom's potential to become your go-to tool for PHP coding. Whether you're a seasoned PHP developer or just starting out, Atom Editor offers an inviting and adaptable platform that enhances your coding experience and helps you create high-quality PHP applications.
+        </section>
+
     </article>
 
-    <hr>
-    <h2>Related Posts</h2>
-    <ul>
-        <li><a href="https://monooa.github.io/test/amp/posts/building-the-ultimate-blogger-workflow-a-custom-python-app-for-static-sites-theming-and-github-sync.html">Building the Ultimate Blogger Workflow: A Custom Python App for Static Sites, Theming, and GitHub Sync</a></li>
-        <li><a href="https://monooa.github.io/test/amp/posts/best-php-rapid-application-development-tools.html">Best php rapid application development tools</a></li>
-        <li><a href="https://monooa.github.io/test/amp/posts/phpstorm-download-for-windows-guide-to-downloading-and-installing-phpstorm-on-windows.html">Phpstorm Download for windows : Guide to Downloading and Installing PhpStorm on Windows</a></li>
-        <li><a href="https://monooa.github.io/test/amp/posts/unleashing-the-power-of-netlify-supercharge-your-web-development-and-deployment.html">Unleashing the Power of Netlify: Supercharge Your Web Development and Deployment</a></li>
-    </ul>
+    <aside class="related-posts">
+        <h3>Related Posts</h3>
+        <ul>
+            <li><a href="https://monooa.github.io/test/posts/building-the-ultimate-blogger-workflow-a-custom-python-app-for-static-sites-theming-and-github-sync.html">Building the Ultimate Blogger Workflow: A Custom Python App for Static Sites, Theming, and GitHub Sync</a></li>             <li><a href="https://monooa.github.io/test/posts/best-php-rapid-application-development-tools.html">Best php rapid application development tools</a></li>             <li><a href="https://monooa.github.io/test/posts/phpstorm-download-for-windows-guide-to-downloading-and-installing-phpstorm-on-windows.html">Phpstorm Download for windows : Guide to Downloading and Installing PhpStorm on Windows</a></li>             <li><a href="https://monooa.github.io/test/posts/unleashing-the-power-of-netlify-supercharge-your-web-development-and-deployment.html">Unleashing the Power of Netlify: Supercharge Your Web Development and Deployment</a></li>         </ul>
+    </aside>
+
     </main>
-    <footer>
-         <p>© 2025 Your Name/Site</p>
+
+    <footer class="main-footer">
+        <p>© 2025 New Blog.</p>
+        <p><a href="https://monooa.github.io/test/">View Non-AMP Version</a></p>
     </footer>
+
 </body>
 </html>

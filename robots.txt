@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://monooa.github.io/test//sitemap.xml
+Sitemap: https://monooa.github.io/test/sitemap.xml
+
+# Optional: Disallow specific paths if needed
+# Disallow: /private/
