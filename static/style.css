@@ -657,3 +657,230 @@ footer.main-footer a:hover {
          margin-top: calc(var(--spacing-base) * 2.5);
      }
 }
+/* templates/static/style.css - Additions for JavaScript Features */
+
+/* --- Dark Mode Theme Variables --- */
+:root {
+    /* Light Theme (Default) variables already defined */
+    color-scheme: light;
+}
+
+html[data-theme="dark"] {
+    --color-primary: #ededed;        /* Light text on dark */
+    --color-secondary: #a1a1a1;      /* Lighter gray meta */
+    --color-tertiary: #7a7a7a;
+    --color-ghost: #2a2a2a;
+    /* --color-accent: #3eb0ef; */      /* Adjust accent for dark if needed */
+    /* --color-accent-hover: #6fcfff; */
+    --color-border: #3a3a3a;         /* Darker border */
+    --color-bg: #1a1a1a;             /* Near black background */
+    --color-bg-alt: #252525;        /* Darker off-background */
+    color-scheme: dark;
+}
+
+/* Apply transitions for smooth theme changes */
+body, header.main-header, .post-list-item, footer.main-footer, .post-content pre, .post-content code {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* --- Theme Toggle Button --- */
+.theme-toggle-button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    color: inherit; /* Inherit color from nav links */
+    line-height: 1; /* Align icon better */
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}
+.theme-toggle-button:hover {
+    opacity: 1.0;
+}
+.theme-toggle-button svg {
+    display: inline-block;
+    vertical-align: middle; /* Align icon nicely */
+}
+/* Hide one icon based on theme (JS handles this) */
+html[data-theme="light"] .theme-toggle-button .icon-moon { display: none; }
+html[data-theme="dark"] .theme-toggle-button .icon-sun { display: none; }
+
+
+/* --- Responsive Navigation --- */
+.menu-toggle-button {
+    background: none;
+    border: none;
+    padding: 8px; /* Click area */
+    margin: 0;
+    cursor: pointer;
+    color: inherit;
+    display: none; /* Hidden by default, shown on mobile */
+    z-index: 101; /* Above nav */
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}
+.menu-toggle-button:hover {
+    opacity: 1.0;
+}
+.menu-toggle-button svg {
+    display: block; /* Prevent extra space below icon */
+}
+
+/* Mobile Navigation Styles */
+@media (max-width: 767px) {
+    .menu-toggle-button {
+        display: block; /* Show toggle on mobile */
+        position: absolute; /* Position relative to header container */
+        top: calc(var(--spacing-base) * 1.2); /* Adjust vertical position */
+        right: calc(var(--spacing-base) * 1.8); /* Adjust horizontal position */
+        /* Adjust LTR/RTL positioning */
+        html[dir="ltr"] & { right: calc(var(--spacing-base) * 1.8); left: auto; }
+        html[dir="rtl"] & { left: calc(var(--spacing-base) * 1.8); right: auto; }
+    }
+
+    header nav ul#main-navigation {
+        /* Hide nav off-screen or collapsed */
+        display: none; /* Start hidden */
+        position: absolute;
+        top: 100%; /* Position below header */
+        left: 0;
+        right: 0;
+        background-color: var(--color-bg);
+        border-top: 1px solid var(--color-border);
+        border-bottom: 1px solid var(--color-border);
+        padding: var(--spacing-base) 0;
+        margin: 0;
+        flex-direction: column; /* Stack items vertically */
+        align-items: center;
+        z-index: 100;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        /* Transition for smooth open/close (optional - using display:none is simpler) */
+        /* max-height: 0; */
+        /* overflow: hidden; */
+        /* transition: max-height 0.3s ease-out; */
+    }
+
+    header nav ul#main-navigation.nav-open {
+        display: flex; /* Show nav when class is added */
+        /* max-height: 500px; */ /* Use if using max-height transition */
+    }
+
+    header nav ul#main-navigation li {
+        margin: 0; /* Reset margins */
+        padding: calc(var(--spacing-base) * 0.8) 0; /* Vertical spacing */
+        width: 100%;
+        text-align: center;
+    }
+    header nav ul#main-navigation li:not(:last-child) {
+       border-bottom: 1px solid var(--color-ghost); /* Separator */
+    }
+     html[data-theme="dark"] header nav ul#main-navigation li:not(:last-child) {
+        border-bottom-color: var(--color-border); /* Use darker border in dark mode */
+     }
+
+    header nav ul#main-navigation a,
+    header nav ul#main-navigation button { /* Include button in styling */
+        font-size: 1.6rem; /* Slightly larger mobile nav text */
+        width: 100%;
+        display: block; /* Make link take full width */
+        padding: 8px 20px;
+    }
+     .theme-toggle-button { /* Ensure theme toggle fits well */
+         display: inline-block;
+         width: auto;
+         padding: 8px;
+     }
+}
+
+
+/* --- Header Scroll Effect --- */
+header.main-header {
+    /* Make header sticky */
+    position: sticky;
+    top: 0;
+    left: 0; /* or right: 0 for RTL? */
+    width: 100%;
+    z-index: 1000; /* Ensure header stays on top */
+    /* Add transitions for smooth effect */
+    transition: padding 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    will-change: padding, background-color, box-shadow; /* Optimize transitions */
+}
+
+header.main-header.site-header-scrolled {
+    padding-top: calc(var(--spacing-base) * 0.8);
+    padding-bottom: calc(var(--spacing-base) * 0.8);
+    background-color: var(--color-bg); /* Ensure bg color */
+    border-bottom-color: transparent; /* Hide border or keep it */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.07); /* Add subtle shadow */
+}
+
+/* Optional: Hide header on scroll down (add .site-header-hidden class via JS) */
+header.main-header.site-header-hidden {
+    transform: translateY(-100%);
+}
+
+
+/* --- Simple Image Lightbox --- */
+.simple-lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(26, 26, 26, 0.9); /* Dark overlay */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000; /* Above everything */
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+}
+
+.simple-lightbox-overlay.lightbox-active {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease, visibility 0s linear 0s;
+}
+
+.simple-lightbox-image {
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+    width: auto;
+    height: auto;
+    object-fit: contain; /* Ensure image fits without distortion */
+    border-radius: 3px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.simple-lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px; /* LTR */
+    background: none;
+    border: none;
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    line-height: 1;
+    padding: 5px;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+}
+.simple-lightbox-close:hover {
+    opacity: 1;
+}
+html[dir="rtl"] .simple-lightbox-close {
+    right: auto;
+    left: 30px; /* RTL */
+}
+
+/* Add zoom-in cursor to images handled by JS */
+.post-content img[style*="cursor: zoom-in"] {
+    /* Already applied inline by JS, but can be defined here too */
+    cursor: zoom-in;
+}
