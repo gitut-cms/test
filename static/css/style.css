@@ -189,3 +189,29 @@ html[dir="rtl"] .related-posts a::after {
     z-index: 1;
     content: "";
 } /* Ensure Bootstrap's stretched-link works as expected */
+
+/* Optional hover effect for related post cards */
+.related-card-hover {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  }
+  
+  .related-card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 .3rem .8rem rgba(0,0,0,.12) !important; /* Slightly stronger shadow on hover */
+  }
+  
+  /* Ensure images within post content don't exceed container width */
+  .post-content img {
+      max-width: 100%;
+      height: auto;
+  }
+  
+  /* Add some basic styling for code blocks if not already present */
+  .post-content pre {
+      background-color: #f8f9fa; /* Light background */
+      border: 1px solid #dee2e6; /* Light border */
+      border-radius: 0.25rem;
+      padding: 1rem;
+      overflow-x: auto; /* Allow horizontal scroll */
+      font-size: 0.9em;
+  }
