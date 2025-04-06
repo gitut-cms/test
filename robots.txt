@@ -1,19 +1,17 @@
 # robots.txt for New Blog
-# Generated on: 2025-04-06 08:11:08 UTC
+# Generated on: 2025-04-06 08:46:51 UTC
 
 User-agent: *
-# Allow crawling of all content by default
 Allow: /
-# Disallow specific paths if needed, e.g., admin areas, temp files
+
+# Optional: Disallow specific paths if needed
 # Disallow: /admin/
-# Disallow: /tmp/
+# Disallow: /private/
 
-# Specify sitemap location (use absolute URL)
-Sitemap: https://monooa.github.io/test/sitemap.xml
+# Optional: If AMP pages exist but you don't want them crawled directly
+# (relying on canonical), you could add:
+# Disallow: /amp/
+# However, it's generally fine to let them be crawled.
 
-# Optional: Specific rules for certain crawlers
-# User-agent: Googlebot
-# Allow: /
-
-# User-agent: Bingbot
-# Crawl-delay: 10 # Example: Wait 10 seconds between fetches for Bing
+# Specify the location of the sitemap
+Sitemap: https://monooa.github.io/test/
