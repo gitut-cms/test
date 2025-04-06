@@ -204,3 +204,94 @@ main {
 
 /* --- Footer --- */
 /* Using bg-white and border-top utilities */
+/* --- Existing Styles --- */
+/* ... keep all previous styles ... */
+
+
+/* --- Borders with Shadow --- */
+/* Apply shadow *directly* to bordered elements if desired, or use Bootstrap shadow utilities */
+.border.shadow-sm,
+.border.shadow,
+.border.shadow-lg {
+    /* Bootstrap handles this well, but you could customize */
+    /* Example: Slightly softer default shadow for borders */
+     /* box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .06) !important; */
+}
+
+/* --- Horizontal Post Card Slider --- */
+.post-card-slider-section {
+    /* Optional margin if needed */
+}
+
+.post-card-slider-container {
+    overflow-x: auto; /* Enable horizontal scroll */
+    scroll-behavior: smooth; /* Animate scrolling */
+    scrollbar-width: none; /* Hide scrollbar (Firefox) */
+    -ms-overflow-style: none; /* Hide scrollbar (IE/Edge) */
+    padding-bottom: 1rem; /* Add space below cards for shadow visibility */
+
+    /* Scroll Snapping */
+    scroll-snap-type: x mandatory; /* Snap horizontally, force snap */
+}
+
+/* Hide scrollbar (Chrome, Safari, Opera) */
+.post-card-slider-container::-webkit-scrollbar {
+    display: none;
+}
+
+.post-card-slider-content {
+    display: flex; /* Lay out cards horizontally */
+    width: max-content; /* Allow content to exceed container width */
+    gap: 1rem; /* Space between cards */
+    padding-left: 0.25rem; /* Slight initial padding */
+    padding-right: 0.25rem;
+}
+
+.slider-card {
+    flex: 0 0 auto; /* Prevent cards from shrinking */
+    width: 85%; /* Card width relative to viewport on small screens */
+    scroll-snap-align: start; /* Snap to the start of the card */
+    /* More specific widths for different screen sizes */
+    @media (min-width: 576px) { width: 60%; } /* sm */
+    @media (min-width: 768px) { width: 45%; } /* md */
+    @media (min-width: 992px) { width: 31%; } /* lg */
+    @media (min-width: 1200px) { width: 23%; } /* xl */
+}
+
+.slider-card .post-card-image.slider-image {
+    max-height: 150px; /* Smaller images for slider cards */
+    object-fit: cover;
+}
+
+/* Slider Navigation Buttons */
+.slider-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    border-radius: 50%; /* Circular buttons */
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+}
+.slider-nav:hover {
+    opacity: 1;
+}
+
+.slider-prev {
+    left: -15px; /* Position slightly outside */
+}
+.slider-next {
+    right: -15px; /* Position slightly outside */
+}
+
+/* Hide buttons on very small screens if they overlap too much */
+@media (max-width: 575.98px) {
+    .slider-prev { left: 5px; }
+    .slider-next { right: 5px; }
+}
