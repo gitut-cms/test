@@ -5,7 +5,7 @@
 body {
     font-family: 'Montserrat', sans-serif;
     /* Bootstrap's dark theme handles background/text colors */
-    font-size: 0.95rem; /* Slightly smaller base font */
+    font-size: 18px; /* Slightly smaller base font */
 }
 
 h1, h2, h3, h4, h5, h6, .navbar-brand, .display-5 {
