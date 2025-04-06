@@ -4,13 +4,14 @@
     <meta charset="utf-8">
     <title>sfsefzsefzsef (AMP) - Tech Now</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-    <link rel="canonical" href="sfsefzsefzsef.html"> 
+    <link rel="canonical" href="YOUR_SITE_BASE_URL/sfsefzsefzsef.html"> 
     <!-- AMP Runtime -->
     <script async src="https://cdn.ampproject.org/v0.js"></script>
 
     <!-- Required AMP Components -->
     <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
     <script async custom-element="amp-img" src="https://cdn.ampproject.org/v0/amp-img-0.1.js"></script>
+    <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script> 
 
     <!-- AMP Boilerplate -->
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
@@ -24,55 +25,32 @@
             background-color: #f8f9fa; /* Light background */
             color: #212529;
         }
-        header, footer {
-            padding: 10px 0;
-            text-align: center;
-            border-bottom: 1px solid #dee2e6;
-            margin-bottom: 15px;
-        }
-        footer {
-             border-top: 1px solid #dee2e6;
-             border-bottom: none;
-             margin-top: 20px;
-             font-size: 0.9em;
-             color: #6c757d;
-        }
+        header, footer { padding: 10px 0; text-align: center; border-bottom: 1px solid #dee2e6; margin-bottom: 15px; background-color: #fff; }
+        footer { border-top: 1px solid #dee2e6; border-bottom: none; margin-top: 20px; font-size: 0.9em; color: #6c757d; }
         h1 { font-size: 1.8em; margin-bottom: 0.5em; }
         .post-meta { font-size: 0.9em; color: #6c757d; margin-bottom: 1em; }
+        main { background-color: #fff; padding: 20px; border-radius: 8px; border: 1px solid #dee2e6; box-shadow: 0 .125rem .25rem rgba(0,0,0,.075); }
         amp-img { max-width: 100%; height: auto; border: 1px solid #dee2e6; border-radius: 8px; margin-bottom: 1em; }
-        .content-body img, .content-body amp-img { /* Style images within content */
-            max-width: 100%; height: auto; border-radius: 8px; margin-bottom: 1em; border: 1px solid #dee2e6;
-        }
+        .content-body img, .content-body amp-img { max-width: 100%; height: auto; border-radius: 8px; margin: 1em auto; border: 1px solid #dee2e6; display: block; }
         /* Sidebar Styles */
-        amp-sidebar {
-            width: 250px;
-            padding: 15px;
-            background-color: white;
-            border-right: 1px solid #dee2e6;
-        }
-        amp-sidebar h4 { font-size: 1.1em; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+        amp-sidebar { width: 250px; padding: 15px; background-color: white; border-right: 1px solid #dee2e6; }
+        amp-sidebar h4 { font-size: 1.1em; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 5px; color: #0d6efd; }
         amp-sidebar ul { list-style: none; padding: 0; margin: 0; }
-        amp-sidebar li a { text-decoration: none; color: #0d6efd; display: block; padding: 8px 0; }
+        amp-sidebar li a { text-decoration: none; color: #212529; display: block; padding: 8px 0; }
         /* Sidebar Toggle Button */
-        .sidebar-trigger {
-            font-size: 1.5em; /* Make icon bigger */
-            cursor: pointer;
-            padding: 5px 10px;
-            position: fixed; /* Keep it visible */
-            top: 10px;
-            left: 10px;
-            background-color: rgba(255,255,255,0.8);
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            z-index: 1000; /* Above content */
-        }
+        .sidebar-trigger { font-size: 1.5em; cursor: pointer; padding: 5px 10px; position: fixed; top: 10px; left: 10px; background-color: rgba(255,255,255,0.9); border: 1px solid #ccc; border-radius: 5px; z-index: 1000; box-shadow: 0 .125rem .25rem rgba(0,0,0,.075); }
+        .close-trigger { font-size: 1.2em; cursor: pointer; padding: 5px 10px; background-color: #eee; border-radius: 5px; border: 1px solid #ccc; margin-bottom: 15px; display: inline-block; }
+        /* AMP Social Share */
+        .amp-social-share-container { margin-top: 20px; padding-top: 15px; border-top: 1px solid #eee; text-align: center;}
+        amp-social-share { margin: 0 5px; }
     </style>
 </head>
 <body>
 
     <!-- AMP Sidebar -->
     <amp-sidebar id="blogSidebar" layout="nodisplay" side="left">
-        <button class="sidebar-trigger" on="tap:blogSidebar.close">✕</button>         <h4><i class="bi bi-tags"></i> Categories</h4>
+        <button class="close-trigger" on="tap:blogSidebar.close">✕ Close</button>
+        <h4><i class="bi bi-tags"></i> Categories</h4>
         <ul>
                <li><a href="category-jjjj.html">jjj</a></li>
         </ul>
@@ -84,10 +62,10 @@
     </amp-sidebar>
 
     <!-- Button to open the sidebar -->
-    <button class="sidebar-trigger" on="tap:blogSidebar.toggle"><i class="bi bi-list"></i></button>
+    <button class="sidebar-trigger" on="tap:blogSidebar.toggle">☰</button>
 
     <header>
-        <a href="index.html" style="text-decoration: none; color: inherit;">Tech Now</a>
+        <a href="index.html" style="text-decoration: none; color: inherit; font-weight: bold; font-size: 1.2em;">Tech Now</a>
     </header>
 
     <main>
@@ -101,10 +79,19 @@
 
         <div class="content-body">
              rfzerfzsrfzefzedf         </div>
+
+        <div class="amp-social-share-container">
+             <p style="margin-bottom: 10px; font-weight:500;">Share this:</p>
+             <amp-social-share type="facebook" data-param-app_id="YOUR_FACEBOOK_APP_ID"></amp-social-share>              <amp-social-share type="twitter"></amp-social-share>
+             <amp-social-share type="linkedin"></amp-social-share>
+             <amp-social-share type="whatsapp"></amp-social-share>
+             <amp-social-share type="email"></amp-social-share>
+        </div>
+
     </main>
 
     <footer>
-        © 2025 Tech Now. View <a href="sfsefzsefzsef.html">Non-AMP Version</a>.
+        © 2025 Tech Now. View <a href="YOUR_SITE_BASE_URL/sfsefzsefzsef.html">Non-AMP Version</a>.
     </footer>
 
 </body>
