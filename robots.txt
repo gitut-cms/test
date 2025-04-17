@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://monooa.github.io/test//sitemap.xml
