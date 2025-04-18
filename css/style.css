@@ -1,171 +1,320 @@
-/* Import Google Font */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-
-/* --- Base & Typography --- */
+/* Reset and Base Styles */
 body {
-    font-family: 'Montserrat', sans-serif;
-    /* Bootstrap's dark theme handles background/text colors */
-    font-size: 18px; /* Slightly smaller base font */
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f8fb; /* Light background for content area */
 }
 
-h1, h2, h3, h4, h5, h6, .navbar-brand, .display-5 {
-    font-weight: 700; /* Bolder headings */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 a {
-    transition: color 0.2s ease-in-out;
+    color: #5860f3; /* Ghost-like purple */
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
 }
 
-/* --- Navbar --- */
-.navbar {
-    /* Example: Add subtle shadow */
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-.navbar-nav .nav-link {
-    padding-left: 0.8rem;
-    padding-right: 0.8rem;
-    border-radius: 0.375rem; /* Rounded effect on hover/active */
-    transition: background-color 0.2s ease;
+/* Header */
+.site-header {
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); /* Example Gradient */
+    color: #fff;
+    padding: 15px 0;
 }
 
-.navbar-nav .nav-link:hover,
-.navbar-nav .nav-link:focus {
-    background-color: rgba(255, 255, 255, 0.08); /* Subtle hover */
+.site-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-.navbar-nav .nav-link.active {
+
+.site-nav {
+    display: flex;
+    align-items: center;
+}
+
+.site-nav-logo {
+    font-size: 1.5em;
     font-weight: bold;
-    background-color: rgba(var(--bs-primary-rgb), 0.15); /* Use primary color tint for active */
-    color: var(--bs-primary);
+    color: #fff;
+    margin-right: 30px;
+}
+.site-nav-logo:hover { text-decoration: none; }
+
+.site-nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
 }
 
-.dropdown-menu {
-    border-radius: 0.5rem !important; /* Ensure dropdown is rounded */
-    box-shadow: 0 0.5rem 1rem rgba(0,0,0,.15);
-    border: 1px solid var(--bs-border-color-translucent);
+.site-nav-links li {
+    margin-right: 20px;
 }
 
-/* --- Post Cards (index.html, category.html) --- */
-.post-card {
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    border: 1px solid var(--bs-border-color-translucent); /* Subtle border */
+.site-nav-links a {
+    color: #fff;
+    opacity: 0.8;
+    font-weight: 500;
+}
+.site-nav-links a:hover {
+    opacity: 1;
+    text-decoration: none;
 }
 
-.shadow-hover:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+.site-header-actions {
+    display: flex;
+    align-items: center;
 }
-
-.post-card .card-img-top {
-    aspect-ratio: 16 / 9; /* Maintain aspect ratio */
-    object-fit: cover; /* Cover the area, cropping if needed */
+.site-header-actions .search-button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.2em;
+    margin-right: 15px;
+    cursor: pointer;
+    opacity: 0.8;
 }
+.site-header-actions .search-button:hover { opacity: 1; }
 
-.post-card .card-title a {
-    color: var(--bs-emphasis-color); /* Use theme's emphasis color */
-}
-.post-card .card-title a:hover {
-    color: var(--bs-primary);
-}
-
-.post-card .card-body {
-    padding: 1.25rem;
-}
-
-
-/* --- Single Post & Page Content --- */
-.post-content .content-body p,
-.page-content .content-body p {
-    margin-bottom: 1.2rem;
-    line-height: 1.7;
-}
-
-.post-content .content-body img,
-.page-content .content-body img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 0.5rem; /* Rounded images in content */
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-}
-
-/* Styling for meta information */
-.post-meta {
+.button.subscribe-button {
+    background-color: #fff;
+    color: #5860f3;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
     font-size: 0.9em;
 }
-.post-meta i { /* Align icons better */
-    vertical-align: -0.125em;
+.button.subscribe-button:hover {
+    background-color: #eee;
+    text-decoration: none;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); /* Same Gradient */
+    color: #fff;
+    padding: 60px 0;
+    text-align: center;
+}
+.hero-section h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+.hero-section p {
+    font-size: 1.2em;
+    opacity: 0.9;
+}
+
+/* Main Content Grid */
+.content-grid {
+    display: flex;
+    gap: 40px; /* Space between columns */
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.featured-post-column {
+    flex: 2; /* Takes twice the space of sidebar */
+    min-width: 0; /* Prevent overflow */
+}
+
+.sidebar-column {
+    flex: 1;
+    min-width: 0; /* Prevent overflow */
+}
+
+/* Post Card Styles (Featured) */
+.post-card.featured {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    overflow: hidden; /* Clip image corners */
+}
+
+.post-card-image-container img {
+    width: 100%;
+    height: 300px; /* Adjust as needed */
+    object-fit: cover;
+}
+
+.post-card-content {
+    padding: 25px;
+}
+
+.post-card-category {
+    display: inline-block;
+    font-size: 0.8em;
+    font-weight: bold;
+    color: #5860f3;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+.post-card-category a { color: inherit; }
+
+.post-card-title {
+    font-size: 1.8em;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+.post-card-title a {
+    color: #111;
+}
+
+.post-card-excerpt {
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.post-card-meta {
+    font-size: 0.9em;
+    color: #777;
+}
+
+/* Post Card Styles (Small - Sidebar) */
+.post-card-small {
+    margin-bottom: 30px;
+    /* No background needed, blends with page */
+}
+
+.post-card-small-title {
+    font-size: 1.2em;
+    margin-top: 5px;
+    margin-bottom: 8px;
+}
+.post-card-small-title a { color: #111; }
+
+.post-card-small-excerpt {
+    font-size: 0.95em;
+    color: #555;
+    margin-bottom: 10px;
+    line-height: 1.5;
 }
 
 
-/* --- Code Block Styling --- */
-.content-body pre {
-    background-color: #1a1d20; /* Darker than body bg */
-    color: #ced4da;
-    padding: 1.25rem;
-    border-radius: 0.5rem; /* Rounded code blocks */
-    overflow-x: auto; /* Add scrollbar if code is too wide */
-    border: 1px solid var(--bs-border-color);
-    position: relative; /* Needed for positioning the copy button */
-    margin-top: 1rem;
-    margin-bottom: 1.5rem;
+/* Integrations Section (Sidebar) */
+.integrations-section {
+    background-color: #ffeb3b; /* Bright Yellow */
+    padding: 25px;
+    border-radius: 8px;
+    margin-top: 30px; /* Space above it */
+    text-align: center;
+}
+.integrations-image img {
+    max-width: 200px; /* Adjust size */
+    margin: 0 auto 15px auto;
+}
+.integrations-section p {
+    color: #333;
+    font-weight: 500;
 }
 
-.content-body pre code {
-    font-family: 'SFMono-Regular', Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-    font-size: 0.875em;
-    background-color: transparent !important; /* Override potential conflicts */
+/* Single Post/Page Styles */
+.post-full, .page-full {
+    background-color: #fff;
+    padding: 40px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+.post-full-header, .page-full-header {
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+}
+.post-full-title, .page-full-title {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+.post-full-custom-excerpt { /* Description shown below title */
+    font-size: 1.1em;
+    color: #555;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+.post-full-meta {
+    font-size: 0.9em;
+    color: #777;
+}
+.post-full-tags a {
+    display: inline-block;
+    background: #eee;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 0.8em;
+    margin-right: 5px;
+    color: #555;
+}
+.post-full-content, .page-full-content {
+    font-size: 1.1em;
+    line-height: 1.7;
+}
+.post-full-content h2, .page-full-content h2 { font-size: 1.8em; margin-top: 1.5em; }
+.post-full-content h3, .page-full-content h3 { font-size: 1.5em; margin-top: 1.3em; }
+.post-full-content p, .page-full-content p { margin-bottom: 1.2em; }
+.post-full-content img, .page-full-content img { margin: 1.5em 0; }
+.post-full-content pre { background: #f0f0f0; padding: 1em; border-radius: 4px; overflow-x: auto; }
+
+/* Breadcrumbs */
+.breadcrumbs ol {
+    list-style: none;
     padding: 0;
-    color: inherit;
+    margin: 10px 0 0 0;
+    font-size: 0.9em;
+    color: #777;
+}
+.breadcrumbs li {
+    display: inline;
+}
+.breadcrumbs li::after {
+    content: ' / ';
+    padding: 0 0.5em;
+    color: #aaa;
+}
+.breadcrumbs li:last-child::after {
+    content: '';
+}
+.breadcrumbs a {
+    color: #777;
 }
 
-/* Copy Button Styling */
-.copy-code-button {
-    position: absolute;
-    top: 0.75rem;
-    right: 0.75rem;
-    background-color: var(--bs-secondary);
-    color: white;
-    border: none;
-    padding: 0.25rem 0.6rem;
-    font-size: 0.75rem;
-    border-radius: 0.3rem;
-    cursor: pointer;
-    opacity: 0.7;
-    transition: opacity 0.2s ease, background-color 0.2s ease;
+/* Footer */
+.site-footer {
+    text-align: center;
+    padding: 30px 0;
+    font-size: 0.9em;
+    color: #777;
+    margin-top: 40px;
+    border-top: 1px solid #eee;
 }
 
-.copy-code-button:hover {
-    opacity: 1;
-    background-color: var(--bs-primary);
-}
+/* Related Posts */
+.related-posts-container { margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; }
+.related-posts-container h3 { margin-bottom: 15px; }
+.related-posts-container ul { list-style: disc; padding-left: 20px; }
+.related-posts-container li { margin-bottom: 8px; }
 
-.copy-code-button i { /* Icon inside button */
-    margin-right: 0.3em;
-    vertical-align: -0.1em;
+/* Responsive Adjustments (Example) */
+@media (max-width: 768px) {
+    .content-grid {
+        flex-direction: column;
+    }
+    .hero-section h1 { font-size: 2.2em; }
+    .post-full-title, .page-full-title { font-size: 1.8em; }
+    .site-header .container { flex-direction: column; }
+    .site-nav { margin-bottom: 15px; }
+    .site-header-actions { margin-top: 10px; }
 }
-
-/* --- Related Posts --- */
-.related-posts {
-    border: 1px solid var(--bs-border-color-translucent);
-    /* Background set by Bootstrap class bg-body-tertiary */
-    /* Padding and rounding set by Bootstrap classes */
-}
-
-.related-posts .list-group-item {
-    /* Remove default list group borders/backgrounds */
-    border-bottom: 1px solid var(--bs-border-color-translucent) !important;
-}
-.related-posts .list-group-item:last-child {
-     border-bottom: 0 !important;
-}
-
-.related-posts .list-group-item:hover {
-    background-color: rgba(var(--bs-primary-rgb), 0.1) !important;
-}
-
-/* --- General Utilities --- */
-.shadow-sm { box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important; }
-.rounded-4 { border-radius: .75rem!important; }
-.rounded-top-4 { border-top-left-radius: .75rem!important; border-top-right-radius: .75rem!important; }
