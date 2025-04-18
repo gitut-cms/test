@@ -1,4 +1,4 @@
-/* --- Base & Variables --- */
+/* --- Base & Variables --- (Keep as is) --- */
 :root {
     --primary-color: #8a42e0; /* Example purple */
     --dark-grey: #15171a;
@@ -13,14 +13,14 @@
 
 body {
     font-family: var(--font-sans);
-    background: var(--white);
+    background: #f8f9fa; /* Lighter background like the Tech Now example */
     color: var(--dark-grey);
     margin: 0;
     line-height: 1.6;
-    font-size: 16px; /* Base font size */
+    font-size: 16px;
 }
 
-/* --- Layout --- */
+/* --- Layout --- (Keep gh-viewport, gh-outer, gh-inner) --- */
 .gh-viewport {
     display: flex;
     flex-direction: column;
@@ -43,16 +43,19 @@ body {
     margin: 0 auto;
 }
 
+/* Canvas for limiting content width */
 .gh-canvas {
     width: 100%;
     max-width: 720px; /* Max width for content */
-    margin: 0 auto;
+    margin-left: auto;  /* Center elements with this class */
+    margin-right: auto; /* Center elements with this class */
 }
 
 
-/* --- Header --- */
+/* --- Header --- (Adjust colors/styles to match Tech Now) --- */
 .gh-head {
-    background: linear-gradient(90deg, rgba(138,66,224,1) 0%, rgba(194,63,175,1) 100%); /* Example Gradient */
+    /* Match Tech Now Purple */
+    background: #8a42e0; /* Adjust if needed */
     color: var(--white);
     padding-top: 15px;
     padding-bottom: 15px;
@@ -66,10 +69,10 @@ body {
 }
 
 .gh-head-brand { display: flex; align-items: center; }
-.gh-head-logo { font-size: 1.5rem; font-weight: 800; color: var(--white); text-decoration: none; margin-right: 20px; }
+.gh-head-logo { font-size: 1.6rem; font-weight: 800; color: var(--white); text-decoration: none; margin-right: 20px; }
 .gh-head-logo:hover { text-decoration: none; }
 .gh-icon-btn { background: none; border: none; color: var(--white); padding: 5px; cursor: pointer; margin-left: 10px; }
-.gh-icon-btn svg { width: 20px; height: 20px; }
+.gh-icon-btn svg { width: 22px; height: 22px; } /* Slightly larger */
 .gh-burger { display: none; } /* Show on mobile */
 
 .gh-head-menu ul.nav {
@@ -78,15 +81,26 @@ body {
     margin: 0;
     display: flex;
 }
-.gh-head-menu ul.nav li { margin-left: 25px; }
-.gh-head-menu ul.nav a { color: var(--white); text-decoration: none; font-weight: 500; }
-.gh-head-menu ul.nav a:hover { opacity: 0.8; }
+.gh-head-menu ul.nav li { margin-left: 30px; } /* More spacing */
+.gh-head-menu ul.nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    padding-bottom: 5px; /* Space for potential underline/border */
+    border-bottom: 2px solid transparent; /* Underline effect on hover/active */
+    transition: border-color 0.2s ease;
+}
+.gh-head-menu ul.nav a:hover,
+.gh-head-menu ul.nav li.active a { /* Add 'active' class dynamically if needed */
+    border-bottom-color: var(--white);
+}
+
 
 .gh-head-actions { display: flex; align-items: center; }
 .gh-head-button {
     background: var(--white);
-    color: var(--primary-color);
-    padding: 8px 16px;
+    color: #8a42e0; /* Match header purple */
+    padding: 8px 18px; /* Slightly larger */
     border-radius: var(--radius);
     text-decoration: none;
     font-weight: 700;
@@ -96,14 +110,13 @@ body {
 }
 .gh-head-button:hover { opacity: 0.9; }
 
-/* --- Post Feed / Cards --- */
+/* --- Post Feed / Cards (Homepage) --- (Keep largely as is, adjust styling) --- */
 .gh-feed {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     margin-top: 30px;
 }
-
 .gh-card {
     background: var(--white);
     border-radius: var(--radius);
@@ -113,39 +126,30 @@ body {
     display: flex;
     flex-direction: column;
 }
-.gh-card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-.gh-card-link { color: inherit; text-decoration: none; display: flex; flex-direction: column; flex-grow: 1; }
-.gh-card-image { margin: 0; line-height: 0; }
-.gh-card-image img { width: 100%; height: 200px; object-fit: cover; }
-.gh-card-wrapper { padding: 20px; display: flex; flex-direction: column; flex-grow: 1; }
-.gh-card-tag { font-size: 0.8rem; font-weight: 700; color: var(--primary-color); margin: 0 0 5px; text-transform: uppercase; }
-.gh-card-title { font-size: 1.3rem; margin: 0 0 10px; line-height: 1.3; }
-.gh-card-excerpt { font-size: 0.95rem; color: var(--mid-grey); margin: 0 0 15px; flex-grow: 1; }
-.gh-card-footer { font-size: 0.8rem; color: var(--mid-grey); margin-top: auto; }
-.gh-card-date { }
-.gh-card-author { font-weight: bold; }
-.bull { margin: 0 5px; }
+/* ... (keep other .gh-card styles) ... */
 
 /* --- Single Post / Page --- */
+
+/* REMOVE the flex layout for main/sidebar */
+/*
 .post-template .gh-main,
 .page-template .gh-main {
-    display: flex; /* Enable sidebar layout if needed */
+    display: flex;
     gap: 30px;
 }
+*/
 
-.post-template .gh-article,
-.page-template .gh-article {
-     flex: 3; /* Main content takes more space */
-     max-width: 720px; /* Override canvas for flex items */
-     margin: 0 auto; /* Center if no sidebar */
+/* Ensure the main article container itself is centered */
+.gh-article {
+    background: var(--white); /* Give article a white background */
+    padding: 30px 0; /* Add some padding inside article */
+    margin-bottom: 30px; /* Space below article */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04); /* Subtle shadow */
+    border-radius: var(--radius);
+    /* This element is centered because its parent (.gh-inner or .gh-main) manages centering */
 }
 
-.gh-sidebar {
-    flex: 1; /* Sidebar takes less space */
-    padding-top: 1.5rem; /* Align roughly with article header */
-    /* Styles for widgets inside the sidebar */
-}
-
+/* Elements inside the article use gh-canvas for width control */
 .gh-article-header { margin-bottom: 30px; }
 .gh-article-tag { font-size: 0.8rem; font-weight: 700; color: var(--primary-color); display: block; margin-bottom: 10px; text-transform: uppercase; }
 .gh-article-tag a { color: inherit; text-decoration: none; }
@@ -153,72 +157,103 @@ body {
 .gh-article-excerpt { font-size: 1.2rem; color: var(--mid-grey); margin: 0; line-height: 1.5; }
 .gh-article-meta { display: flex; align-items: center; margin-top: 20px; font-size: 0.9rem; color: var(--mid-grey); }
 .gh-article-author-image img { width: 35px; height: 35px; border-radius: 50%; margin-right: 10px; }
-.gh-article-meta-content { display: flex; align-items: center; flex-wrap: wrap; }
-.gh-article-author-name a { color: var(--dark-grey); font-weight: 700; text-decoration: none; }
-.gh-article-author-name a:hover { text-decoration: underline; }
-.gh-article-meta-sep { margin: 0 8px; }
-.gh-article-date { }
-.gh-article-length { }
-.gh-breadcrumbs { font-size: 0.8rem; margin-top: 15px; }
-.gh-breadcrumbs ol { list-style: none; padding: 0; margin: 0; display: flex; }
-.gh-breadcrumbs li::after { content: '/'; margin: 0 5px; color: var(--mid-grey); }
-.gh-breadcrumbs li:last-child::after { content: ''; }
-.gh-breadcrumbs a { color: var(--mid-grey); text-decoration: none; }
-.gh-breadcrumbs a:hover { text-decoration: underline; }
+/* ... (keep other .gh-article-meta styles) ... */
+.gh-breadcrumbs { font-size: 0.8rem; margin-top: 15px; color: var(--mid-grey); }
+/* ... (keep other .gh-breadcrumbs styles) ... */
 
 
-.gh-article-image { margin: 30px 0; }
+.gh-article-image { margin: 30px auto; display: block; max-width: 100%;} /* Center figure */
 .gh-article-image img { width: 100%; height: auto; display: block; border-radius: var(--radius); }
+/* For full-bleed image effect if needed:
+.gh-article-image.gh-feature-image {
+    max-width: none;
+    width: 100%;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+} */
+
 
 .gh-content { font-size: 1.1rem; line-height: 1.7; }
-.gh-content h1, .gh-content h2, .gh-content h3, .gh-content h4 { margin: 1.5em 0 0.5em; font-weight: 700; }
-.gh-content p { margin: 0 0 1.5em; }
-.gh-content a { color: var(--primary-color); text-decoration: underline; }
-.gh-content img { max-width: 100%; height: auto; margin: 1em 0; border-radius: var(--radius); }
-.gh-content blockquote { border-left: 3px solid var(--primary-color); margin: 1.5em 0; padding: 0.5em 1.5em; font-style: italic; }
-.gh-content pre { background: var(--light-grey); padding: 1em; border-radius: var(--radius); overflow-x: auto; }
-.gh-content code { font-family: monospace; }
-.gh-content pre code { background: none; padding: 0; }
+/* ... (keep other .gh-content styles like h1-h4, p, a, img, blockquote, pre, code) ... */
 
-/* --- Sidebar Widgets --- */
-.gh-widget { margin-bottom: 30px; background: #f8f9fa; padding: 15px; border-radius: var(--radius); }
-.gh-widget h4 { margin: 0 0 10px; font-size: 1rem; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+/* --- REMOVE Sidebar Styles --- */
+/*
+.gh-sidebar {
+    flex: 1;
+    padding-top: 1.5rem;
+}
+*/
+
+/* --- Related Posts (adjust margin/border) --- */
+.gh-related {
+     margin-top: 40px;
+     padding-top: 30px; /* Add space above */
+     border-top: 1px solid var(--light-grey); /* Optional separator */
+}
+
+/* --- Categories List Below Content --- */
+.gh-categories-list {
+    margin-top: 40px; /* Add space above */
+    padding-top: 30px; /* Add space inside if needed */
+    border-top: 1px solid var(--light-grey); /* Optional separator */
+}
+
+/* --- Widget Styling (Used by Related & Categories) --- */
+/* Make widget less boxy */
+.gh-widget {
+    margin-bottom: 30px;
+    background: none; /* Remove background */
+    padding: 0; /* Remove padding */
+    border-radius: 0; /* Remove radius */
+}
+.gh-widget h4,
+.gh-related h3 { /* Style headings */
+    margin: 0 0 15px;
+    font-size: 1.1rem; /* Smaller heading */
+    font-weight: 700;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 8px;
+    color: var(--dark-grey);
+}
 .gh-widget ul { list-style: none; padding: 0; margin: 0; }
-.gh-widget li { margin-bottom: 5px; }
-.gh-widget a { color: var(--dark-grey); text-decoration: none; font-size: 0.9rem; }
-.gh-widget a:hover { text-decoration: underline; }
+.gh-widget li { margin-bottom: 8px; }
+.gh-widget a {
+    color: var(--mid-grey); /* Subtler link color */
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+.gh-widget a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
 
 
-/* --- Footer --- */
+/* --- Footer --- (Keep as is or adjust colors) --- */
 .gh-foot {
-    background: var(--dark-grey);
-    color: rgba(255,255,255,0.7);
+    background: var(--white); /* Lighter footer */
+    color: var(--mid-grey); /* Mid grey text */
+    border-top: 1px solid var(--light-grey); /* Separator line */
     padding-top: 30px;
     padding-bottom: 30px;
     margin-top: 4vw;
     font-size: 0.9rem;
 }
-.gh-foot-inner { display: flex; justify-content: space-between; align-items: center; }
-.gh-copyright { }
-.gh-foot-menu ul.nav { list-style: none; padding: 0; margin: 0; display: flex; }
-.gh-foot-menu ul.nav li { margin-left: 15px; }
-.gh-foot-menu ul.nav a { color: rgba(255,255,255,0.7); text-decoration: none; }
-.gh-foot-menu ul.nav a:hover { color: var(--white); }
+/* ... (keep gh-foot-inner, gh-copyright, gh-foot-menu styles) ... */
+.gh-foot-menu ul.nav a { color: var(--mid-grey); }
+.gh-foot-menu ul.nav a:hover { color: var(--dark-grey); }
 
-/* --- Pagination --- */
+
+/* --- Pagination --- (Keep as is) --- */
 .gh-pagination { margin-top: 40px; text-align: center; }
-.gh-pagination-inner { display: flex; justify-content: space-between; align-items: center; }
-.gh-pagination a { color: var(--dark-grey); font-weight: bold; text-decoration: none; }
-.gh-pagination a:hover { color: var(--primary-color); }
-.gh-pagination-page { color: var(--mid-grey); }
+/* ... (keep other .gh-pagination styles) ... */
 
-/* --- Responsive --- */
+/* --- Responsive --- (Keep as is, may need adjustments) --- */
 @media (max-width: 768px) {
-    .gh-head-menu { display: none; } /* Hide desktop menu */
-    .gh-burger { display: block; } /* Show mobile menu icon */
-    .gh-head-actions .gh-search { display: none; } /* Hide search in actions on mobile */
-    .gh-feed { grid-template-columns: 1fr; } /* Stack cards */
-    .post-template .gh-main { flex-direction: column; } /* Stack article and sidebar */
+    .gh-head-menu { display: none; }
+    .gh-burger { display: block; }
+    .gh-head-actions .gh-search { display: none; }
+    .gh-feed { grid-template-columns: 1fr; }
+    /* No need for post-template flex direction change anymore */
     .gh-article-title { font-size: 1.8rem; }
     .gh-foot-inner { flex-direction: column; text-align: center; }
     .gh-foot-menu { margin-top: 15px; }
