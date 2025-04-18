@@ -1,148 +1,131 @@
 <!doctype html>
-<html lang="en" dir="ltr">
+<!-- Setting dark theme via data attribute -->
+<html lang="en" dir="ltr" data-bs-theme="dark">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title> | Tech Now</title>
-
+    <!-- SEO and Title -->
+    <title>sefsfsfsf - Tech Now</title>
     <meta name="description" content="sefsefs">
 
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="https://monooa.github.io/test/css/style.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-    <link rel="canonical" href="https://monooa.github.io/test/sefsfsfsf/">
+    <!-- Google Fonts (Example: Montserrat) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 
-    <link rel="amphtml" href="https://monooa.github.io/test/sefsfsfsf/amp/">
+    <!-- Custom CSS (Load AFTER Bootstrap) -->
+    <link rel="stylesheet" href="css/style.css">
 
-    <script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://monooa.github.io/test/sefsfsfsf/"
-  },
-  "headline": "sefsfsfsf",
-  "description": "sefsefs",
-  "image": [
-    "https://blogger.googleusercontent.com/img/a/AVvXsEhxvQpDn3G1Z7TKYCGQPa1Yl_OgbAF5EkG9IyEfhZWeqNLazCSyJdoLKCkVzwCwPcDiQz7ToeSiEWTdc5y7Im4XaYTLPsFkzx23tWWOqjTsKHpjo_-M8SrltESWVR3DLBywrFlBW092e_LcE1BtN7DTfZpOdaJ6Qx4C-ycKq8n1GCV7OiFq9A3-tFwAHZU=s16000"
-  ],
-  "datePublished": "2025-04-06T19:16:11.723463",
-  "dateModified": "2025-04-06T19:16:11.723463",
-  "author": {
-    "@type": "Organization",
-    "name": "Tech Now"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Tech Now"
-  },
-  "keywords": "jjj"
-}</script>
-    <script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://monooa.github.io/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "jjj",
-      "item": "https://monooa.github.io/test/category/jjjj/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "sefsfsfsf",
-      "item": "https://monooa.github.io/test/sefsfsfsf/"
-    }
-  ]
-}</script>
+    <!-- AMP Link (If Enabled) -->
+        <link rel="amphtml" href="sefsfsfsf/index.amp.html">
 
+    <!-- Google Analytics (If Enabled) -->
 
-    <link rel="icon" href="https://monooa.github.io/test/favicon.ico" sizes="any">
+    <!-- Google Webmaster Verification (If Enabled) -->
 
 </head>
-<body class="post-template post-sefsfsfsf"> 
-    <div class="site-wrapper">
+<body>
 
-        <header class="site-header ">
-            <div class="header-container container">                 <div class="nav-left">
-                    <a class="site-title-link" href="https://monooa.github.io/test/">Tech Now</a>
-                    <nav class="main-nav" aria-label="Main Navigation">
-
-                        <a class="nav-item " href="https://monooa.github.io/test/">Home</a>
-
-                            <a class="nav-item " href="https://monooa.github.io/test/loiiikl/">uikuii</a>
-                            <a class="nav-item " href="https://monooa.github.io/test/tyjrry/">tyjrry-yuj-uj-uèj</a>
-                            <a class="nav-item " href="https://monooa.github.io/test/iiiiiiiiiiiiiiiiiiii/">iiiiiiiiiiiiiiiiiiii</a>
-
-                        <div class="nav-item dropdown">
-                             <a href="#" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Categories</a>
-                             <ul class="dropdown-menu" aria-label="Categories">
-                                    <li><a class="dropdown-item " href="https://monooa.github.io/test/category/jjjj/">jjj</a></li>
-                                    <li><a class="dropdown-item " href="https://monooa.github.io/test/category/php/">php</a></li>
-                             </ul>
-                        </div>
-
-                    </nav>
-                </div>
-                <div class="nav-right">
+    <!-- Header/Navbar -->
+    <header class="mb-4">
+        <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="index.html">
+                  <i class="bi bi-code-slash me-2"></i>Tech Now
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNavbar">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html"><i class="bi bi-house-door me-1"></i>Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="loiiikl.html"><i class="bi bi-file-earmark-text me-1"></i>uikuii</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="tyjrry.html"><i class="bi bi-file-earmark-text me-1"></i>tyjrry-yuj-uj-uèj</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="iiiiiiiiiiiiiiiiiiii.html"><i class="bi bi-file-earmark-text me-1"></i>iiiiiiiiiiiiiiiiiiii</a>
+                        </li>
+                         <!-- Optional Category Dropdown -->
+                         <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-tags me-1"></i> Categories
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end rounded-3">
+                                <li><a class="dropdown-item" href="category-jjjj.html">jjj</a></li>
+                                <li><a class="dropdown-item" href="category-php.html">php</a></li>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </header>
-
-        <main class="site-main container">
-<article class="post-content container" itemscope itemtype="http://schema.org/Article">     <header class="page-header">         <div class="post-header-meta">                     <span class="post-category">                         <a href="https://monooa.github.io/test/category/jjjj/">jjj</a>
-                    </span>
-                <span class="separator">•</span> 
-            <time class="publish-date" itemprop="datePublished" datetime="2025-04-06T19:16:11.723463">April 06, 2025</time>
-
-        </div>
-
-        <h1 itemprop="headline">sefsfsfsf</h1> 
-
-         <nav aria-label="breadcrumb">
-             <ol>
-             </ol>
-         </nav>
+        </nav>
     </header>
 
-    <figure class="post-feature-image">
-        <img src="https://blogger.googleusercontent.com/img/a/AVvXsEhxvQpDn3G1Z7TKYCGQPa1Yl_OgbAF5EkG9IyEfhZWeqNLazCSyJdoLKCkVzwCwPcDiQz7ToeSiEWTdc5y7Im4XaYTLPsFkzx23tWWOqjTsKHpjo_-M8SrltESWVR3DLBywrFlBW092e_LcE1BtN7DTfZpOdaJ6Qx4C-ycKq8n1GCV7OiFq9A3-tFwAHZU=s16000" alt="sefsfsfsf" itemprop="image" loading="lazy">
-    </figure>
+    <!-- Main Content Area -->
+    <main class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-9">             <article class="post-content">
+                <header class="mb-4">
+                    <h1 class="display-5 fw-bold mb-3">sefsfsfsf</h1>
+                    <div class="text-body-secondary mb-3 post-meta">
+                        <span><i class="bi bi-calendar3 me-1"></i> Published on April 06, 2025</span>
+                        <span class="mx-2">|</span>
+                        <span><i class="bi bi-folder me-1"></i> Category: <a href="category-jjjj.html" class="text-reset">jjj</a></span>
+                    </div>
+                </header>
 
-    <section class="post-body" itemprop="articleBody">         szefsq
-    </section>
+                <img src="https://blogger.googleusercontent.com/img/a/AVvXsEhxvQpDn3G1Z7TKYCGQPa1Yl_OgbAF5EkG9IyEfhZWeqNLazCSyJdoLKCkVzwCwPcDiQz7ToeSiEWTdc5y7Im4XaYTLPsFkzx23tWWOqjTsKHpjo_-M8SrltESWVR3DLBywrFlBW092e_LcE1BtN7DTfZpOdaJ6Qx4C-ycKq8n1GCV7OiFq9A3-tFwAHZU=s16000" alt="sefsfsfsf" class="img-fluid rounded-4 mb-4 shadow-sm post-featured-image">
 
-
-</article>
-        </main>
-
-
-        <footer class="site-footer">
-            <div class="container">
-                <nav class="footer-nav" aria-label="Footer Navigation">
-                    <a href="https://monooa.github.io/test/">Home</a>
-                        <a href="https://monooa.github.io/test/loiiikl/">uikuii</a>
-                        <a href="https://monooa.github.io/test/tyjrry/">tyjrry-yuj-uj-uèj</a>
-                        <a href="https://monooa.github.io/test/iiiiiiiiiiiiiiiiiiii/">iiiiiiiiiiiiiiiiiiii</a>
-                </nav>
-                <div class="copyright">
-                    <a href="https://monooa.github.io/test/">Tech Now</a> © 2025
+                <div class="content-body">
+                    szefsq
                 </div>
-            </div>
-        </footer>
 
-    </div> 
-    <script src="https://monooa.github.io/test/js/script.js" defer></script>
+            </article>
 
 
+
+
+
+                <aside class="related-posts bg-body-tertiary p-4 rounded-4 mt-5 shadow-sm">
+                    <h3 class="mb-3 h5"><i class="bi bi-diagram-3 me-2"></i>Related Posts</h3>
+                    <div class="list-group list-group-flush">
+                            <a href="get-started-with-django-a-beginners-installation-guide.html" class="list-group-item list-group-item-action bg-transparent border-0 px-0 py-2 link-light">
+                                Get Started with Django: A Beginner&#39;s Installation Guide
+                            </a>
+                            <a href="fffffff.html" class="list-group-item list-group-item-action bg-transparent border-0 px-0 py-2 link-light">
+                                fffffffesdfqsefsef
+                            </a>
+                            <a href="sfsefzsefzsef.html" class="list-group-item list-group-item-action bg-transparent border-0 px-0 py-2 link-light">
+                                sfsefzsefzsef
+                            </a>
+                    </div>
+                </aside>
+  
+        </div>     </div>     </main>
+
+    <!-- Footer -->
+    <footer class="container mt-5 py-4 border-top text-center text-body-secondary">
+        <p>© 2025 Tech Now. Powered by Python CMS.</p>
+        <!-- AdSense Code (If Enabled) - Check placement guidelines -->
+    </footer>
+
+    <!-- Bootstrap JS Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <!-- Custom JS (for copy code, etc.) -->
+    <script src="js/script.js"></script>
 
 </body>
 </html>

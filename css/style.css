@@ -1,408 +1,171 @@
-/* templates/default/css/style.css */
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
-/* --- Basic Reset & Variables --- */
-:root {
-    --primary-color: #8a42ff; /* Example purple */
-    --secondary-color: #ff2e8a; /* Example pink */
-    --accent-color: #fff000; /* Example yellow */
-    --text-color: #333;
-    --text-light: #666;
-    --bg-color: #ffffff;
-    --bg-alt: #f5f5f5;
-    --border-color: #eee;
-    --header-bg: var(--primary-color); /* Default header bg */
-    --hero-gradient: linear-gradient(135deg, #4f00bc, #8a42ff);
-
-    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    --font-serif: Georgia, serif; /* Or specific serif if desired */
-    --font-mono: monospace;
-
-    --container-width: 1100px;
-    --gutter: 20px;
-}
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
+/* --- Base & Typography --- */
 body {
-    font-family: var(--font-sans);
-    color: var(--text-color);
-    background-color: var(--bg-color);
-    line-height: 1.6;
-    font-size: 16px; /* Base font size */
+    font-family: 'Montserrat', sans-serif;
+    /* Bootstrap's dark theme handles background/text colors */
+    font-size: 18px; /* Slightly smaller base font */
 }
 
-.container {
-    max-width: var(--container-width);
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: var(--gutter);
-    padding-right: var(--gutter);
+h1, h2, h3, h4, h5, h6, .navbar-brand, .display-5 {
+    font-weight: 700; /* Bolder headings */
 }
 
 a {
-    color: var(--primary-color);
-    text-decoration: none;
-}
-a:hover {
-    text-decoration: underline;
+    transition: color 0.2s ease-in-out;
 }
 
-img {
+/* --- Navbar --- */
+.navbar {
+    /* Example: Add subtle shadow */
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.navbar-nav .nav-link {
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+    border-radius: 0.375rem; /* Rounded effect on hover/active */
+    transition: background-color 0.2s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+    background-color: rgba(255, 255, 255, 0.08); /* Subtle hover */
+}
+.navbar-nav .nav-link.active {
+    font-weight: bold;
+    background-color: rgba(var(--bs-primary-rgb), 0.15); /* Use primary color tint for active */
+    color: var(--bs-primary);
+}
+
+.dropdown-menu {
+    border-radius: 0.5rem !important; /* Ensure dropdown is rounded */
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,.15);
+    border: 1px solid var(--bs-border-color-translucent);
+}
+
+/* --- Post Cards (index.html, category.html) --- */
+.post-card {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    border: 1px solid var(--bs-border-color-translucent); /* Subtle border */
+}
+
+.shadow-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.post-card .card-img-top {
+    aspect-ratio: 16 / 9; /* Maintain aspect ratio */
+    object-fit: cover; /* Cover the area, cropping if needed */
+}
+
+.post-card .card-title a {
+    color: var(--bs-emphasis-color); /* Use theme's emphasis color */
+}
+.post-card .card-title a:hover {
+    color: var(--bs-primary);
+}
+
+.post-card .card-body {
+    padding: 1.25rem;
+}
+
+
+/* --- Single Post & Page Content --- */
+.post-content .content-body p,
+.page-content .content-body p {
+    margin-bottom: 1.2rem;
+    line-height: 1.7;
+}
+
+.post-content .content-body img,
+.page-content .content-body img {
     max-width: 100%;
     height: auto;
-    display: block; /* Remove bottom space */
+    border-radius: 0.5rem; /* Rounded images in content */
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
 }
 
-h1, h2, h3, h4, h5, h6 {
-    margin-top: 1.5em;
-    margin-bottom: 0.5em;
-    font-weight: 700;
-    line-height: 1.2;
-}
-h1 { font-size: 2.5em; } /* Adjust sizes as needed */
-h2 { font-size: 2em; }
-h3 { font-size: 1.5em; }
-h4 { font-size: 1.2em; }
-
-p {
-    margin-bottom: 1em;
-}
-
-/* --- Site Wrapper --- */
-.site-wrapper {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-.site-main {
-    flex-grow: 1;
-    padding-top: var(--gutter);
-    padding-bottom: calc(var(--gutter) * 2);
-}
-
-/* --- Header --- */
-.site-header {
-    background-color: var(--header-bg);
-    color: white;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-.site-header a {
-    color: white;
-}
-
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.nav-left {
-    display: flex;
-    align-items: center;
-}
-
-.site-title-link {
-    font-size: 1.2em;
-    font-weight: bold;
-    margin-right: var(--gutter);
-    text-decoration: none;
-}
-.site-title-link:hover {
-    text-decoration: none;
-}
-
-.main-nav {
-    display: flex;
-}
-
-.nav-item {
-    margin-right: 15px;
-    padding: 5px 0;
-    font-weight: 500;
-    text-decoration: none;
-    border-bottom: 2px solid transparent; /* For current state */
-}
-.nav-item:hover {
-    text-decoration: none;
-    opacity: 0.8;
-}
-.nav-item.nav-current {
-    border-bottom-color: white; /* Highlight current nav item */
-}
-
-.nav-right {
-    display: flex;
-    align-items: center;
-}
-
-.nav-icon {
-    margin-left: 15px;
-    font-size: 1.2em; /* Adjust icon size */
-    text-decoration: none;
-}
-.nav-icon:hover {
-    opacity: 0.8;
-    text-decoration: none;
-}
-
-.button {
-    display: inline-block;
-    padding: 8px 16px;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-    text-decoration: none;
-    text-align: center;
-}
-.button:hover {
-    text-decoration: none;
-    opacity: 0.9;
-}
-
-.subscribe-button {
-    background-color: white;
-    color: var(--header-bg); /* Use header bg for text color */
-    margin-left: 15px;
-}
-
-/* --- Hero Section (Homepage) --- */
-.home-template .site-header { /* Specific header style for homepage */
-   background: transparent; /* Make header transparent over hero */
-   position: absolute; /* Position over hero */
-   width: 100%;
-   z-index: 10;
-}
-
-.hero-section {
-    background: var(--hero-gradient);
-    color: white;
-    padding: 120px var(--gutter) 80px; /* Adjust padding */
-    text-align: center;
-    margin-bottom: calc(var(--gutter) * 2);
-}
-
-.hero-title {
-    font-size: 3.5em;
-    margin-top: 0;
-    margin-bottom: 0.2em;
-    font-weight: 800;
-}
-
-.hero-description {
-    font-size: 1.3em;
-    opacity: 0.8;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* --- Post Feed (index.html) --- */
-.post-feed {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Responsive grid */
-    gap: calc(var(--gutter) * 1.5);
-}
-
-.post-card {
-    background-color: var(--bg-color);
-    /* Add border or shadow if desired */
-     border: 1px solid var(--border-color);
-     border-radius: 8px;
-     overflow: hidden; /* Clip image corners */
-     display: flex;
-     flex-direction: column;
-     text-decoration: none;
-     color: var(--text-color);
-}
-.post-card:hover {
-    /* Add hover effect, e.g., shadow or transform */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    text-decoration: none;
-}
-
-.post-card-image-link {
-    display: block;
-}
-.post-card-image {
-    width: 100%;
-    aspect-ratio: 16 / 9; /* Maintain aspect ratio */
-    object-fit: cover; /* Cover the area */
-}
-
-.post-card-content {
-    padding: var(--gutter);
-    flex-grow: 1; /* Allow content to push footer down */
-    display: flex;
-    flex-direction: column;
-}
-
-.post-card-tags {
-    font-size: 0.8em;
-    color: var(--primary-color);
-    margin-bottom: 8px;
-    font-weight: 600;
-    text-transform: uppercase;
-}
-.post-card-tags a {
-    color: inherit;
-    text-decoration: none;
-}
-.post-card-tags a:hover {
-    text-decoration: underline;
-}
-
-.post-card-title {
-    font-size: 1.5em;
-    margin-top: 0;
-    margin-bottom: 0.4em;
-    color: var(--text-color); /* Ensure title link color isn't overridden */
-}
-
-.post-card-excerpt {
-    font-size: 0.95em;
-    color: var(--text-light);
-    margin-bottom: 1em;
-    flex-grow: 1; /* Take up remaining space before footer */
-}
-
-.post-card-meta {
-    font-size: 0.8em;
-    color: var(--text-light);
-    margin-top: auto; /* Push to bottom */
-    padding-top: 10px;
-    border-top: 1px solid var(--border-color);
-}
-
-
-/* --- Post / Page Detail --- */
-.content-area {
-    /* Basic content styling */
-    max-width: 720px; /* Typical reading width */
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.content-area header { /* Article header */
-    margin-bottom: calc(var(--gutter) * 1.5);
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 1em;
-}
-
-.content-area header h1 {
-    margin-top: 0;
-    margin-bottom: 0.2em;
-}
-
-.content-area header p { /* Metadata */
-    color: var(--text-light);
+/* Styling for meta information */
+.post-meta {
     font-size: 0.9em;
-    margin-bottom: 0;
+}
+.post-meta i { /* Align icons better */
+    vertical-align: -0.125em;
 }
 
-.content-area .article-body {
-    font-size: 1.1em; /* Slightly larger for reading */
+
+/* --- Code Block Styling --- */
+.content-body pre {
+    background-color: #1a1d20; /* Darker than body bg */
+    color: #ced4da;
+    padding: 1.25rem;
+    border-radius: 0.5rem; /* Rounded code blocks */
+    overflow-x: auto; /* Add scrollbar if code is too wide */
+    border: 1px solid var(--bs-border-color);
+    position: relative; /* Needed for positioning the copy button */
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
 }
 
-.content-area .article-body h2 { font-size: 1.8em; margin-top: 2em;}
-.content-area .article-body h3 { font-size: 1.4em; margin-top: 1.8em;}
-.content-area .article-body p { margin-bottom: 1.2em; }
-.content-area .article-body ul,
-.content-area .article-body ol { margin-left: 1.5em; margin-bottom: 1.2em; }
-.content-area .article-body li { margin-bottom: 0.5em; }
-.content-area .article-body blockquote { border-left: 3px solid var(--primary-color); padding-left: 1em; margin-left: 0; margin-right: 0; margin-bottom: 1.2em; font-style: italic; color: var(--text-light); }
-.content-area .article-body pre { background-color: var(--bg-alt); padding: 1em; overflow-x: auto; margin-bottom: 1.2em; border-radius: 4px; font-family: var(--font-mono); font-size: 0.9em;}
-.content-area .article-body code { font-family: var(--font-mono); background-color: var(--bg-alt); padding: 0.2em 0.4em; border-radius: 3px; font-size: 0.9em;}
-.content-area .article-body pre code { background-color: transparent; padding: 0; }
-.content-area .article-body img { margin-top: 1.5em; margin-bottom: 1.5em; border-radius: 4px; }
-.content-area .article-body figure { margin: 1.5em 0; }
-.content-area .article-body figcaption { text-align: center; font-size: 0.9em; color: var(--text-light); margin-top: 0.5em; }
-
-
-/* --- Category Page --- */
-.category-header {
-    margin-bottom: calc(var(--gutter) * 2);
-    padding-bottom: 1em;
-    border-bottom: 1px solid var(--border-color);
-}
-.category-header h2 {
-    margin-top: 0;
-}
-
-/* --- Footer --- */
-.site-footer {
-    background-color: var(--bg-alt);
-    color: var(--text-light);
-    padding: calc(var(--gutter) * 1.5) 0;
-    margin-top: calc(var(--gutter) * 2);
-    font-size: 0.9em;
-    text-align: center;
-}
-
-.site-footer a {
-    color: var(--text-color);
-    font-weight: 500;
-}
-
-/* --- Related Posts Snippet --- */
-.related-posts-container {
-    margin-top: 2em;
-    padding-top: 1.5em;
-    border-top: 1px solid var(--border-color);
-}
-.related-posts-container h3 {
-    margin-top: 0;
-    margin-bottom: 1em;
-    font-size: 1.3em;
-}
-.related-posts-container ul {
-    list-style: none;
-    padding-left: 0;
-}
-.related-posts-container li {
-    margin-bottom: 0.5em;
-}
-
-/* --- Breadcrumbs (Basic) --- */
-nav[aria-label="breadcrumb"] ol {
-    list-style: none;
+.content-body pre code {
+    font-family: 'SFMono-Regular', Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 0.875em;
+    background-color: transparent !important; /* Override potential conflicts */
     padding: 0;
-    margin: 0.5em 0 1em 0;
-    font-size: 0.9em;
-    color: var(--text-light);
-}
-nav[aria-label="breadcrumb"] li {
-    display: inline;
-}
-nav[aria-label="breadcrumb"] li + li::before {
-    content: "/";
-    padding: 0 0.5em;
-    color: var(--text-light);
-}
-nav[aria-label="breadcrumb"] a {
-    color: var(--text-light);
-}
-nav[aria-label="breadcrumb"] a:hover {
-    color: var(--primary-color);
+    color: inherit;
 }
 
-/* --- Responsive (Very Basic Example) --- */
-@media (max-width: 768px) {
-    h1 { font-size: 2em; }
-    h2 { font-size: 1.7em; }
-    .hero-title { font-size: 2.5em; }
-    .hero-description { font-size: 1.1em; }
-    .post-feed { grid-template-columns: 1fr; } /* Stack posts */
-    .content-area .article-body { font-size: 1em; }
-    /* Hide nav text, show burger icon (requires JS) */
-    .main-nav { display: none; }
-    /* Adjust header padding */
-    .site-header { padding-top: 15px; padding-bottom: 15px; }
+/* Copy Button Styling */
+.copy-code-button {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    background-color: var(--bs-secondary);
+    color: white;
+    border: none;
+    padding: 0.25rem 0.6rem;
+    font-size: 0.75rem;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s ease, background-color 0.2s ease;
 }
+
+.copy-code-button:hover {
+    opacity: 1;
+    background-color: var(--bs-primary);
+}
+
+.copy-code-button i { /* Icon inside button */
+    margin-right: 0.3em;
+    vertical-align: -0.1em;
+}
+
+/* --- Related Posts --- */
+.related-posts {
+    border: 1px solid var(--bs-border-color-translucent);
+    /* Background set by Bootstrap class bg-body-tertiary */
+    /* Padding and rounding set by Bootstrap classes */
+}
+
+.related-posts .list-group-item {
+    /* Remove default list group borders/backgrounds */
+    border-bottom: 1px solid var(--bs-border-color-translucent) !important;
+}
+.related-posts .list-group-item:last-child {
+     border-bottom: 0 !important;
+}
+
+.related-posts .list-group-item:hover {
+    background-color: rgba(var(--bs-primary-rgb), 0.1) !important;
+}
+
+/* --- General Utilities --- */
+.shadow-sm { box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important; }
+.rounded-4 { border-radius: .75rem!important; }
+.rounded-top-4 { border-top-left-radius: .75rem!important; border-top-right-radius: .75rem!important; }
