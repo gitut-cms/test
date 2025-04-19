@@ -1,260 +1,734 @@
-/* --- Base & Variables --- (Keep as is) --- */
-:root {
-    --primary-color: #8a42e0; /* Example purple */
-    --dark-grey: #15171a;
-    --mid-grey: #738a94;
-    --light-grey: #e5eff5;
+/* ==========================================================================
+   Base & Variables - Based on Casper Theme Appearance
+   ========================================================================== */
+
+   :root {
+    /* Colors */
+    --primary-color: #8a42ff; /* A purple similar to the gradient */
+    --primary-darker: #6b2cb0;
+    --secondary-color: #ff7e0f; /* An orange accent (adjust if needed) */
     --white: #ffffff;
     --black: #000000;
-    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    --font-serif: Georgia, serif; /* Example */
-    --radius: 5px;
+    --darkgrey: #15171a; /* Very dark grey for text */
+    --midgrey: #738a94; /* Meta text, borders */
+    --lightgrey: #e5eff5; /* Borders, backgrounds */
+    --ghost-accent-color: var(--primary-color); /* Used by default Ghost components */
+    --header-gradient-start: #511f8e; /* Darker purple */
+    --header-gradient-end: #ac40ff; /* Lighter purple/pink */
+    --post-header-bg: #f77bff; /* Pinkish color for post header example */
+    --yellow-box-bg: #fffacc; /* Yellow for the sidebar example */
+    --yellow-box-border: #f7e07a;
+
+    /* Typography */
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    --font-serif: Georgia, Times, serif; /* Optional for specific elements */
+    --font-mono: Menlo, Consolas, Monaco, "Courier New", monospace;
+    --base-font-size: 1.6rem; /* ~16px */
+    --line-height-base: 1.6em;
+    --line-height-small: 1.4em;
+    --line-height-large: 1.8em;
+
+    /* Sizes */
+    --site-width: 1120px;
+    --post-width: 700px;
+    --gap: 30px; /* Grid/spacing gap */
+}
+
+/* Base Styles */
+html {
+    font-size: 62.5%; /* 1rem = 10px */
+    scroll-behavior: smooth;
 }
 
 body {
+    background: var(--white);
+    color: var(--darkgrey);
     font-family: var(--font-sans);
-    background: #f8f9fa; /* Lighter background like the Tech Now example */
-    color: var(--dark-grey);
-    margin: 0;
-    line-height: 1.6;
-    font-size: 16px;
+    font-size: var(--base-font-size);
+    line-height: var(--line-height-base);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-/* --- Layout --- (Keep gh-viewport, gh-outer, gh-inner) --- */
-.gh-viewport {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+*, ::after, ::before {
+    box-sizing: border-box;
 }
 
-.gh-main {
-    flex-grow: 1;
-    padding: 4vw 0; /* Vertical padding */
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: var(--line-height-small);
+    margin: 0.6em 0 0.4em;
+    color: var(--darkgrey);
 }
 
-.gh-outer {
-    padding-left: 4vw;
-    padding-right: 4vw;
+h1 { font-size: 3.8rem; }
+h2 { font-size: 3.2rem; }
+h3 { font-size: 2.8rem; }
+h4 { font-size: 2.4rem; }
+h5 { font-size: 2.1rem; }
+h6 { font-size: 1.8rem; }
+
+p {
+    margin: 0 0 1.5em 0;
 }
 
-.gh-inner {
-    width: 100%;
-    max-width: 1100px; /* Adjust as needed */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    opacity: 0.9;
+}
+
+/* Utilities */
+.outer {
+    padding: 0 var(--gap);
+    position: relative;
+}
+
+.inner {
     margin: 0 auto;
-}
-
-/* Canvas for limiting content width */
-.gh-canvas {
+    max-width: var(--site-width);
     width: 100%;
-    max-width: 720px; /* Max width for content */
-    margin-left: auto;  /* Center elements with this class */
-    margin-right: auto; /* Center elements with this class */
 }
 
+/* Remove default list styles */
+ul, ol {
+    margin: 0 0 1.5em 0;
+    padding-left: 1.5em;
+}
 
-/* --- Header --- (Adjust colors/styles to match Tech Now) --- */
-.gh-head {
-    /* Match Tech Now Purple */
-    background: #8a42e0; /* Adjust if needed */
+/* ==========================================================================
+   Site Header
+   ========================================================================== */
+
+.site-header {
+    position: relative;
     color: var(--white);
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 12px;
+    padding-bottom: 12px;
 }
 
-.gh-head-inner {
+/* Header Background (Gradient for Home) */
+.site-header-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1; /* Behind content */
+    background: var(--header-gradient-end) linear-gradient(135deg, var(--header-gradient-start) 0%, var(--header-gradient-end) 100%) no-repeat center center;
+    background-size: cover;
+    padding-bottom: 80px; /* Extra space below nav */
+}
+
+.home-template .site-header {
+    /* Allow gradient to show through */
+    background: transparent;
+    /* Make nav stick potentially? */
+}
+
+/* Example Pink Background for Posts */
+.post-template .site-header {
+    background: var(--post-header-bg);
+    color: var(--darkgrey); /* Adjust text color */
+}
+.post-template .site-header a {
+    color: var(--darkgrey);
+}
+.post-template .subscribe-button { /* Adjust subscribe button for dark text */
+    color: var(--darkgrey);
+    border-color: color-mix(in srgb, var(--darkgrey) 30%, transparent);
+}
+.post-template .subscribe-button:hover {
+    background: var(--darkgrey);
+    color: var(--white);
+}
+
+
+/* Navigation */
+.site-nav-main .inner {
+    max-width: 1280px; /* Slightly wider nav container */
+}
+
+.site-nav {
+    display: flex;
+    align-items": center;
+    justify-content: space-between;
+    height: 48px; /* Fixed height */
+}
+
+.site-nav-left,
+.site-nav-right {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    height: 60px; /* Example height */
 }
 
-.gh-head-brand { display: flex; align-items: center; }
-.gh-head-logo { font-size: 1.6rem; font-weight: 800; color: var(--white); text-decoration: none; margin-right: 20px; }
-.gh-head-logo:hover { text-decoration: none; }
-.gh-icon-btn { background: none; border: none; color: var(--white); padding: 5px; cursor: pointer; margin-left: 10px; }
-.gh-icon-btn svg { width: 22px; height: 22px; } /* Slightly larger */
-.gh-burger { display: none; } /* Show on mobile */
+.site-nav-logo {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-right: 24px;
+    color: inherit; /* Inherit from header */
+    text-decoration: none;
+    line-height: 1;
+}
+.site-nav-logo:hover {
+    text-decoration: none;
+    opacity: 1;
+}
 
-.gh-head-menu ul.nav {
+.site-nav-content {
+    display: flex;
+    align-items: center;
+}
+
+.nav {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
 }
-.gh-head-menu ul.nav li { margin-left: 30px; } /* More spacing */
-.gh-head-menu ul.nav a {
-    color: var(--white);
-    text-decoration: none;
+
+.nav li {
+    margin: 0;
+    padding: 0 12px;
+}
+
+.nav a {
+    color: inherit;
+    font-size: 1.5rem;
     font-weight: 500;
-    padding-bottom: 5px; /* Space for potential underline/border */
-    border-bottom: 2px solid transparent; /* Underline effect on hover/active */
-    transition: border-color 0.2s ease;
-}
-.gh-head-menu ul.nav a:hover,
-.gh-head-menu ul.nav li.active a { /* Add 'active' class dynamically if needed */
-    border-bottom-color: var(--white);
-}
-
-
-.gh-head-actions { display: flex; align-items: center; }
-.gh-head-button {
-    background: var(--white);
-    color: #8a42e0; /* Match header purple */
-    padding: 8px 18px; /* Slightly larger */
-    border-radius: var(--radius);
     text-decoration: none;
-    font-weight: 700;
-    margin-left: 15px;
-    font-size: 0.9rem;
-    transition: opacity 0.2s ease;
+    opacity: 0.8;
+    transition: opacity 0.2s ease-in-out;
 }
-.gh-head-button:hover { opacity: 0.9; }
 
-/* --- Post Feed / Cards (Homepage) --- (Keep largely as is, adjust styling) --- */
-.gh-feed {
+.nav a:hover {
+    opacity: 1;
+    text-decoration: none;
+}
+
+/* Right Nav Elements */
+.site-nav-right .social-links {
+    margin-right: 16px;
+}
+
+.social-links a {
+    color: inherit;
+    opacity: 0.8;
+    padding: 0 8px;
+    display: inline-block; /* Allows padding */
+}
+.social-links a:hover {
+    opacity: 1;
+}
+.social-links svg {
+    height: 1.8rem;
+    width: 1.8rem;
+    fill: currentColor;
+    vertical-align: middle;
+}
+
+/* Subscribe Button */
+.subscribe-button {
+    display: block;
+    background: var(--white);
+    color: var(--black);
+    padding: 8px 16px;
+    border: 1px solid color-mix(in srgb, var(--black) 30%, transparent);
+    border-radius: 5px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.subscribe-button:hover {
+    background: var(--primary-darker);
+    color: var(--white);
+    border-color: var(--primary-darker);
+    text-decoration: none;
+}
+
+/* Header Content (Homepage) */
+.site-header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10vw 0 8vw; /* Use viewport width for responsive padding */
+}
+
+.site-title {
+    font-size: 5rem;
+    font-weight: 800;
+    margin: 0 0 0.2em;
+    color: var(--white);
+    z-index: 10;
+}
+
+.site-description {
+    font-size: 2.2rem;
+    font-weight: 400;
+    opacity: 0.8;
+    margin: 0;
+    max-width: 700px;
+    color: var(--white);
+     z-index: 10;
+}
+
+/* ==========================================================================
+   Main Content
+   ========================================================================== */
+
+.site-main {
+    padding-top: var(--gap);
+    padding-bottom: var(--gap);
+}
+
+/* Post Feed Grid */
+.post-feed {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 30px;
+    gap: var(--gap);
 }
-.gh-card {
+
+/* Post Card */
+.post-card {
+    display: flex;
+    flex-direction: column;
     background: var(--white);
-    border-radius: var(--radius);
+    border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    transition: transform 0.2s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05), 0 0 1px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1), 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+.post-card-image-link {
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+.post-card-image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Maintain aspect ratio */
+    object-fit: cover;
+    background: var(--lightgrey); /* Placeholder bg */
+}
+
+.post-card-content {
+    padding: var(--gap);
+    flex-grow: 1; /* Ensure content area fills space */
     display: flex;
     flex-direction: column;
 }
-/* ... (keep other .gh-card styles) ... */
 
-/* --- Single Post / Page --- */
-
-/* REMOVE the flex layout for main/sidebar */
-/*
-.post-template .gh-main,
-.page-template .gh-main {
-    display: flex;
-    gap: 30px;
-}
-*/
-
-/* Ensure the main article container itself is centered */
-.gh-article {
-    background: var(--white); /* Give article a white background */
-    padding: 30px 0; /* Add some padding inside article */
-    margin-bottom: 30px; /* Space below article */
-    box-shadow: 0 1px 3px rgba(0,0,0,0.04); /* Subtle shadow */
-    border-radius: var(--radius);
-    /* This element is centered because its parent (.gh-inner or .gh-main) manages centering */
-}
-
-/* Elements inside the article use gh-canvas for width control */
-.gh-article-header { margin-bottom: 30px; }
-.gh-article-tag { font-size: 0.8rem; font-weight: 700; color: var(--primary-color); display: block; margin-bottom: 10px; text-transform: uppercase; }
-.gh-article-tag a { color: inherit; text-decoration: none; }
-.gh-article-title { font-size: 2.5rem; margin: 0 0 15px; line-height: 1.2; font-weight: 800; }
-.gh-article-excerpt { font-size: 1.2rem; color: var(--mid-grey); margin: 0; line-height: 1.5; }
-.gh-article-meta { display: flex; align-items: center; margin-top: 20px; font-size: 0.9rem; color: var(--mid-grey); }
-.gh-article-author-image img { width: 35px; height: 35px; border-radius: 50%; margin-right: 10px; }
-/* ... (keep other .gh-article-meta styles) ... */
-.gh-breadcrumbs { font-size: 0.8rem; margin-top: 15px; color: var(--mid-grey); }
-/* ... (keep other .gh-breadcrumbs styles) ... */
-
-
-.gh-article-image { margin: 30px auto; display: block; max-width: 100%;} /* Center figure */
-.gh-article-image img { width: 100%; height: auto; display: block; border-radius: var(--radius); }
-/* For full-bleed image effect if needed:
-.gh-article-image.gh-feature-image {
-    max-width: none;
-    width: 100%;
-    margin-left: calc(-50vw + 50%);
-    margin-right: calc(-50vw + 50%);
-} */
-
-
-.gh-content { font-size: 1.1rem; line-height: 1.7; }
-/* ... (keep other .gh-content styles like h1-h4, p, a, img, blockquote, pre, code) ... */
-
-/* --- REMOVE Sidebar Styles --- */
-/*
-.gh-sidebar {
-    flex: 1;
-    padding-top: 1.5rem;
-}
-*/
-
-/* --- Related Posts (adjust margin/border) --- */
-.gh-related {
-     margin-top: 40px;
-     padding-top: 30px; /* Add space above */
-     border-top: 1px solid var(--light-grey); /* Optional separator */
-}
-
-/* --- Categories List Below Content --- */
-.gh-categories-list {
-    margin-top: 40px; /* Add space above */
-    padding-top: 30px; /* Add space inside if needed */
-    border-top: 1px solid var(--light-grey); /* Optional separator */
-}
-
-/* --- Widget Styling (Used by Related & Categories) --- */
-/* Make widget less boxy */
-.gh-widget {
-    margin-bottom: 30px;
-    background: none; /* Remove background */
-    padding: 0; /* Remove padding */
-    border-radius: 0; /* Remove radius */
-}
-.gh-widget h4,
-.gh-related h3 { /* Style headings */
-    margin: 0 0 15px;
-    font-size: 1.1rem; /* Smaller heading */
-    font-weight: 700;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 8px;
-    color: var(--dark-grey);
-}
-.gh-widget ul { list-style: none; padding: 0; margin: 0; }
-.gh-widget li { margin-bottom: 8px; }
-.gh-widget a {
-    color: var(--mid-grey); /* Subtler link color */
+.post-card-content-link {
+    color: inherit;
     text-decoration: none;
-    font-size: 0.95rem;
+    flex-grow: 1;
 }
-.gh-widget a:hover {
-    color: var(--primary-color);
+.post-card-content-link:hover {
+    text-decoration: none;
+}
+
+.post-card-header {
+    margin-bottom: 10px;
+}
+
+.post-card-primary-tag {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--midgrey);
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.post-card-primary-tag a {
+    color: inherit;
+    text-decoration: none;
+}
+.post-card-primary-tag a:hover {
     text-decoration: underline;
 }
 
-
-/* --- Footer --- (Keep as is or adjust colors) --- */
-.gh-foot {
-    background: var(--white); /* Lighter footer */
-    color: var(--mid-grey); /* Mid grey text */
-    border-top: 1px solid var(--light-grey); /* Separator line */
-    padding-top: 30px;
-    padding-bottom: 30px;
-    margin-top: 4vw;
-    font-size: 0.9rem;
+.post-card-title {
+    font-size: 2.2rem;
+    margin: 0;
+    font-weight: 700;
+    color: var(--darkgrey);
 }
-/* ... (keep gh-foot-inner, gh-copyright, gh-foot-menu styles) ... */
-.gh-foot-menu ul.nav a { color: var(--mid-grey); }
-.gh-foot-menu ul.nav a:hover { color: var(--dark-grey); }
+
+.post-card-excerpt {
+    font-size: 1.6rem;
+    line-height: var(--line-height-base);
+    color: var(--midgrey);
+    margin-top: 10px;
+    flex-grow: 1; /* Pushes meta to bottom */
+}
+.post-card-excerpt p {
+    margin-bottom: 0;
+}
+
+.post-card-meta {
+    font-size: 1.3rem;
+    color: var(--midgrey);
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid var(--lightgrey);
+}
+.post-card-date {
+    /* Styles if needed */
+}
+
+/* ==========================================================================
+   Single Post / Page
+   ========================================================================== */
+.post-template .site-main .inner,
+.page-template .site-main .inner {
+    max-width: var(--post-width); /* Constrain content width */
+}
+
+.post-full {
+    /* Add styles for single post container if different from page */
+}
+
+.page {
+     /* Add styles for static page container if different from post */
+}
+
+.post-full-header {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.post-full-tags {
+    margin-bottom: 12px;
+}
+.post-full-tags a {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    background: color-mix(in srgb, var(--primary-color) 10%, transparent);
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin: 0 5px;
+    text-decoration: none;
+}
+.post-full-tags a:hover {
+    background: color-mix(in srgb, var(--primary-color) 20%, transparent);
+}
+
+.post-full-title {
+    font-size: 4.8rem;
+    margin: 0;
+}
+
+.post-full-custom-excerpt {
+    font-size: 2rem;
+    line-height: var(--line-height-small);
+    color: var(--midgrey);
+    margin: 15px 0 0;
+}
+
+.post-full-meta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    font-size: 1.4rem;
+    color: var(--midgrey);
+}
+.post-full-byline {
+    /* Style if needed */
+}
+.post-full-byline-content {
+    /* Style if needed */
+}
+.post-full-byline-meta-date {
+    /* Style if needed */
+}
+.post-full-byline-meta-reading-time {
+    margin-left: 10px;
+}
 
 
-/* --- Pagination --- (Keep as is) --- */
-.gh-pagination { margin-top: 40px; text-align: center; }
-/* ... (keep other .gh-pagination styles) ... */
+.post-full-image {
+    margin: 0 0 40px; /* Add space below image */
+    text-align: center; /* Center image if it's narrower than content */
+}
+.post-full-image img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 5px; /* Optional rounding */
+}
 
-/* --- Responsive --- (Keep as is, may need adjustments) --- */
+.post-full-content {
+    font-size: 1.8rem; /* Slightly larger post content */
+    line-height: var(--line-height-large);
+}
+
+/* Content Typography */
+.post-content {
+    /* Base styles set on body */
+}
+
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.post-content h4,
+.post-content h5,
+.post-content h6 {
+    margin-top: 1.8em;
+    margin-bottom: 0.6em;
+}
+
+.post-content p {
+    margin-bottom: 1.5em;
+}
+
+.post-content ul,
+.post-content ol {
+    margin-bottom: 1.5em;
+    padding-left: 1.8em;
+}
+
+.post-content li {
+    margin-bottom: 0.5em;
+}
+
+.post-content blockquote {
+    border-left: 3px solid var(--primary-color);
+    margin: 1.5em 0;
+    padding: 0.5em 0 0.5em 1.5em;
+    font-style: italic;
+    color: var(--midgrey);
+}
+.post-content blockquote p {
+    margin-bottom: 0;
+}
+
+
+.post-content pre {
+    background: var(--darkgrey);
+    color: var(--lightgrey);
+    padding: 1.5em;
+    border-radius: 5px;
+    margin-bottom: 1.5em;
+    overflow-x: auto;
+    font-family: var(--font-mono);
+    font-size: 1.4rem; /* Smaller for code */
+    white-space: pre;
+}
+
+.post-content code {
+    font-family: var(--font-mono);
+    background: color-mix(in srgb, var(--midgrey) 10%, transparent);
+    padding: 0.1em 0.4em;
+    border-radius: 3px;
+    font-size: 0.9em; /* Slightly smaller than surrounding text */
+}
+.post-content pre code {
+    background: none;
+    padding: 0;
+    font-size: inherit;
+}
+
+
+/* Comments */
+.post-full-comments {
+    margin-top: 50px;
+    padding-top: 50px;
+    border-top: 1px solid var(--lightgrey);
+}
+
+/* ==========================================================================
+   Sidebar Example (Yellow Box)
+   ========================================================================== */
+
+/* This needs adjustments based on where you place the sidebar HTML.
+   Assuming a simple structure next to the main content might require
+   the parent container (.site-main .inner or a new wrapper) to use Grid or Flexbox. */
+
+.sidebar {
+   /* Example: Position next to main content using Grid on parent */
+   /* grid-column: 2; /* If using grid */
+   /* padding-left: var(--gap); */
+}
+
+.sidebar-widget {
+    margin-bottom: var(--gap);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.sidebar-widget.yellow-background {
+    background-color: var(--yellow-box-bg);
+    border: 1px solid var(--yellow-box-border);
+}
+
+.sidebar-widget h4 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+}
+.sidebar-widget p {
+     font-size: 1.4rem;
+     color: var(--midgrey);
+     margin-bottom: 10px;
+}
+.sidebar-widget img { /* Example for the app icons */
+     display: block;
+     max-width: 100%;
+     height: auto;
+     border-radius: 5px;
+     margin-bottom: 15px;
+}
+
+/* ==========================================================================
+   Pagination
+   ========================================================================== */
+
+.pagination {
+    text-align: center;
+    margin-top: 60px;
+    font-size: 1.4rem;
+    color: var(--midgrey);
+}
+
+.pagination .older-posts,
+.pagination .newer-posts {
+    display: inline-block;
+    padding: 8px 16px;
+    border: 1px solid var(--lightgrey);
+    text-decoration: none;
+    border-radius: 5px;
+    color: var(--midgrey);
+    transition: all 0.2s ease;
+}
+.pagination .older-posts:hover,
+.pagination .newer-posts:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.pagination .page-number {
+    display: inline-block;
+    padding: 0 20px;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.site-footer {
+    background: var(--darkgrey);
+    color: rgba(255, 255, 255, 0.7);
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-top: 60px;
+}
+
+.site-footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-footer .nav a,
+.site-footer .copyright a {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.4rem;
+}
+.site-footer .nav a:hover,
+.site-footer .copyright a:hover {
+    color: var(--white);
+}
+
+.copyright {
+    font-size: 1.4rem;
+}
+
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
+
+@media (max-width: 1000px) {
+    h1 { font-size: 3.2rem; }
+    h2 { font-size: 2.8rem; }
+    .post-full-title { font-size: 4.2rem; }
+    .post-content { font-size: 1.7rem; }
+}
+
+
 @media (max-width: 768px) {
-    .gh-head-menu { display: none; }
-    .gh-burger { display: block; }
-    .gh-head-actions .gh-search { display: none; }
-    .gh-feed { grid-template-columns: 1fr; }
-    /* No need for post-template flex direction change anymore */
-    .gh-article-title { font-size: 1.8rem; }
-    .gh-foot-inner { flex-direction: column; text-align: center; }
-    .gh-foot-menu { margin-top: 15px; }
+    :root {
+        --gap: 20px;
+    }
+    .post-feed {
+        grid-template-columns: 1fr; /* Stack cards */
+    }
+    .site-header-content {
+        padding: 15vw 0 12vw;
+    }
+     .site-title { font-size: 4rem; }
+     .site-description { font-size: 1.8rem; }
+     .post-full-title { font-size: 3.6rem; }
+     .post-full-custom-excerpt { font-size: 1.8rem; }
+
+     .site-nav-content {
+         /* Basic mobile menu toggle needed here - JS required */
+         /* display: none; /* Hide desktop nav by default */
+     }
+     .site-nav-left {
+         /* Adjust spacing if nav hidden */
+     }
+     .site-footer-content {
+         flex-direction: column;
+         text-align: center;
+     }
+     .site-footer-nav {
+         margin-top: 15px;
+     }
+     .site-footer .nav li {
+         padding: 0 8px;
+     }
+}
+
+@media (max-width: 500px) {
+    :root {
+        --gap: 15px;
+    }
+     h1 { font-size: 2.8rem; }
+     h2 { font-size: 2.4rem; }
+     .site-title { font-size: 3.2rem; }
+     .post-full-title { font-size: 3rem; }
+     .post-card-title { font-size: 2rem; }
+     .post-content { font-size: 1.6rem; }
+
+     .subscribe-button {
+         font-size: 1.3rem;
+         padding: 6px 12px;
+     }
+     .site-nav-logo {
+        margin-right: 10px;
+        font-size: 1.8rem;
+     }
+      .social-links a {
+        padding: 0 5px;
+     }
 }
