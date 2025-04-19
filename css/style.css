@@ -1,0 +1,752 @@
+/* ==========================================================================
+   Base Styles & Variables
+   ========================================================================== */
+
+   :root {
+    /* Colors */
+    --primary-color: #6a3bfc; /* Purple/Blue Accent - Adjust as needed */
+    --primary-hover-color: #5021d1;
+    --dark-color: #0a0a0a;
+    --mid-grey-color: #738a94;
+    --light-grey-color: #e5eff5;
+    --lighter-grey-color: #f4f8fb;
+    --white-color: #ffffff;
+    --border-color: #dfe9f2;
+    --background-color: var(--white-color);
+    --text-color: var(--dark-color);
+    --secondary-text-color: var(--mid-grey-color);
+
+    /* Fonts - Use system fonts for broad compatibility */
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    --font-serif: Georgia, Times, "Times New Roman", serif;
+    --font-mono: Menlo, Consolas, Monaco, "Liberation Mono", "Courier New", monospace;
+
+    /* Sizes */
+    --inner-width: 1040px;
+    --outer-padding: 4vw; /* Responsive padding */
+}
+
+/* Basic Reset & Body */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px; /* Base font size ~1.6rem */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-sans);
+    color: var(--text-color);
+    background-color: var(--background-color);
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+/* ==========================================================================
+   Layout & Structure
+   ========================================================================== */
+
+.site-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Outer/Inner for centered content */
+.outer {
+    padding-left: var(--outer-padding);
+    padding-right: var(--outer-padding);
+}
+
+.inner {
+    width: 100%;
+    max-width: var(--inner-width);
+    margin: 0 auto;
+}
+
+/* Main content area */
+.site-main {
+    flex-grow: 1;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    color: var(--dark-color);
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.3rem; }
+h5 { font-size: 1.1rem; }
+h6 { font-size: 1rem; }
+
+p {
+    margin-top: 0;
+    margin-bottom: 1.5em;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+    color: var(--primary-hover-color);
+    text-decoration: underline;
+}
+
+strong { font-weight: 700; }
+em { font-style: italic; }
+
+code {
+    font-family: var(--font-mono);
+    background: var(--lighter-grey-color);
+    padding: 0.1em 0.4em;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+
+pre {
+    font-family: var(--font-mono);
+    background: var(--dark-color);
+    color: var(--lighter-grey-color);
+    padding: 1.5em;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-size: 0.9em;
+    line-height: 1.5;
+}
+
+pre code {
+    background: none;
+    padding: 0;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: var(--border-color);
+    margin: 3em 0;
+}
+
+blockquote {
+    border-left: 3px solid var(--primary-color);
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 1.5em;
+    font-style: italic;
+    color: var(--secondary-text-color);
+}
+
+/* ==========================================================================
+   Site Header
+   ========================================================================== */
+
+.site-header {
+    background: var(--background-color); /* Default header */
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: relative; /* For potential background element */
+}
+
+.site-header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px; /* Adjust height as needed */
+}
+
+.site-header-left,
+.site-header-right {
+    display: flex;
+    align-items: center;
+}
+
+.site-logo {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-right: 1.5rem;
+}
+.site-logo:hover {
+    text-decoration: none;
+    opacity: 0.9;
+}
+
+/* Navigation */
+.site-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.site-nav li {
+    margin-left: 1.5rem;
+}
+
+.site-nav a {
+    color: var(--secondary-text-color);
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.site-nav a:hover,
+.site-nav .nav-current a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+/* Social Links, Search, Subscribe */
+.social-links {
+    margin-left: 1.5rem;
+}
+.social-links a {
+    color: var(--secondary-text-color);
+    margin-left: 1rem;
+    font-size: 0.9rem;
+}
+.social-links a:hover {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.search-button,
+.subscribe-button {
+    margin-left: 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+.subscribe-button {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 6px 14px;
+    border-radius: 4px;
+}
+.subscribe-button:hover {
+    background-color: var(--primary-hover-color);
+    color: var(--white-color);
+    text-decoration: none;
+}
+
+
+/* Homepage Header Specific */
+.site-home-header {
+    background: var(--dark-color); /* Dark background for home */
+    color: var(--white-color);
+    padding-top: 5vw;
+    padding-bottom: 5vw;
+    text-align: center;
+}
+
+.site-home-header .site-header-content {
+    /* Keep header items visible on dark background */
+    position: relative;
+    z-index: 10;
+}
+.site-home-header .site-logo,
+.site-home-header .site-nav a,
+.site-home-header .social-links a,
+.site-home-header .search-button {
+    color: var(--white-color);
+    opacity: 0.8;
+}
+.site-home-header .site-nav a:hover,
+.site-home-header .social-links a:hover,
+.site-home-header .search-button:hover,
+.site-home-header .site-nav .nav-current a {
+    opacity: 1;
+}
+.site-home-header .subscribe-button {
+    /* Adjust subscribe button if needed on dark */
+}
+
+.site-header-background {
+    /* This div can be used for background image if needed */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1; /* Behind content */
+    /* Example background image:
+    background-size: cover;
+    background-position: center;
+    opacity: 0.9; */
+}
+
+.site-home-header .site-title {
+    font-size: 3.5rem;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--white-color);
+}
+
+.site-home-header .site-description {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* ==========================================================================
+   Post Feed & Cards
+   ========================================================================== */
+
+.post-feed {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 2rem;
+}
+
+.post-card {
+    background: var(--white-color);
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05), 0 0 1px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none; /* Remove underline from card link */
+}
+
+.post-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08), 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.post-card-image-link {
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+.post-card-image {
+    display: block;
+    width: 100%;
+    height: 200px; /* Fixed height for card images */
+    object-fit: cover;
+    background-color: var(--lighter-grey-color); /* Placeholder bg */
+}
+
+.post-card-content {
+    padding: 25px;
+    flex-grow: 1; /* Make content take remaining space */
+    display: flex;
+    flex-direction: column;
+}
+
+.post-card-content-link {
+    color: inherit; /* Inherit text color */
+    text-decoration: none;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+.post-card-content-link:hover {
+    text-decoration: none;
+}
+
+.post-card-header {
+    margin-bottom: 10px;
+}
+
+.post-card-tags {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--secondary-text-color);
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.post-card-title {
+    font-size: 1.4rem;
+    margin: 0;
+    color: var(--dark-color); /* Ensure title is dark */
+}
+.post-card-content-link:hover .post-card-title {
+    color: var(--primary-color); /* Title color change on hover */
+}
+
+
+.post-card-excerpt {
+    font-size: 0.95rem;
+    color: var(--secondary-text-color);
+    flex-grow: 1; /* Push footer down */
+}
+.post-card-excerpt p {
+    margin-bottom: 0;
+}
+
+.post-card-meta {
+    margin-top: 15px;
+    font-size: 0.85rem;
+    color: var(--secondary-text-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.author-list {
+    display: flex;
+    align-items: center;
+}
+.author-profile-image { /* Placeholder style */
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    margin-right: 8px;
+    background: var(--light-grey-color);
+}
+.author-name {
+    font-weight: 500;
+}
+
+.reading-time {
+    margin-left: auto; /* Push to the right */
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.post-date {
+    /* Already space-between pushes it right */
+}
+
+/* Large Post Card (First on Homepage) */
+.post-card-large {
+    grid-column: 1 / -1; /* Span full width */
+}
+@media (min-width: 768px) {
+    .post-card-large {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Image | Content */
+        gap: 30px;
+    }
+    .post-card-large .post-card-image-link {
+        grid-column: 1;
+    }
+    .post-card-large .post-card-image {
+        height: 350px; /* Larger image */
+    }
+    .post-card-large .post-card-content {
+        grid-column: 2;
+        padding: 30px;
+    }
+    .post-card-large .post-card-title {
+        font-size: 1.8rem;
+    }
+}
+
+
+/* ==========================================================================
+   Single Post / Page
+   ========================================================================== */
+
+.post-full, .page {
+    background: var(--white-color); /* Add background if desired */
+    padding: 30px; /* Add padding around content */
+    border-radius: 5px;
+}
+
+.post-full-header {
+    text-align: center;
+    margin: 0 auto 3rem auto;
+    max-width: 800px; /* Limit header width */
+}
+
+.post-full-meta {
+    font-size: 0.9rem;
+    color: var(--secondary-text-color);
+    margin-bottom: 1rem;
+}
+.post-full-meta a {
+    color: inherit;
+}
+.post-full-meta a:hover {
+    color: var(--primary-color);
+}
+.post-full-meta .date-divider {
+    margin: 0 0.5em;
+}
+
+.post-full-title {
+    font-size: 3rem;
+    margin: 0 0 1rem 0;
+}
+
+.post-full-custom-excerpt {
+    font-size: 1.2rem;
+    color: var(--secondary-text-color);
+    line-height: 1.5;
+    margin: 0;
+}
+
+.post-full-author-meta {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--secondary-text-color);
+}
+.post-full-author-meta .author-name {
+    font-weight: 600;
+    margin-left: 10px; /* Add margin if image used */
+}
+.post-full-author-meta .reading-time {
+    margin-left: 1rem;
+}
+
+
+.post-full-image {
+    margin: 2rem calc(-1 * var(--outer-padding)) 3rem; /* Break out of padding */
+    max-width: calc(100% + 2 * var(--outer-padding)); /* Allow full width */
+    width: calc(100% + 2 * var(--outer-padding));
+}
+.post-full-image img {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    background-color: var(--lighter-grey-color);
+}
+
+
+.post-full-content {
+    max-width: 720px; /* Limit content width for readability */
+    margin: 0 auto;
+    font-size: 1.1rem; /* Slightly larger body text for posts */
+}
+
+/* Styling elements within the content */
+.post-content > *:first-child {
+    margin-top: 0;
+}
+.post-content h2, .post-content h3 {
+    margin-top: 2.5em;
+}
+.post-content img,
+.post-content video,
+.post-content iframe {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 1.5em auto; /* Center images */
+}
+.post-content figure { /* For images with captions */
+    margin: 1.5em 0;
+}
+.post-content figcaption {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--secondary-text-color);
+    margin-top: 0.5em;
+}
+.post-content ul, .post-content ol {
+    padding-left: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+/* Archive Header (for category pages) */
+.archive-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+.archive-title {
+    font-size: 2rem;
+    margin: 0;
+}
+
+
+/* ==========================================================================
+   Related Posts & Comments
+   ========================================================================== */
+
+.related-posts {
+    margin-top: 4rem;
+    border-top: 1px solid var(--border-color);
+    padding-top: 2rem;
+}
+.related-posts-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--secondary-text-color);
+}
+/* Related posts reuse .post-feed and .post-card styles */
+.related-posts .post-card-image {
+    height: 150px; /* Smaller images for related */
+}
+.related-posts .post-card-title {
+    font-size: 1.1rem;
+}
+
+
+.post-full-comments {
+    margin-top: 4rem;
+    border-top: 1px solid var(--border-color);
+    padding-top: 2rem;
+    max-width: 720px; /* Match content width */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* ==========================================================================
+   Pagination
+   ========================================================================== */
+
+.pagination {
+    text-align: center;
+    margin-top: 3rem;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+    color: var(--secondary-text-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border-color);
+}
+
+.pagination a {
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.pagination a:hover {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.page-number {
+    /* Centered automatically */
+}
+
+/* ==========================================================================
+   Site Footer
+   ========================================================================== */
+
+.site-footer {
+    background: var(--lighter-grey-color);
+    padding: 2.5rem 0;
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--secondary-text-color);
+    margin-top: 4rem; /* Space above footer */
+}
+
+.site-footer-content {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-footer .copyright a {
+    color: var(--text-color);
+    font-weight: 500;
+}
+.site-footer .copyright a:hover {
+    color: var(--primary-color);
+}
+
+
+.site-footer-nav {
+    margin-top: 10px; /* Space on small screens */
+}
+.site-footer-nav a {
+    color: var(--secondary-text-color);
+    margin-left: 1rem;
+}
+.site-footer-nav a:hover {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+
+/* ==========================================================================
+   Responsiveness
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    html {
+        font-size: 15px;
+    }
+
+    :root {
+        --outer-padding: 5vw;
+    }
+
+    .inner {
+        max-width: 90%;
+    }
+
+    .site-header-content {
+        height: auto;
+        padding: 15px 0;
+        /* Simple stacking for now, burger menu needs JS */
+        flex-direction: column;
+    }
+    .site-header-left { margin-bottom: 10px; }
+    .site-header-right { flex-wrap: wrap; justify-content: center;}
+    .site-nav { order: 1; width: 100%; text-align: center; margin-bottom: 10px; }
+    .site-nav li { margin: 0 10px; }
+    .social-links { order: 2; margin-left: 0; margin-top: 10px; }
+    .search-button, .subscribe-button { order: 3; margin-left: 10px; margin-top: 10px;}
+
+
+    .site-home-header .site-title { font-size: 2.5rem; }
+    .site-home-header .site-description { font-size: 1rem; }
+
+    .post-feed {
+        grid-template-columns: 1fr; /* Stack cards */
+        gap: 25px;
+    }
+
+    .post-card-large {
+        grid-template-columns: 1fr; /* Stack large card sections */
+    }
+    .post-card-large .post-card-image {
+        height: 250px;
+    }
+
+    .post-full-title { font-size: 2.2rem; }
+    .post-full-custom-excerpt { font-size: 1.1rem; }
+    .post-full-image { margin-left: -5vw; margin-right: -5vw; width: 100vw; max-width: 100vw; } /* Full bleed */
+    .post-full-content { font-size: 1rem; }
+
+    .site-footer-content {
+        flex-direction: column;
+    }
+    .site-footer-nav { margin-top: 15px; }
+    .site-footer-nav a { margin: 0 10px; }
+}
