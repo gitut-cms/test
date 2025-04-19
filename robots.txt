@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-# Sitemap not generated
+# Sitemap not generated or base_url not set
