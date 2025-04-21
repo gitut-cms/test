@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https:/monooa.github.io/test/css/style.css">
     <!-- Add Analytics code snippet here if site.analytics_id exists -->
 </head>
 <body>
@@ -13,19 +13,19 @@
 <header class="site-header">
     <div class="header-container">
         <div class="site-branding">
-            <a href="/">kkk</a>
+            <a href="https:/monooa.github.io/test/">Gitut CMS</a>
         </div>
         <nav class="site-navigation">
             <ul>
-                    <li><a href="/">Home</a></li>
+                    <li><a href="https:/monooa.github.io/test/">Home</a></li>
             </ul>
         </nav>
     </div>
 </header>
         <header class="hero-section">
             <div class="hero-content">
-                <h1>kkk</h1>
-            </div>
+                <h1>Gitut CMS</h1>
+<p>The Best Static Site Cms</p>            </div>
         </header>
 
         <main class="site-main">
@@ -38,7 +38,7 @@
 
 <footer class="site-footer">
     <div class="footer-container">
-        <p>© 2025 kkk. All rights reserved.</p>
+        <p>© 2025 Gitut CMS. All rights reserved.</p>
      </div>
 </footer>
     </div> </body>
