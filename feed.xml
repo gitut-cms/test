@@ -1,13 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Default Template</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title></title>
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Add Analytics code snippet here if site.analytics_id exists -->
 </head>
 <body>
-    <h1>Default Template - kkk</h1>
-    <p>Basic content goes here.</p>
-</body>
+    <div class="site-container">
+
+<header class="site-header">
+    <div class="header-container">
+        <div class="site-branding">
+            <a href="/">kkk</a>
+        </div>
+        <nav class="site-navigation">
+            <ul>
+                    <li><a href="/">Home</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+        <header class="hero-section">
+            <div class="hero-content">
+                <h1>kkk</h1>
+            </div>
+        </header>
+
+        <main class="site-main">
+            <div class="post-feed">
+                    <article class="featured-post post-card">
+                         <div class="featured-image-container">
+                             <div class="featured-image-placeholder"></div>                          </div>
+                         <div class="featured-content">
+                            <span class="post-category"><a href="/category/utytyuityu/">utytyuityu</a></span>
+                            <h2 class="post-title"><a href="/yiyui/">yiyui</a></h2>
+                            <p class="post-excerpt"></p>
+                            <div class="post-meta">
+                                <span class="post-date">Apr 21, 2025</span>
+                            </div>
+                         </div>
+                    </article>
+
+<article class="post-card">
+    <div class="post-card-content">
+        <header class="post-card-header">
+            <h2 class="post-title"><a href="/yyyyyy/">yyyyyy</a></h2>
+        </header>
+        <section class="post-card-excerpt">
+            <p>حهتàçه</p>
+        </section>
+        <footer class="post-card-meta">
+            <span class="post-date">Apr 21, 2025</span>
+        </footer>
+    </div>
+</article>
+            </div>
+
+
+        </main>
+
+<footer class="site-footer">
+    <div class="footer-container">
+        <p>© 2025 kkk. All rights reserved.</p>
+     </div>
+</footer>
+    </div> </body>
 </html>
