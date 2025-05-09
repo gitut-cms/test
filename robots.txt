@@ -14,7 +14,7 @@
  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400&amp;display=swap" rel="stylesheet">
 
     <!-- Favicon Link -->
-    <link rel="icon" href="/https:/gitut-cms.github.io/test/icon.ico">
+    <link rel="icon" href="https://gitut-cms.github.io/test/icon.ico">
 
 
         <style>
@@ -228,7 +228,7 @@
             /* Include SAVED Custom CSS Code from CMS Settings */
             
         </style>
-        <link rel="stylesheet" href="/https:/gitut-cms.github.io/test/style.css">
+        <link rel="stylesheet" href="https://gitut-cms.github.io/test/style.css">
 
     <!-- Include Custom Head Code from CMS Settings -->
     
@@ -245,12 +245,12 @@
 <header class="site-header">
     <div class="container">
         <div class="site-branding">
-            <a href="/https:/gitut-cms.github.io/test/">kikk</a>
+            <a href="https://gitut-cms.github.io/test/">kikk</a>
         </div>
 
         <nav class="site-nav">
             <ul>
-                 <li><a href="/https:/gitut-cms.github.io/test/">Home</a></li>
+                 <li><a href="https://gitut-cms.github.io/test/">Home</a></li>
                  <li><a href="#">About</a></li>                  <li><a href="#">Contact</a></li>             </ul>
         </nav>
 
@@ -279,7 +279,7 @@
 
         <nav class="footer-nav">
             <ul>
-                 <li><a href="/https:/gitut-cms.github.io/test/">Home</a></li>
+                 <li><a href="https://gitut-cms.github.io/test/">Home</a></li>
                  <li><a href="#">Privacy Policy</a></li>             </ul>
         </nav>
 
