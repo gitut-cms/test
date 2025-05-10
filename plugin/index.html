@@ -297,7 +297,7 @@
             <div class="main-content">
  <article class="featured-post-card">
     <div class="post-card-content">
-        <h2 class="post-card-title"><a href="https://gitut-cms.github.io/test/plugin/uyikyuikyh/">uyikyuikyh</a></h2>
+        <h2 class="post-card-title"><a href="https://gitut-cms.github.io/test/plugin/jololmihopmjopmop/">jololmihopmjopmop</a></h2>
         <p class="post-card-excerpt">
             
         </p>
@@ -308,6 +308,16 @@
 </article>
                 <div class="post-feed">
  <article class="featured-post-card">
+    <div class="post-card-content">
+        <h2 class="post-card-title"><a href="https://gitut-cms.github.io/test/plugin/uyikyuikyh/">uyikyuikyh</a></h2>
+        <p class="post-card-excerpt">
+            
+        </p>
+        <footer class="post-card-meta">
+            <span class="post-date">May 10, 2025</span>
+        </footer>
+    </div>
+</article> <article class="featured-post-card">
     <div class="post-card-image">
         <a href="https://gitut-cms.github.io/test/plugin/blast-off-with-django-your-step-by-step-installation-guide/">
             <img src="https://cdn.pixabay.com/photo/2024/05/14/11/37/tv-8760950_1280.png" alt="Blast Off with Django: Your Step-by-Step Installation Guide" loading="lazy">
@@ -332,6 +342,20 @@
                  <section class="sidebar-widget">
                     <h3>Recent Posts</h3>
  <article class="sidebar-post-card">
+    <div class="post-card-content">
+        <h4 class="post-card-title"><a href="https://gitut-cms.github.io/test/plugin/uyikyuikyh/">uyikyuikyh</a></h4>
+        <footer class="post-author-meta">              <div class="author-avatar">
+                 <img src="https://gitut-cms.github.io/test/plugin/images/admin_avatar.jpeg" alt="Admin">
+             </div>
+             <div class="author-info">
+                <span class="author-name">Admin</span>
+                <div class="post-date-time">
+                   <time datetime="2025-05-10">May 10, 2025</time>
+               </div>
+             </div>
+         </footer>
+    </div>
+</article><article class="sidebar-post-card">
     <div class="post-card-content">
              <div class="post-card-tags">
                  <a href="https://gitut-cms.github.io/test/plugin/category/gdocs-import/">GDrive Docs Import</a>
@@ -391,6 +415,46 @@
     <!-- Include Custom Body Code from CMS Settings -->
     
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const siteBaseUrl = "https://gitut-cms.github.io/test/plugin".replace(/\/$/, ""); // Get base URL, remove trailing slash
+            const redirectPage = "https://gitut-cms.github.io/test/plugin/redirect.html"; // Get path to redirect page
+
+            document.body.addEventListener('click', function(event) {
+                // Find the link element, even if the click was on a child (like an image inside a link)
+                const linkElement = event.target.closest('a');
+
+                if (linkElement && linkElement.href) {
+                    const targetUrl = linkElement.href;
+                    const isExternal = !(
+                        targetUrl.startsWith('/') ||                 // Internal absolute path
+                        targetUrl.startsWith('#') ||                 // Anchor link
+                        targetUrl.startsWith('mailto:') ||           // Mail link
+                        targetUrl.startsWith('tel:') ||              // Tel link
+                        (siteBaseUrl && targetUrl.startsWith(siteBaseUrl)) || // Starts with site's own base URL
+                        // Check if it's a relative path within the same origin (heuristic)
+                        targetUrl.indexOf(':') === -1 || targetUrl.startsWith(window.location.origin)
+                    );
+                    const opensInNewTab = linkElement.target === '_blank';
+
+                    // Only intercept external links that do NOT open in a new tab
+                    if (isExternal && !opensInNewTab) {
+                        event.preventDefault(); // Stop the default link navigation
+                        const encodedUrl = encodeURIComponent(targetUrl);
+                        // Construct the final redirect URL - ensure correct path resolution
+                        let finalRedirectUrl = redirectPage;
+                        // If redirectPage doesn't start with '/', assume relative path needs handling
+                        if (!finalRedirectUrl.startsWith('/')) {
+                             // Simple relative path construction (might need refinement depending on base_url structure)
+                             const currentPath = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
+                             finalRedirectUrl = currentPath + '/' + redirectPage;
+                        }
+                        window.location.href = `${finalRedirectUrl}?url=${encodedUrl}`;
+                    }
+                }
+            });
+        });
+    </script>
 
 <!-- Generated by Gitut CMS -->
 </body>
