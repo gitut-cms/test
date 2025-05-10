@@ -29,7 +29,7 @@
   --global-h2-size: 19px;
   --global-h2-weight: var(--heading-font-weight);
   --global-h3-color: var(--heading-color);
-  --global-h3-family: Amatic SC;
+  --global-h3-family: var(--heading-font-family);
   --global-h3-size: 17px;
   --global-h3-weight: var(--heading-font-weight);
   --global-h4-color: var(--heading-color);
