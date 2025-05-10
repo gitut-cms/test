@@ -1,294 +1,61 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
     <title>Gitut CMS</title>
-<!-- File: base.html -->
+    <link>https://gitut-cms.github.io/test/plugin/</link>
+    <description></description>
+    <language>en</language>
+    <lastBuildDate>Sat, 10 May 2025 15:30:51 +0000</lastBuildDate>
+    <atom:link href="https://gitut-cms.github.io/test/plugin/feed.xml" rel="self" type="application/rss+xml" />
 
-<!-- DEBUG: google_fonts_import_urls = [[&#39;https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&amp;display=swap&#39;, &#39;https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap&#39;]] -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&amp;display=swap" rel="stylesheet">
- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet">
-
-    <!-- Favicon Link -->
-    <link rel="icon" href="https://gitut-cms.github.io/test/plugin/icon.ico">
-
-
-        <style>
-            :root {
-                /* --- START GENERATED CSS VARIABLES (based on SAVED settings) --- */
-
-                /* Standard Colors */
-                --primary-color: #4154f1;
-                --secondary-color: #6c757d;
-                --text-color: #212529;
-                --background-color: #f6f9ff;
-                --link-color: #4154f1;
-                --link-hover-color: #012970;
-                --heading-color: #012970;
-
-                /* Global Headings Colors */
-                --global-h1-color: #ff0080;
-                --global-h2-color: #ff0080;
-                --global-h3-color: #012970;
-                --global-h4-color: #ff0080;
-
-                /* Post Body Colors */
-                --post-body-text-color: #ff0080;
-                --post-body-link-color: #4154f1;
-                --post-body-h1-color: #012970;
-                --post-body-h2-color: #00ffff;
-                --post-body-h3-color: #00ffff;
-                --post-body-h4-color: #012970;
-                --post-body-blockquote-color: #00ff40;
-                --post-body-code-color: #e74c3c;
-                --post-body-code-bg: #f6f9ff;
-
-                /* Border Colors */
-                --border-color: #e5eff5;
-                --blockquote-border-color: var(--primary-color);
-                --code-border-color: var(--border-color);
-                --header-border-color: var(--border-color);
-                --footer-border-color: var(--border-color);
-                --card-border-color: var(--border-color);
-                --pagination-border-color: #0000a0;
-                --pagination-hover-border-color: var(--primary-color);
-
-                /* Background Colors */
-                --card-bg-color: #ffffff;
-                --hero-bg-color: #ffffff;
-                --button-primary-bg: var(--heading-color);
-                --button-primary-hover-bg: #ffffff;
-                --pagination-hover-bg: var(--primary-color);
-                --widget-bg-color: #ffeb3b;
-
-                 /* Text Colors */
-                --hero-text-color: #ffffff;
-                --hero-subtext-color: rgba(255, 255, 255, 0.8);
-                --button-primary-text-color: #ffffff;
-                --footer-text-color: var(--secondary-color);
-
-                /* Standard Fonts */
-                --body-font-family: system-ui, -apple-system, BlinkMacSystemFont, &#34;Segoe UI&#34;, Roboto, &#34;Helvetica Neue&#34;, Arial, sans-serif;
-                --body-font-size: 16px;
-                --body-font-weight: 400;
-                --heading-font-family: Segoe UI;
-                --heading-font-size: 14px;
-                --heading-font-weight: bold;
-
-                /* Global Headings Fonts */
-                --global-h1-family: Roboto Slab;
-                --global-h1-size: 32px;
-                --global-h1-weight: bold;
-                --global-h2-family: Segoe UI;
-                --global-h2-size: 28px;
-                --global-h2-weight: bold;
-                --global-h3-family: Segoe UI;
-                --global-h3-size: 24px;
-                --global-h3-weight: bold;
-                --global-h4-family: Segoe UI;
-                --global-h4-size: 20px;
-                --global-h4-weight: bold;
-
-                /* Post Body Fonts */
-                --post-body-text-family: Roboto;
-                --post-body-text-size: 16px;
-                --post-body-text-weight: normal;
-                --post-body-h1-family: Roboto;
-                --post-body-h1-size: 28px;
-                --post-body-h1-weight: bold;
-                --post-body-h2-family: Segoe UI;
-                --post-body-h2-size: 24px;
-                --post-body-h2-weight: bold;
-                --post-body-h3-family: Segoe UI;
-                --post-body-h3-size: 20px;
-                --post-body-h3-weight: bold;
-                --post-body-h4-family: Segoe UI;
-                --post-body-h4-size: 18px;
-                --post-body-h4-weight: bold;
-                --post-body-blockquote-family: Segoe UI;
-                --post-body-blockquote-size: 16px;
-                --post-body-blockquote-weight: normal;
-                --post-body-blockquote-style: italic;
-                --post-body-code-family: monospace;
-                --post-body-code-size: 14px;
-                --post-body-code-weight: normal;
-
-                 /* Dynamic Variables from RootVarsEditor Plugin */
-                --background-color: #00ffff;
-                --card-bg-color: #ffffff;
-                --hero-bg-color: linear-gradient(100deg, #6a11cb, #2575fc);
-                --pagination-hover-bg: var(--primary-color);
-                --redirect-box-bg: #ffffff;
-                --redirect-button-bg: #28a745;
-                --redirect-button-hover-bg: #218838;
-                --redirect-page-bg: #f0f0f0;
-                --widget-bg-color: #ffeb3b;
-                --blockquote-border-color: var(--primary-color);
-                --border-color: #e5eff5;
-                --card-border-color: var(--border-color);
-                --code-border-color: var(--border-color);
-                --footer-border-color: var(--border-color);
-                --header-border-color: var(--border-color);
-                --pagination-border-color: var(--border-color);
-                --pagination-hover-border-color: var(--primary-color);
-                --card-border-radius: 8px;
-                --card-shadow: 0 2px 5px rgba(0,0,0,0.05), 0 5px 15px rgba(0,0,0,0.03);
-                --footer-text-color: var(--secondary-color);
-                --hero-subtext-color: rgba(255, 255, 255, 0.8);
-                --hero-text-color: #ffffff;
-                --link-color: var(--primary-color);
-                --post-body-link-color: var(--link-color);
-                --redirect-button-text-color: #ffffff;
-                --redirect-text-color: #555;
-                --text-color: #1a2127;
-                --body-font-family: system-ui, -apple-system, BlinkMacSystemFont, &#34;Segoe UI&#34;, Roboto, &#34;Helvetica Neue&#34;, Arial, sans-serif;
-                --body-font-size: 16px;
-                --body-font-weight: 400;
-                --heading-font-family: var(--body-font-family);
-                --heading-font-size: 20px;
-                --heading-font-weight: 700;
-                --global-h1-color: var(--heading-color);
-                --global-h2-color: var(--heading-color);
-                --global-h3-color: var(--heading-color);
-                --global-h4-color: var(--heading-color);
-                --header-shadow: 0 1px 3px rgba(0,0,0,0.03);
-                --body-line-height: 1.6;
-                --container-max-width: 1140px;
-                --content-area-max-width: 720px;
-                --heading-line-height: 1.2;
-                --redirect-box-padding: 30px 40px;
-                --redirect-button-padding: 10px 20px;
-                --code-font-family: monospace;
-                --global-h1-family: var(--heading-font-family);
-                --global-h1-size: 2.8rem;
-                --global-h1-weight: var(--heading-font-weight);
-                --global-h2-family: var(--heading-font-family);
-                --global-h2-size: 19px;
-                --global-h2-weight: var(--heading-font-weight);
-                --global-h3-family: var(--heading-font-family);
-                --global-h3-size: 17px;
-                --global-h3-weight: var(--heading-font-weight);
-                --global-h4-family: var(--heading-font-family);
-                --global-h4-size: 16px;
-                --global-h4-weight: var(--heading-font-weight);
-                --heading-color: #1a2127;
-                --link-hover-color: color-mix(in srgb, var(--link-color) 80%, black);
-                --redirect-box-radius: 8px;
-                --redirect-box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-                --redirect-button-font-size: 1.1em;
-                --redirect-button-radius: 5px;
-                --redirect-countdown-color: #dc3545;
-                --redirect-countdown-size: 1.8em;
-                --redirect-destination-color: #777;
-                --redirect-destination-font-size: 0.9em;
-                --redirect-title-color: #333;
-                --post-body-blockquote-color: var(--secondary-color);
-                --post-body-blockquote-family: var(--post-body-text-family);
-                --post-body-blockquote-size: 1.1em;
-                --post-body-blockquote-style: italic;
-                --post-body-blockquote-weight: var(--post-body-text-weight);
-                --post-body-code-bg: #f0f0f0;
-                --post-body-code-color: #e74c3c;
-                --post-body-code-family: var(--code-font-family);
-                --post-body-code-size: 0.9em;
-                --post-body-code-weight: normal;
-                --post-body-h1-color: var(--global-h1-color);
-                --post-body-h1-family: var(--global-h1-family);
-                --post-body-h1-size: 22px;
-                --post-body-h1-weight: var(--global-h1-weight);
-                --post-body-h2-color: var(--global-h2-color);
-                --post-body-h2-family: var(--global-h2-family);
-                --post-body-h2-size: 2.0rem;
-                --post-body-h2-weight: var(--global-h2-weight);
-                --post-body-h3-color: var(--global-h3-color);
-                --post-body-h3-family: var(--global-h3-family);
-                --post-body-h3-size: 1.6rem;
-                --post-body-h3-weight: var(--global-h3-weight);
-                --post-body-h4-color: var(--global-h4-color);
-                --post-body-h4-family: var(--global-h4-family);
-                --post-body-h4-size: 1.3rem;
-                --post-body-h4-weight: var(--global-h4-weight);
-                --post-body-text-color: var(--text-color);
-                --post-body-text-family: var(--body-font-family);
-                --post-body-text-size: 1.1rem;
-                --post-body-text-weight: var(--body-font-weight);
-                --button-primary-bg: var(--heading-color);
-                --button-primary-hover-bg: #333;
-                --button-primary-text-color: #ffffff;
-                --primary-color: #8a42f4;
-                --secondary-color: #5a6672;
-
-                /* --- END GENERATED CSS VARIABLES --- */
-            }
-
-            /* Include SAVED Custom CSS Code from CMS Settings */
-            
-        </style>
-        <link rel="stylesheet" href="https://gitut-cms.github.io/test/plugin/style.css">
-
-    <!-- Include Custom Head Code from CMS Settings -->
-    
-
-    <!-- Basic Schema.org Markup -->
-    <script type="application/ld+json">
-    </script>
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
-<body>
-
-<header class="site-header">
-    <div class="container">
-        <div class="site-branding">
-            <a href="https://gitut-cms.github.io/test/plugin/">Gitut CMS</a>
-        </div>
-
-        <nav class="site-nav">
-            <ul>
-                 <li><a href="https://gitut-cms.github.io/test/plugin/">Home</a></li>
-                 <li><a href="#">About</a></li>                  <li><a href="#">Contact</a></li>             </ul>
-        </nav>
-
-        <div class="header-actions">
-            <div class="social-links">
-             </div>
-
-         </div>
-    </div>
-</header>
-    <main class="site-main">
-
-
-    <div class="container">
-
-
-
-
-    </div>     </main>
-
-<footer class="site-footer">
-    <div class="container">
-        <div class="footer-copyright">
-             © 2025 Gitut CMS
-        </div>
-
-        <nav class="footer-nav">
-            <ul>
-                 <li><a href="https://gitut-cms.github.io/test/plugin/">Home</a></li>
-                 <li><a href="#">Privacy Policy</a></li>             </ul>
-        </nav>
-
-         <div class="social-links footer-social">           </div>
-
-    </div>
-</footer>
-    <!-- Include Custom Body Code from CMS Settings -->
-    
-
-
-</body>
-</html>
+     <item>
+        <title>uyikyuikyh</title>
+        <link>https://gitut-cms.github.io/test/plugin/uyikyuikyh/</link>
+        <pubDate>Sat, 10 May 2025 15:53:43 </pubDate>
+        <guid isPermaLink="true">https://gitut-cms.github.io/test/plugin/uyikyuikyh/</guid>
+        <description><![CDATA[
+            uiyhuiyhui uiklhujikhlvhyoluiuiouioyuiyuyiyiyguiguioguyiougiougiou uiophiohiophjiopijopiojpi yuiyuigyuigyioguyioioioioguy
+        ]]></description>
+        <content:encoded><![CDATA[
+            &lt;h2&gt;uiyhuiyhui
+&lt;/h2&gt;
+&lt;p&gt;uiklhujikhlvhyoluiuiouioyuiyuyiyiyguiguioguyiougiougiou
+&lt;/p&gt;&lt;p&gt;uiophiohiophjiopijopiojpi&lt;p&gt;&lt;/p&gt;
+&lt;/p&gt;
+&lt;p&gt;yuiyuigyuigyioguyioioioioguy&lt;/p&gt;&lt;div class=&#34;youtube-embed-container&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/8f6PY1OOifQ&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen title=&#34;YouTube video player&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+        ]]></content:encoded>
+<dc:creator>Admin</dc:creator>    </item>
+     <item>
+        <title>Blast Off with Django: Your Step-by-Step Installation Guide</title>
+        <link>https://gitut-cms.github.io/test/plugin/blast-off-with-django-your-step-by-step-installation-guide/</link>
+        <pubDate>Thu, 08 May 2025 20:47:21 </pubDate>
+        <guid isPermaLink="true">https://gitut-cms.github.io/test/plugin/blast-off-with-django-your-step-by-step-installation-guide/</guid>
+        <description><![CDATA[
+<p><img src="https://cdn.pixabay.com/photo/2024/05/14/11/37/tv-8760950_1280.png" alt="Blast Off with Django: Your Step-by-Step Installation Guide" /></p>            Prerequisites: What You&#39;ll NeedPython: Django is a Python framework, so you&#39;ll need Python installed. Django currently supports Python 3.8 and newer.Check your Python version: Open your terminal...
+        ]]></description>
+        <content:encoded><![CDATA[
+            &lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;h3&gt;Prerequisites: What You&#39;ll Need&lt;/h3&gt;&lt;ol&gt;&lt;li&gt;&lt;p&gt;&lt;strong&gt;Python:&lt;/strong&gt; Django is a Python framework, so you&#39;ll need Python installed. Django currently supports Python 3.8 and newer.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;strong&gt;Check your Python version:&lt;/strong&gt; Open your terminal or command prompt and type:&lt;/p&gt;&lt;div data-language=&#34;text&#34; class=&#34;toastui-editor-ww-code-block-highlighting&#34;&gt;&lt;pre&gt;&lt;code&gt;      python --version
+# or on some systems
+python3 --version
+    &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;If you don&#39;t have Python or have an older version, download the latest stable release from &lt;a href=&#34;https://www.google.com/url?sa=E&amp;amp;amp;q=https%3A%2F%2Fwww.python.org%2Fdownloads%2F&#34;&gt;python.org&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;strong&gt;pip:&lt;/strong&gt; This is Python&#39;s package installer. It usually comes bundled with Python versions 3.4 and later.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;strong&gt;Check if pip is installed:&lt;/strong&gt;&lt;/p&gt;&lt;div data-language=&#34;text&#34; class=&#34;toastui-editor-ww-code-block-highlighting&#34;&gt;&lt;pre&gt;&lt;code&gt;      pip --version
+# or
+pip3 --version
+    &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;IGNORE_WHEN_COPYING_START&lt;/p&gt;&lt;p&gt; content_copy download&lt;/p&gt;&lt;p&gt; Use code &lt;a href=&#34;https://support.google.com/legal/answer/13505487&#34;&gt;with caution&lt;/a&gt;. Bash&lt;/p&gt;&lt;p&gt;IGNORE_WHEN_COPYING_END&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;If you don&#39;t have it, you can find instructions to install pip on the &lt;a href=&#34;https://www.google.com/url?sa=E&amp;amp;amp;q=https%3A%2F%2Fpip.pypa.io%2Fen%2Fstable%2Finstallation%2F&#34;&gt;official pip documentation page&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ol&gt;&lt;h3&gt;Step 1: Create and Activate a Virtual Environment (Highly Recommended!)&lt;/h3&gt;&lt;p&gt;Before installing Django, it&#39;s best practice to create a virtual environment. Why?&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;strong&gt;Isolation:&lt;/strong&gt; It keeps project dependencies separate from your global Python installation and other projects. This prevents version conflicts.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;strong&gt;Cleanliness:&lt;/strong&gt; Keeps your global site-packages directory tidy.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;strong&gt;Reproducibility:&lt;/strong&gt; Makes it easy to recreate the project environment elsewhere.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Let&#39;s create one:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;p&gt;&lt;strong&gt;Navigate to your project directory:&lt;/strong&gt; Open your terminal/command prompt and cd into the folder where you want your Django project to live.&lt;/p&gt;&lt;div data-language=&#34;text&#34; class=&#34;toastui-editor-ww-code-block-highlighting&#34;&gt;&lt;pre&gt;&lt;code&gt;      mkdir my_django_project
+cd my_django_project
+    &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;IGNORE_WHEN_COPYING_START&lt;/p&gt;&lt;p&gt; content_copy download&lt;/p&gt;&lt;p&gt; Use code &lt;a href=&#34;https://support.google.com/legal/answer/13505487&#34;&gt;with caution&lt;/a&gt;. Bash&lt;/p&gt;&lt;p&gt;IGNORE_WHEN_COPYING_END&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;strong&gt;Create the virtual environment:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;For Python 3:&lt;/p&gt;&lt;div data-language=&#34;text&#34; class=&#34;toastui-editor-ww-code-block-highlighting&#34;&gt;&lt;pre&gt;&lt;code&gt;      python -m venv myenv
+    &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;IGNORE_WHEN_COPYING_START&lt;/p&gt;&lt;p&gt; content_copy download&lt;/p&gt;&lt;p&gt; Use code &lt;a href=&#34;https://support.google.com/legal/answer/13505487&#34;&gt;with caution&lt;/a&gt;. Bash&lt;/p&gt;&lt;p&gt;IGNORE_WHEN_COPYING_END&lt;/p&gt;&lt;p&gt;(You can name myenv anything you like, e.g., venv, .venv, env)&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;strong&gt;Activate the virtual environment:&lt;/strong&gt; The command differs slightly based on your operating system:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;strong&gt;On macOS and Linux:&lt;/strong&gt;&lt;/p&gt;&lt;div data-language=&#34;text&#34; class=&#34;toastui-editor-ww-code-block-highlighting&#34;&gt;&lt;pre&gt;&lt;code&gt;      source myenv/bin/activate
+    &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;IGNORE_WHEN_COPYING_START&lt;/p&gt;&lt;p&gt; content_copy download&lt;/p&gt;&lt;p&gt; Use code &lt;a href=&#34;https://support.google.com/legal/answer/13505487&#34;&gt;with caution&lt;/a&gt;. Bash&lt;/p&gt;&lt;p&gt;IGNORE_WHEN_COPYING_END&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;strong&gt;On Windows (Command Prompt/PowerShell):&lt;/strong&gt;&lt;/p&gt;&lt;div data-language=&#34;text&#34; class=&#34;toastui-editor-ww-code-block-highlighting&#34;&gt;&lt;pre&gt;&lt;code&gt;      myenv\Scripts\activate
+    &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;IGNORE_WHEN_COPYING_START&lt;/p&gt;&lt;p&gt; content_copy download&lt;/p&gt;&lt;p&gt; Use code &lt;a href=&#34;https://support.google.com/legal/answer/13505487&#34;&gt;with caution&lt;/a&gt;. Bash&lt;/p&gt;&lt;p&gt;IGNORE_WHEN_COPYING_END&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;You&#39;ll know it&#39;s active because your command prompt will usually be prefixed with the environment&#39;s name, like (myenv).&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;&lt;h3&gt;Step 2: Install Django&lt;/h3&gt;&lt;p&gt;Now that your virtual environment is active, installing Django is a breeze using pip:&lt;/p&gt;&lt;div data-language=&#34;text&#34; class=&#34;toastui-editor-ww-code-block-highlighting&#34;&gt;&lt;pre&gt;&lt;code&gt;      pip install django
+    &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;IGNORE_WHEN_COPYING_START&lt;/p&gt;&lt;p&gt; content_copy download&lt;/p&gt;&lt;p&gt; Use code &lt;a href=&#34;https://support.google.com/legal/answer/13505487&#34;&gt;with caution&lt;/a&gt;. Bash&lt;/p&gt;&lt;p&gt;IGNORE_WHEN_COPYING_END&lt;/p&gt;&lt;p&gt;This command will download and install the latest stable version of Django and its dependencies into your active virtual environment.&lt;/p&gt;&lt;p&gt;Want a specific version? You can do that too:&lt;/p&gt;&lt;div data-language=&#34;text&#34; class=&#34;toastui-editor-ww-code-block-highlighting&#34;&gt;&lt;pre&gt;&lt;code&gt;      pip install django==4.2  # Installs Django version 4.2
+    &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;IGNORE_WHEN_COPYING_START&lt;/p&gt;&lt;p&gt; content_copy download&lt;/p&gt;&lt;p&gt; Use code &lt;a href=&#34;https://support.google.com/legal/answer/13505487&#34;&gt;with caution&lt;/a&gt;. Bash&lt;/p&gt;&lt;p&gt;IGNORE_WHEN_COPYING_END&lt;/p&gt;&lt;p&gt;But for starting out, the latest version is usually what you want.&lt;/p&gt;&lt;h3&gt;Step 3: Verify Your Django Installation&lt;/h3&gt;&lt;p&gt;Let&#39;s make sure Django is installed correctly. You can do this in a couple of ways:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;p&gt;&lt;strong&gt;Using django-admin:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;With your virtual environment still active, type:&lt;/p&gt;&lt;div data-language=&#34;text&#34; class=&#34;toastui-editor-ww-code-block-highlighting&#34;&gt;&lt;pre&gt;&lt;code&gt;      django-admin --version
+    &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;IGNORE_WHEN_COPYING_START&lt;/p&gt;&lt;p&gt; content_copy download&lt;/p&gt;&lt;p&gt; Use code &lt;a href=&#34;https://support.google.com/legal/answer/13505487&#34;&gt;with caution&lt;/a&gt;. Bash&lt;/p&gt;&lt;p&gt;IGNORE_WHEN_COPYING_END&lt;/p&gt;&lt;p&gt;This should print the installed Django version (e.g., 4.2.7).&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;strong&gt;Using the Python interpreter:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;Still in your activated virtual environment, open the Python interpreter:&lt;/p&gt;&lt;div data-language=&#34;text&#34; class=&#34;toastui-editor-ww-code-block-highlighting&#34;&gt;&lt;pre&gt;&lt;code&gt;      python
+    &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;IGNORE_WHEN_COPYING_START&lt;/p&gt;&lt;p&gt; content_copy download&lt;/p&gt;&lt;p&gt; Use code &lt;a href=&#34;https://support.google.com/legal/answer/13505487&#34;&gt;with caution&lt;/a&gt;. Bash&lt;/p&gt;&lt;p&gt;IGNORE_WHEN_COPYING_END&lt;/p&gt;&lt;p&gt;Then, in the Python prompt (&amp;gt;&amp;gt;&amp;gt;), type:&lt;/p&gt;&lt;div data-language=&#34;text&#34; class=&#34;toastui-editor-ww-code-block-highlighting&#34;&gt;&lt;pre&gt;&lt;code&gt;      import django
+print(django.get_version())
+    &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;IGNORE_WHEN_COPYING_START&lt;/p&gt;&lt;p&gt; content_copy download&lt;/p&gt;&lt;p&gt; Use code &lt;a href=&#34;https://support.google.com/legal/answer/13505487&#34;&gt;with caution&lt;/a&gt;. Python&lt;/p&gt;&lt;p&gt;IGNORE_WHEN_COPYING_END&lt;/p&gt;&lt;p&gt;This should also print the installed Django version. Type exit() or Ctrl+D (Ctrl+Z then Enter on Windows) to leave the Python interpreter.&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;&lt;h3&gt;Congratulations! What&#39;s Next?&lt;/h3&gt;&lt;p&gt;You&#39;ve successfully installed Django! Pat yourself on the back.&lt;/p&gt;&lt;p&gt;Now you&#39;re ready for the exciting part: &lt;strong&gt;building your first Django app!&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;The typical next step is to create a Django project using django-admin startproject myprojectname. But that&#39;s a topic for another blog post!&lt;/p&gt;&lt;p&gt;For now, you&#39;ve conquered the installation. Keep that virtual environment activated whenever you&#39;re working on this project. To deactivate it when you&#39;re done, simply type:&lt;/p&gt;&lt;div data-language=&#34;text&#34; class=&#34;toastui-editor-ww-code-block-highlighting&#34;&gt;&lt;pre&gt;&lt;code&gt;      deactivate
+    &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;IGNORE_WHEN_COPYING_START&lt;/p&gt;&lt;p&gt; content_copy download&lt;/p&gt;&lt;p&gt; Use code &lt;a href=&#34;https://support.google.com/legal/answer/13505487&#34;&gt;with caution&lt;/a&gt;. Bash&lt;/p&gt;&lt;p&gt;IGNORE_WHEN_COPYING_END&lt;/p&gt;&lt;p&gt;Happy Djangonaut-ing! Feel free to ask any questions in the comments below.&lt;/p&gt;&lt;div contenteditable=&#34;false&#34;&gt;&lt;hr&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Optional additions you might consider for a real blog post:&lt;/strong&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;A catchy featured image.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Links to the official Django documentation or tutorial.&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;A brief &#34;Troubleshooting&#34; section for common issues (e.g., python vs python3 command, pip not found).&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;A call to action for readers to share or comment.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;
+        ]]></content:encoded>
+<dc:creator>Admin</dc:creator>    </item>
+</channel>
+</rss>
