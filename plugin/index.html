@@ -417,45 +417,64 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const siteBaseUrl = "https://gitut-cms.github.io/test/plugin".replace(/\/$/, ""); // Get base URL, remove trailing slash
-            const redirectPage = "https://gitut-cms.github.io/test/plugin/redirect.html"; // Get path to redirect page
+            const siteBaseUrl = "https://gitut-cms.github.io/test/plugin".replace(/\/$/, "");
+            const redirectPage = "https://gitut-cms.github.io/test/plugin/redirect.html";
 
             document.body.addEventListener('click', function(event) {
-                // Find the link element, even if the click was on a child (like an image inside a link)
                 const linkElement = event.target.closest('a');
 
                 if (linkElement && linkElement.href) {
                     const targetUrl = linkElement.href;
                     const isExternal = !(
-                        targetUrl.startsWith('/') ||                 // Internal absolute path
-                        targetUrl.startsWith('#') ||                 // Anchor link
-                        targetUrl.startsWith('mailto:') ||           // Mail link
-                        targetUrl.startsWith('tel:') ||              // Tel link
-                        (siteBaseUrl && targetUrl.startsWith(siteBaseUrl)) || // Starts with site's own base URL
-                        // Check if it's a relative path within the same origin (heuristic)
+                        targetUrl.startsWith('/') ||
+                        targetUrl.startsWith('#') ||
+                        targetUrl.startsWith('mailto:') ||
+                        targetUrl.startsWith('tel:') ||
+                        (siteBaseUrl && targetUrl.startsWith(siteBaseUrl)) ||
                         targetUrl.indexOf(':') === -1 || targetUrl.startsWith(window.location.origin)
                     );
                     const opensInNewTab = linkElement.target === '_blank';
 
-                    // Only intercept external links that do NOT open in a new tab
                     if (isExternal && !opensInNewTab) {
-                        event.preventDefault(); // Stop the default link navigation
+                        event.preventDefault();
                         const encodedUrl = encodeURIComponent(targetUrl);
-                        // Construct the final redirect URL - ensure correct path resolution
+                        
                         let finalRedirectUrl = redirectPage;
-                        // If redirectPage doesn't start with '/', assume relative path needs handling
-                        if (!finalRedirectUrl.startsWith('/')) {
-                             // Simple relative path construction (might need refinement depending on base_url structure)
-                             const currentPath = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
-                             finalRedirectUrl = currentPath + '/' + redirectPage;
+                        const isFullHttpUrl = finalRedirectUrl.startsWith('http://') || finalRedirectUrl.startsWith('https://');
+                        const isRootRelativeUrl = finalRedirectUrl.startsWith('/');
+
+                        // Only prepend current path if redirectPage is truly relative (e.g., "redirect.html")
+                        if (!isFullHttpUrl && !isRootRelativeUrl) {
+                            // Construct path relative to current page's directory
+                            let pathSegments = window.location.pathname.split('/');
+                            pathSegments.pop(); // Remove current file or last segment
+                            let currentDir = pathSegments.join('/');
+                            
+                            // Ensure currentDir has a trailing slash if it's not empty or just "/"
+                            if (currentDir === "" && window.location.pathname.startsWith('/')) { 
+                                currentDir = "/"; // Handle root index.html case
+                            } else if (currentDir && !currentDir.endsWith('/')) {
+                                currentDir += '/';
+                            } else if (!currentDir) { // if currentDir is empty (e.g. from root page with no path)
+                                currentDir = "./"; // Use explicit relative current directory
+                            }
+                            
+                            finalRedirectUrl = currentDir + redirectPage;
+                            // Normalize to prevent double slashes if currentDir is '/'
+                            finalRedirectUrl = finalRedirectUrl.replace(/\/\//g, '/'); 
+                            if (finalRedirectUrl.startsWith('.///')) { // Fix for potential triple slash from root + ./
+                                finalRedirectUrl = finalRedirectUrl.replace('.///', './');
+                            } else if (finalRedirectUrl.startsWith('//')) { // Fix for server root
+                                finalRedirectUrl = finalRedirectUrl.substring(1);
+                            }
                         }
+                        
                         window.location.href = `${finalRedirectUrl}?url=${encodedUrl}`;
                     }
                 }
             });
         });
     </script>
-
 <!-- Generated by Gitut CMS -->
 </body>
 <!-- Generated by Gitut CMS -->
