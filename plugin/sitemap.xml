@@ -2,40 +2,36 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://gitut-cms.github.io/test/plugin/</loc>
-        <lastmod>2025-05-10</lastmod>
+        <lastmod>2025-05-13</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://gitut-cms.github.io/test/plugin/jololmihopmjopmop/</loc>
-        <lastmod>2025-05-10</lastmod>
+        <loc>https://gitut-cms.github.io/test/plugin/بوابة-العمل-الحر-طريقك-نحو-الاستقلال-المالي-والإبداعي/</loc>
+        <lastmod>2025-05-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://gitut-cms.github.io/test/plugin/uyikyuikyh/</loc>
-        <lastmod>2025-05-10</lastmod>
+        <loc>https://gitut-cms.github.io/test/plugin/الربح-من-الإنترنت-آفاق-واعدة-في-عالم-رقمي-متجدد/</loc>
+        <lastmod>2025-05-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://gitut-cms.github.io/test/plugin/blast-off-with-django-your-step-by-step-installation-guide/</loc>
-        <lastmod>2025-05-08</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
+        <loc>https://gitut-cms.github.io/test/plugin/ععععع/</loc>
+        <lastmod>2025-05-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://gitut-cms.github.io/test/plugin/category/gdocs-import/</loc>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
+        <loc>https://gitut-cms.github.io/test/plugin/من-نحن/</loc>
+        <lastmod>2025-05-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://gitut-cms.github.io/test/plugin/category/gdrive-import/</loc>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    <url>
-        <loc>https://gitut-cms.github.io/test/plugin/category/utytyuityu/</loc>
+        <loc>https://gitut-cms.github.io/test/plugin/category/الربح-من-الانترنت/</loc>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
     </url>
