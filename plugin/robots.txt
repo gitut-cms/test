@@ -1,7 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://gitut-cms.github.io/test/plugin/sitemap.xml
-
-# Disallow specific paths if needed, e.g.:
-# Disallow: /admin/
-# Disallow: /private/Sitemap: https://gitut-cms.github.io/test/plugin/sitemap.xml
