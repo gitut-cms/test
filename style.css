@@ -10,7 +10,7 @@
   --author-avatar-margin-left: 12px;
   --author-avatar-size: 45px;
   --author-info-date-time-font-size: 0.875rem;
-  --background: #f6f9ff;
+  --background: #17181a;
   --background-color: #F6F5F2;
   --blockquote-border-color: var(--primary-color);
   --body-font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
@@ -93,7 +93,7 @@
   --header-shadow: 0 1px 4px rgba(0,0,0,0.06);
   --header-social-links-font-size: 1.2rem;
   --header-social-links-gap: 10px;
-  --heading: #012970;
+  --heading: var(--global-h1-color);
   --heading-color: #383838;
   --heading-font-family: 'Merriweather', Georgia, serif;
   --heading-font-size: 20px;
@@ -151,7 +151,7 @@
   --papr-logo-max-height: 40px;
   --papr-theme-homepage-featured-category-tag-padding: 6px 12px;
   --papr-theme-homepage-recent-news-category-tag-padding: 4px 8px;
-  --papr-theme-main-header-border-bottom-style: 1px solid #e0e0e0;
+  --papr-theme-main-header-border-bottom-style: 1px solid var(--default-border-color);
   --papr-theme-main-header-padding: 20px 0;
   --papr-theme-main-navigation-dropdown-indicator-display-property: inline-block;
   --papr-theme-top-bar-padding: 8px 0;
@@ -166,7 +166,7 @@
   --post-body-blockquote-size: 1.1em;
   --post-body-blockquote-style: italic;
   --post-body-blockquote-weight: var(--post-body-text-weight);
-  --post-body-code-background: #f6f9ff;
+  --post-body-code-background: var(--code-block-inside-the-post-background-color);
   --post-body-code-bg: #f9f2f4;
   --post-body-code-color: #c7254e;
   --post-body-code-family: var(--code-font-family);
@@ -269,12 +269,12 @@
   --post-tags-label-margin-left-rtl: 8px;
   --post-tags-label-margin-right-ltr: 8px;
   --preformatted-text-block-inside-the-post-margin: 2em 0;
-  --primary: #4154f1;
+  --primary: var(--main-theme-color);
   --primary-color: #557C55;
   --primary-gradient-end: #2575fc;
   --primary-gradient-start: #6a11cb;
   --quote-block-inside-the-post-margin: 1.8em 0;
-  --quote-block-inside-the-post-padding: 0.8em 1.5em 0.8em 0;
+  --quote-block-inside-the-post-padding: 0.8em 1.5em;
   --recent-news-category-tag-bg: #6c757d;
   --recent-news-category-tag-color: #fff;
   --recent-news-category-tag-font-size: 0.7rem;
@@ -372,7 +372,7 @@
   --tag-link-margin: 0 5px 5px 0;
   --tag-link-padding: 4px 10px;
   --tag-link-text-decoration: none;
-  --text: #212529;
+  --text: var(--default-text-color);
   --text-color: #4A4A4A;
   --text-inside-the-post-line-height: 1.7;
   --top-bar-bg: #222222;
@@ -411,8 +411,8 @@ body {
   max-width: var(--main-content-container-maximum-width);
   margin-left: auto;
   margin-right: auto;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: var(--container-padding-mobile); /* Use variable */
+  padding-right: var(--container-padding-mobile); /* Use variable */
 }
 
 a {
@@ -427,19 +427,19 @@ a:hover {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--default-headings-font-family);
-  color: var(--all-headings-color);
+  color: var(--all-headings-color); /* General heading color */
   line-height: var(--default-headings-line-height);
   margin-top: 1.5em;
   margin-bottom: 0.75em;
   font-weight: var(--default-headings-font-weight);
 }
 /* Default H1-H4 will use overall site heading styles */
-h1 { font-family: var(--overall-site-heading-one-font-family); font-size: var(--overall-site-heading-one-font-size); font-weight: var(--overall-site-heading-one-font-weight); }
-h2 { font-family: var(--overall-site-heading-two-font-family); font-size: var(--overall-site-heading-two-font-size); font-weight: var(--overall-site-heading-two-font-weight); }
-h3 { font-family: var(--overall-site-heading-three-font-family); font-size: var(--overall-site-heading-three-font-size); font-weight: var(--overall-site-heading-three-font-weight); }
-h4 { font-family: var(--overall-site-heading-four-font-family); font-size: var(--overall-site-heading-four-font-size); font-weight: var(--overall-site-heading-four-font-weight); }
-h5 { font-size: calc(var(--overall-site-heading-four-font-size) * 0.9); font-weight: var(--overall-site-heading-four-font-weight); }
-h6 { font-size: calc(var(--overall-site-heading-four-font-size) * 0.8); font-weight: var(--overall-site-heading-four-font-weight); }
+h1 { font-family: var(--overall-site-heading-one-font-family); font-size: var(--overall-site-heading-one-font-size); font-weight: var(--overall-site-heading-one-font-weight); color: var(--global-h1-color); }
+h2 { font-family: var(--overall-site-heading-two-font-family); font-size: var(--overall-site-heading-two-font-size); font-weight: var(--overall-site-heading-two-font-weight); color: var(--global-h2-color); }
+h3 { font-family: var(--overall-site-heading-three-font-family); font-size: var(--overall-site-heading-three-font-size); font-weight: var(--overall-site-heading-three-font-weight); color: var(--global-h3-color); }
+h4 { font-family: var(--overall-site-heading-four-font-family); font-size: var(--overall-site-heading-four-font-size); font-weight: var(--overall-site-heading-four-font-weight); color: var(--global-h4-color); }
+h5 { font-size: calc(var(--global-h4-font-size) * 0.9); font-weight: var(--global-h4-font-weight); color: var(--global-h4-color);}
+h6 { font-size: calc(var(--global-h4-font-size) * 0.8); font-weight: var(--global-h4-font-weight); color: var(--global-h4-color);}
 
 p {
   margin-top: 0;
@@ -472,7 +472,7 @@ blockquote {
 [dir="rtl"] blockquote {
   border-left: none;
   border-right: var(--quote-block-inside-the-post-border-right-width) solid var(--quote-block-border-color); /* RTL */
-  padding: var(--quote-block-inside-the-post-padding); /* padding-left/right handled by var */
+  /* padding is already var(--quote-block-inside-the-post-padding) which is symmetric, so it's fine */
 }
 blockquote p:last-child {
   margin-bottom: 0;
@@ -480,7 +480,7 @@ blockquote p:last-child {
 
 pre {
   font-family: var(--code-block-inside-the-post-font-family);
-  font-size: var(--code-block-inside-the-post-font-size);
+  font-size: var(--post-body-code-font-size); /* Use consistent code font size */
   background-color: var(--code-block-inside-the-post-background-color);
   color: var(--code-block-inside-the-post-text-color);
   padding: var(--preformatted-text-block-inside-the-post-padding);
@@ -489,9 +489,9 @@ pre {
   border-radius: var(--preformatted-text-block-inside-the-post-border-radius);
   border: 1px solid var(--code-block-border-color);
 }
-code {
+code { /* Inline code */
   font-family: var(--code-block-inside-the-post-font-family);
-  font-size: var(--code-block-inside-the-post-font-size);
+  font-size: var(--post-body-code-font-size); /* Use consistent code font size */
   background-color: var(--code-block-inside-the-post-background-color);
   color: var(--code-block-inside-the-post-text-color);
   padding: var(--inline-code-inside-the-post-padding);
@@ -502,6 +502,7 @@ pre code { /* Reset styles for code inside pre */
   background-color: transparent;
   color: inherit;
   border-radius: 0;
+  font-size: inherit; /* Inherit from pre */
 }
 
 hr {
@@ -566,7 +567,7 @@ figure img {
     color: var(--papr-theme-top-bar-link-hover-color);
     text-decoration: none;
 }
-.top-bar-right .social-icons a {
+.top-bar-right .social-icons a { /* Assuming .social-icons is used here */
     color: var(--papr-theme-top-bar-text-color);
     font-size: 1rem; /* Adjust as needed */
 }
@@ -578,7 +579,7 @@ figure img {
   background-color: var(--papr-theme-main-header-background-color);
   padding: var(--papr-theme-main-header-padding);
   border-bottom: var(--papr-theme-main-header-border-bottom-style);
-  box-shadow: none; /* Papr main header doesn't seem to have shadow if top bar is present */
+  box-shadow: none; 
 }
 
 .header-container { /* Main header container */
@@ -589,7 +590,7 @@ figure img {
 }
 
 .site-logo-area .logo-link img,
-.site-logo-area .site-logo-image {
+.site-logo-area .site-logo-image { /* Assuming .site-logo-image is a class for the img */
   max-height: var(--papr-theme-logo-maximum-height);
   display: block;
 }
@@ -612,15 +613,14 @@ figure img {
   text-decoration: none;
   font-weight: var(--papr-theme-main-navigation-link-font-weight);
   font-size: 1rem; /* Adjust as needed */
-  padding: 5px 0; /* Minimal padding, styling is mostly on text */
+  padding: 5px 0; 
 }
 .main-navigation a:hover,
-.main-navigation li.current-menu-item a { /* Example for active link */
+.main-navigation li.current-menu-item a { 
   color: var(--papr-theme-main-navigation-link-hover-color);
 }
-/* Basic dropdown indicator if you plan to use dropdowns */
 .main-navigation .menu-item-has-children > a::after {
-    content: '▼'; /* Or an SVG icon */
+    content: '▼'; 
     display: var(--papr-theme-main-navigation-dropdown-indicator-display-property);
     font-size: 0.6em;
     margin-left: 5px; /* LTR */
@@ -636,7 +636,7 @@ figure img {
     align-items: center;
     gap: 15px;
 }
-.header-right-controls .search-toggle-button,
+.header-right-controls .search-toggle-button, /* Assuming these classes */
 .header-right-controls .mobile-menu-toggle-button {
     background: none;
     border: none;
@@ -653,7 +653,6 @@ figure img {
     height: 20px;
     fill: currentColor;
 }
-/* Hide mobile menu toggle on desktop by default, show via media query */
 .mobile-menu-toggle-button {
     display: none;
 }
@@ -666,11 +665,11 @@ figure img {
     text-align: var(--main-banner-section-text-alignment);
     background-color: var(--main-banner-background-color);
 }
-.hero-section .container {
+.hero-section .container { /* Assuming .container is used inside */
     padding-bottom: var(--main-banner-inner-container-padding-bottom);
 }
 .hero-title {
-    font-size: var(--main-banner-title-font-size); /* Uses its own specific size from :root */
+    font-size: var(--main-banner-title-font-size);
     font-weight: var(--main-banner-title-font-weight);
     color: var(--main-banner-title-text-color);
     margin-top: 0;
@@ -686,12 +685,12 @@ figure img {
 }
 
 /* --- Index Widget --- */
-.index-widget-area {
-    background-color: var(--summary-card-background-color);
-    padding: 20px;
+.index-widget-area { /* Assuming this is for a widget like "Table of Contents" */
+    background-color: var(--sidebar-widget-background-color); /* Use widget bg */
+    padding: 20px; /* Or var(--sidebar-widget-box-padding) */
     margin-bottom: var(--general-content-grid-gap);
-    border-radius: var(--summary-card-border-radius);
-    box-shadow: var(--summary-card-box-shadow);
+    border-radius: var(--summary-card-border-radius); /* Consistent border radius */
+    box-shadow: var(--summary-card-box-shadow); /* Consistent shadow */
 }
 
 /* --- Posts List & Cards (General, not Papr specific yet) --- */
@@ -707,13 +706,13 @@ figure img {
 /* --- Papr Homepage Grid Styles --- */
 .homepage-layout-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 2fr 1fr; /* Default Papr layout */
     gap: var(--papr-theme-homepage-grid-gap);
-    margin-top: var(--main-content-area-padding);
+    margin-top: var(--main-content-area-padding); /* Or a specific margin if needed */
 }
 
-.featured-post-card {
-    background-color: transparent;
+.featured-post-card { /* This seems to be a specific large card */
+    background-color: transparent; /* Often no distinct background for the main featured one */
     box-shadow: none;
     border-radius: 0;
     display: flex;
@@ -723,16 +722,16 @@ figure img {
 .featured-post-image-container {
     position: relative;
     margin-bottom: 20px;
-    aspect-ratio: 16 / 10;
+    aspect-ratio: 16 / 10; /* Common aspect ratio for featured images */
 }
 .featured-post-image-container img.featured-post-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: var(--summary-card-border-radius);
+    border-radius: var(--summary-card-border-radius); /* Consistent radius */
 }
 
-.category-tag.on-image-tag {
+.category-tag.on-image-tag { /* General class for tags on images */
     position: absolute;
     bottom: 15px;
     left: 15px; /* LTR */
@@ -752,24 +751,25 @@ figure img {
 }
 
 .featured-post-content {
-    padding: 0;
+    padding: 0; /* Content for featured post might not have padding if image is focus */
 }
 .featured-post-title {
     font-size: var(--papr-theme-homepage-featured-post-title-font-size);
-    font-weight: 700;
+    font-weight: 700; /* Typically bold */
     margin: 0 0 10px 0;
     line-height: 1.2;
+    color: var(--global-h1-color); /* Use a prominent heading color */
 }
 .featured-post-title a {
-    color: var(--all-headings-color);
+    color: inherit; 
     text-decoration: none;
 }
 .featured-post-title a:hover {
-    color: var(--main-theme-color);
+    color: var(--main-theme-color); /* Hover to theme color */
 }
 .featured-post-meta {
     font-size: var(--papr-theme-homepage-featured-post-meta-font-size);
-    color: #777777;
+    color: var(--secondary); /* Use secondary text color */
     display: flex;
     gap: 15px;
     flex-wrap: wrap;
@@ -782,18 +782,19 @@ figure img {
     align-items: center;
     margin-bottom: 20px;
     padding-bottom: 10px;
-    border-bottom: 2px solid var(--all-headings-color);
+    border-bottom: 2px solid var(--global-h3-color); /* Use a heading color for border */
 }
 .recent-news-title {
     font-size: var(--papr-theme-homepage-recent-news-title-font-size);
     margin: 0;
     font-weight: 700;
+    color: var(--global-h3-color); /* Consistent with border */
 }
-.all-recent-news-link {
+.all-recent-news-link { /* Link to see all news */
     font-size: 0.75rem;
     font-weight: bold;
     text-transform: uppercase;
-    color: var(--all-headings-color);
+    color: var(--all-headings-color); /* Or theme color */
     text-decoration: none;
     border-bottom: 2px solid var(--hyperlink-color);
     padding-bottom: 2px;
@@ -829,7 +830,7 @@ figure img {
     flex-direction: column;
     flex-grow: 1;
 }
-.category-tag-container {
+.category-tag-container { /* Container for the small tag above title */
     margin-bottom: 8px;
 }
 .category-tag.above-title-tag {
@@ -848,9 +849,10 @@ figure img {
     font-weight: 600;
     margin: 0 0 5px 0;
     line-height: 1.3;
+    color: var(--all-headings-color); /* Or a slightly less prominent heading color */
 }
 .recent-post-title a {
-    color: var(--all-headings-color);
+    color: inherit;
     text-decoration: none;
 }
 .recent-post-title a:hover {
@@ -858,8 +860,8 @@ figure img {
 }
 .recent-post-author {
     font-size: var(--papr-theme-homepage-recent-post-author-font-size);
-    color: #777777;
-    margin-top: auto;
+    color: var(--secondary); /* Use secondary text color */
+    margin-top: auto; /* Pushes to bottom if content above is short */
 }
 
 /* --- Additional Posts Grid (3x3) Styles --- */
@@ -867,27 +869,29 @@ figure img {
     margin-top: calc(var(--papr-theme-homepage-grid-gap) * 1.5);
     margin-bottom: var(--papr-theme-homepage-grid-gap);
 }
-.additional-posts-grid-area .section-title {
-    font-size: var(--papr-theme-homepage-recent-news-title-font-size);
+.additional-posts-grid-area .section-title { /* Title for this section */
+    font-size: var(--papr-theme-homepage-recent-news-title-font-size); /* Consistent with other section titles */
     font-weight: 700;
     margin: 0 0 25px 0;
     padding-bottom: 10px;
-    border-bottom: 2px solid var(--all-headings-color);
+    border-bottom: 2px solid var(--global-h3-color); /* Consistent border */
+    color: var(--global-h3-color);
 }
 .additional-posts-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* Default 3 columns */
     gap: var(--general-content-grid-gap);
 }
+/* Assuming .post-card is used within .additional-posts-grid */
 .additional-posts-grid .post-card .post-card-image {
-    height: 180px;
+    height: 180px; /* Specific height for these cards */
 }
 .additional-posts-grid .post-card .post-card-title {
-    font-size: 1.1rem;
+    font-size: 1.1rem; /* Slightly smaller title for grid cards */
 }
 .additional-posts-grid .post-card .post-card-excerpt {
     font-size: 0.9rem;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 3; /* Limit excerpt lines */
     -webkit-box-orient: vertical;
     overflow: hidden;
     display: -webkit-box;
@@ -898,21 +902,23 @@ figure img {
 
 
 /* Post Summary (Generic list item, can be styled like card or simpler) */
-.post-summary {
+.post-summary { /* This could be a simpler list item view */
   background-color: var(--summary-card-background-color);
   border-radius: var(--summary-card-border-radius);
   padding: var(--summary-card-content-area-padding);
   box-shadow: var(--summary-card-box-shadow);
   transition: var(--summary-card-transition-effect);
+  margin-bottom: var(--list-of-posts-gap); /* If used in a simple list */
 }
 .post-summary:hover {
   transform: var(--summary-card-hover-transform-effect);
   box-shadow: var(--summary-card-hover-box-shadow);
 }
-.post-summary h3 {
+.post-summary h3 { /* Or h2 if appropriate for context */
   font-size: var(--summary-card-title-font-size);
   margin: var(--summary-card-title-margin);
   font-weight: var(--summary-card-title-font-weight);
+  color: var(--global-h3-color); /* Use a heading color */
 }
 .post-summary h3 a {
   color: inherit;
@@ -923,7 +929,7 @@ figure img {
 }
 .post-summary .post-meta {
   font-size: var(--summary-card-meta-info-font-size);
-  color: var(--secondary-theme-color);
+  color: var(--secondary); /* Use general secondary text color */
   margin-bottom: 10px;
 }
 .post-summary .post-excerpt {
@@ -1003,9 +1009,10 @@ figure img {
   margin: var(--summary-card-title-margin);
   line-height: var(--summary-card-title-line-height);
   font-weight: var(--summary-card-title-font-weight);
+  color: var(--global-h3-color); /* Use a heading color */
 }
 .post-card-title a {
-  color: var(--all-headings-color);
+  color: inherit; 
   text-decoration: none;
 }
 .post-card-title a:hover {
@@ -1019,17 +1026,17 @@ figure img {
 }
 .post-card-meta {
   font-size: var(--summary-card-meta-info-font-size);
-  color: var(--secondary-theme-color);
+  color: var(--secondary); /* Use general secondary text color */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: auto;
+  margin-top: auto; /* Push to bottom */
 }
-.post-card-meta .read-more-link {
+.post-card-meta .read-more-link { /* Class for the "Read More" text specifically */
   font-weight: 500;
   color: var(--summary-card-read-more-link-color);
 }
-[dir="rtl"] .post-card-meta .read-more-arrow {
+[dir="rtl"] .post-card-meta .read-more-arrow { /* Assuming an arrow icon span */
   margin-left: var(--summary-card-meta-info-read-more-arrow-margin-right);
   margin-right: 0;
 }
@@ -1038,42 +1045,38 @@ figure img {
   margin-right: var(--summary-card-meta-info-read-more-arrow-margin-right);
 }
 
-/* Responsive grid for general posts-list (not homepage) */
+/* Responsive grid for general posts-list (not Papr homepage specific sidebars) */
 @media (min-width: 768px) {
   .posts-list:not(.recent-posts-list):not(.additional-posts-grid) {
     grid-template-columns: repeat(2, 1fr);
   }
-  .additional-posts-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  /* .additional-posts-grid is already handled to be 2 columns at this breakpoint if not 3 */
 }
 @media (min-width: 992px) {
   .posts-list:not(.recent-posts-list):not(.additional-posts-grid) {
     grid-template-columns: repeat(3, 1fr);
   }
-   .additional-posts-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+   /* .additional-posts-grid is 3 columns by default */
 }
 
 
 /* --- Single Post / Page --- */
-.page-header, .post-header {
+.page-header, .post-header { /* Container for title and meta on single views */
   margin-bottom: var(--single-post-header-margin-bottom);
   padding-bottom: var(--single-post-header-padding-bottom);
   border-bottom: 1px solid var(--default-border-color);
 }
-.page-header h1, .post-header h1 {
-  /* CORRECTED: Use heading-one-inside-the-post for main post/page titles */
+.page-header h1, .post-header h1 { /* Main title of the post/page */
   font-family: var(--heading-one-inside-the-post-font-family);
   font-size: var(--heading-one-inside-the-post-font-size);
   font-weight: var(--heading-one-inside-the-post-font-weight);
+  color: var(--post-body-h1-color); /* Use specific post heading color */
   margin-top: 0;
   margin-bottom: 0.3em;
 }
-.post-meta, .page-meta {
+.post-meta, .page-meta { /* Meta info: date, author, etc. */
   font-size: var(--single-post-meta-info-font-size);
-  color: var(--secondary-theme-color);
+  color: var(--secondary); /* Use general secondary text color */
   margin-bottom: var(--single-post-meta-info-margin-bottom);
   display: flex;
   flex-wrap: wrap;
@@ -1085,11 +1088,12 @@ figure img {
   margin-top: var(--post-page-tags-container-margin-top);
   margin-bottom: var(--post-page-tags-container-margin-bottom);
   font-size: 0.9em;
-  color: var(--secondary-theme-color);
+  color: var(--secondary);
 }
-.post-tags strong, .post-tags .tags-label {
+.post-tags strong, .post-tags .tags-label { /* "Tags:" label */
   font-weight: var(--post-page-tags-label-font-weight);
   margin-right: var(--post-page-tags-label-margin-right-for-left-to-right);
+  color: var(--default-text-color); /* Make label slightly more prominent */
 }
 [dir="rtl"] .post-tags strong, [dir="rtl"] .post-tags .tags-label {
   margin-right: 0;
@@ -1113,29 +1117,31 @@ figure img {
 }
 
 /* Category Links (e.g., in post meta) */
-.post-meta a[href*="/category/"], .category-link:not(.on-image-tag):not(.above-title-tag) {
-  font-size: var(--category-button-font-size);
+.post-meta a[href*="/category/"], 
+.category-link:not(.on-image-tag):not(.above-title-tag) { /* General category link styling */
+  font-size: var(--body-font-size); /* Reset from var(--category-button-font-size) if too small */
   background-color: var(--category-button-background-color);
-  color: var(--category-button-text-color) !important;
+  color: var(--category-button-text-color) !important; /* Important to override generic a */
   padding: var(--category-button-padding);
   border-radius: var(--category-button-border-radius);
   margin: 2px 3px;
   display: var(--category-button-display-property);
   text-decoration: var(--category-button-text-decoration);
   transition: background-color 0.2s ease, color 0.2s ease;
-  line-height: 1.3;
+  line-height: 1.3; /* Prevent text from being too cramped */
 }
-.post-meta a[href*="/category/"]:hover, .category-link:not(.on-image-tag):not(.above-title-tag):hover {
+.post-meta a[href*="/category/"]:hover, 
+.category-link:not(.on-image-tag):not(.above-title-tag):hover {
   background-color: var(--category-button-hover-background-color);
   color: var(--category-button-hover-text-color) !important;
   text-decoration: none;
 }
 .post-meta {
-  line-height: 1.8; /* Give badges space */
+  line-height: 1.8; /* Give badges/links in meta some breathing room */
 }
 
 
-.post-featured-image {
+.post-featured-image { /* Wrapper for featured image on single post */
   margin: var(--single-post-featured-image-margin);
   max-height: var(--single-post-featured-image-maximum-height);
   overflow: hidden;
@@ -1144,30 +1150,38 @@ figure img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 0;
+  border-radius: 0; /* Featured images are often edge-to-edge within their margin */
 }
 
-.post-content, .page-content {
+.post-content, .page-content { /* Main content wrapper */
   max-width: var(--text-content-area-maximum-width);
   margin-left: auto;
   margin-right: auto;
   line-height: var(--text-inside-the-post-line-height);
+  color: var(--post-body-text-color); /* Ensure post body text color is applied */
 }
 /* Headings *within* the .post-content or .page-content */
-.post-content h1, .page-content h1 { font-family: var(--heading-one-inside-the-post-font-family); font-size: var(--heading-one-inside-the-post-font-size); font-weight: var(--heading-one-inside-the-post-font-weight); margin: var(--headings-inside-the-post-margin); }
-.post-content h2, .page-content h2 { font-family: var(--heading-two-inside-the-post-font-family); font-size: var(--heading-two-inside-the-post-font-size); font-weight: var(--heading-two-inside-the-post-font-weight); margin: var(--headings-inside-the-post-margin); }
-.post-content h3, .page-content h3 { font-family: var(--heading-three-inside-the-post-font-family); font-size: var(--heading-three-inside-the-post-font-size); font-weight: var(--heading-three-inside-the-post-font-weight); margin: var(--headings-inside-the-post-margin); }
-.post-content h4, .page-content h4 { font-family: var(--heading-four-inside-the-post-font-family); font-size: var(--heading-four-inside-the-post-font-size); font-weight: var(--heading-four-inside-the-post-font-weight); margin: var(--headings-inside-the-post-margin); }
+.post-content h1, .page-content h1 { font-family: var(--heading-one-inside-the-post-font-family); font-size: var(--heading-one-inside-the-post-font-size); font-weight: var(--heading-one-inside-the-post-font-weight); margin: var(--headings-inside-the-post-margin); color: var(--post-body-h1-color); }
+.post-content h2, .page-content h2 { font-family: var(--heading-two-inside-the-post-font-family); font-size: var(--heading-two-inside-the-post-font-size); font-weight: var(--heading-two-inside-the-post-font-weight); margin: var(--headings-inside-the-post-margin); color: var(--post-body-h2-color); }
+.post-content h3, .page-content h3 { font-family: var(--heading-three-inside-the-post-font-family); font-size: var(--heading-three-inside-the-post-font-size); font-weight: var(--heading-three-inside-the-post-font-weight); margin: var(--headings-inside-the-post-margin); color: var(--post-body-h3-color); }
+.post-content h4, .page-content h4 { font-family: var(--heading-four-inside-the-post-font-family); font-size: var(--heading-four-inside-the-post-font-size); font-weight: var(--heading-four-inside-the-post-font-weight); margin: var(--headings-inside-the-post-margin); color: var(--post-body-h4-color); }
+/* Ensure links within post content also use the post body link color */
+.post-content a, .page-content a {
+    color: var(--post-body-link-color);
+}
+.post-content a:hover, .page-content a:hover {
+    color: var(--hyperlink-hover-color); /* Use general hover or a specific post body link hover */
+}
 
 
-.youtube-embed-container {
+.youtube-embed-container { /* Responsive YouTube embeds */
   position: relative;
-  padding-bottom: 56.25%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
   height: 0;
   overflow: hidden;
   max-width: 100%;
   margin: var(--youtube-video-embed-margin);
-  background-color: #000;
+  background-color: #000; /* Placeholder while loading */
 }
 .youtube-embed-container iframe {
   position: absolute;
@@ -1179,25 +1193,33 @@ figure img {
 }
 
 /* --- Sidebar --- */
-[dir="rtl"] .site-sidebar {
+.site-sidebar { /* The main sidebar container, if one exists outside of Papr's grid */
+  /* Styles for a generic sidebar if not using Papr's homepage grid for all pages */
+  /* For example:
+    padding-left: var(--general-content-grid-gap); 
+    border-left: 1px solid var(--default-border-color);
+  */
+}
+[dir="rtl"] .site-sidebar { /* Example for RTL generic sidebar */
   border-left: none;
   border-right: 1px solid var(--default-border-color);
   padding-left: 0;
   padding-right: var(--general-content-grid-gap);
 }
-.widget {
+.widget { /* Standard sidebar widget */
   background-color: var(--sidebar-widget-background-color);
   padding: var(--sidebar-widget-box-padding);
   margin-bottom: var(--sidebar-widget-box-margin-bottom);
-  border-radius: var(--summary-card-border-radius);
-  box-shadow: var(--summary-card-box-shadow);
+  border-radius: var(--summary-card-border-radius); /* Consistent radius */
+  box-shadow: var(--summary-card-box-shadow); /* Consistent shadow */
 }
-.widget h4, .widget h3 {
+.widget h4, .widget h3 { /* Widget titles (use h3 or h4 consistently) */
   font-size: var(--sidebar-widget-title-font-size);
   margin-top: 0;
   margin-bottom: var(--sidebar-widget-title-margin-bottom);
   padding-bottom: var(--sidebar-widget-title-padding-bottom);
   border-bottom: 1px solid var(--default-border-color);
+  color: var(--global-h4-color); /* Use a heading color */
 }
 .widget ul {
   list-style: none;
@@ -1209,9 +1231,11 @@ figure img {
 }
 .widget ul li a {
   text-decoration: none;
+  color: var(--default-text-color); /* Default link color in widgets */
   padding: var(--sidebar-category-link-padding);
   display: block;
   transition: background-color 0.2s ease, color 0.2s ease;
+  border-radius: 3px; /* Subtle rounding for hover */
 }
 .widget ul li a:hover {
   background-color: color-mix(in srgb, var(--main-theme-color) 10%, transparent);
@@ -1219,15 +1243,16 @@ figure img {
 }
 
 /* --- Related Posts (both in content and sidebar) --- */
-.related-posts {
+.related-posts { /* Section for related/similar posts */
   margin-top: var(--similar-posts-section-margin-top);
   padding-top: var(--similar-posts-section-padding-top);
   border-top: 1px solid var(--default-border-color);
 }
-.related-posts h3 {
+.related-posts h3 { /* Title like "Related Posts" */
   font-size: var(--similar-posts-section-title-font-size);
   margin-bottom: var(--similar-posts-section-title-margin-bottom);
   margin-top: 0;
+  color: var(--global-h3-color);
 }
 .related-posts ul {
   list-style: none;
@@ -1238,15 +1263,23 @@ figure img {
   margin-bottom: var(--similar-posts-list-item-margin-bottom);
   font-size: var(--similar-posts-link-font-size);
 }
-/* Sidebar specific related post styling */
-.site-sidebar .related-posts {
-  margin-top: 0;
-  padding-top: 0;
-  border-top: none;
+.related-posts li a { /* Ensure links are styled correctly */
+    color: var(--hyperlink-color);
 }
-.site-sidebar .related-posts h3 {
-  font-size: var(--sidebar-similar-posts-title-font-size);
+.related-posts li a:hover {
+    color: var(--hyperlink-hover-color);
+}
+
+/* Sidebar specific related post styling (if different) */
+.site-sidebar .related-posts { /* If related posts widget is in sidebar */
+  margin-top: 0; /* Widgets usually handle their own top margin */
+  padding-top: 0;
+  border-top: none; /* Widget might have its own top border via title */
+}
+.site-sidebar .related-posts h3 { /* Title of related posts widget */
+  font-size: var(--sidebar-similar-posts-title-font-size); /* Use widget title size */
   margin-bottom: var(--sidebar-similar-posts-title-margin-bottom);
+  /* Border and color inherited from general .widget h3/h4 */
 }
 .site-sidebar .related-posts li {
   font-size: var(--sidebar-similar-posts-link-font-size);
@@ -1258,12 +1291,13 @@ figure img {
   padding-top: var(--section-for-comments-padding-top);
   border-top: 1px solid var(--default-border-color);
 }
-.comments-section h3 {
+.comments-section h3 { /* Title like "Comments" or "Leave a Reply" */
   font-size: var(--section-for-comments-title-font-size);
   margin-bottom: var(--section-for-comments-title-margin-bottom);
   margin-top: 0;
+  color: var(--global-h3-color);
 }
-#disqus_thread {
+#disqus_thread { /* Specific for Disqus, adapt if using other systems */
   background-color: var(--disqus-comments-area-background-color);
   padding: var(--disqus-comments-area-padding);
 }
@@ -1273,42 +1307,43 @@ figure img {
   text-align: center;
   margin: var(--page-navigation-buttons-margin);
   padding: var(--page-navigation-buttons-padding);
-  border-top: 1px solid var(--default-border-color);
+  /* border-top: 1px solid var(--default-border-color); No, already a var */
 }
 .pagination ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  display: inline-flex;
+  display: inline-flex; /* Aligns items nicely */
   gap: var(--page-navigation-links-gap);
   align-items: center;
 }
 .pagination li {
-  margin: 0 var(--page-number-button-margin);
+  margin: 0; /* Gap handles spacing */
 }
-.pagination a, .pagination span {
+.pagination a, .pagination span { /* Includes current page span */
   display: inline-block;
   padding: var(--page-number-button-padding);
   border: 1px solid var(--page-navigation-border-color);
   border-radius: var(--page-number-button-border-radius);
   font-weight: var(--page-number-button-font-weight);
-  color: var(--default-text-color);
+  color: var(--default-text-color); /* Default color for numbers */
+  text-decoration: none;
   transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 .pagination a:hover {
   background-color: var(--page-navigation-hover-background-color);
-  color: var(--primary-button-text-color);
+  color: var(--primary-button-text-color); /* Text color on hover */
   border-color: var(--page-navigation-hover-border-color);
   text-decoration: none;
 }
-.pagination .active span {
+.pagination .active span, .pagination span.current { /* Current page item */
   background-color: var(--main-theme-color);
   color: var(--primary-button-text-color);
   border-color: var(--main-theme-color);
   cursor: default;
 }
-.pagination .disabled span {
-  color: var(--secondary-theme-color);
+.pagination .disabled span { /* Disabled prev/next links */
+  color: var(--secondary); /* Use secondary text color */
   border-color: var(--default-border-color);
   cursor: default;
   opacity: 0.7;
@@ -1324,20 +1359,20 @@ figure img {
   font-size: var(--main-website-footer-font-size);
   border-top: 1px solid var(--main-footer-border-color);
 }
-.footer-container {
+.footer-container { /* Inner container for footer content */
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   gap: var(--main-website-footer-container-gap);
 }
-.footer-text {
+.footer-text { /* Copyright text area */
   font-weight: var(--main-website-footer-copyright-text-font-weight);
 }
 .footer-text p {
-    margin: 0.3em 0;
+    margin: 0.3em 0; /* Small margin for paragraphs in footer */
 }
-.footer-navigation ul {
+.footer-navigation ul { /* Footer menu */
   list-style: none;
   padding: 0;
   margin: 0;
@@ -1346,15 +1381,15 @@ figure img {
   gap: var(--main-website-footer-navigation-gap);
 }
 .footer-navigation a {
-  color: inherit;
+  color: inherit; /* Inherit from --main-footer-text-color */
   text-decoration: none;
 }
 .footer-navigation a:hover {
-  color: var(--main-theme-color);
+  color: var(--main-theme-color); /* Hover to theme color */
   text-decoration: underline;
 }
-.social-icons a {
-  color: inherit;
+.social-icons a { /* General social icons, can be in footer or header top bar */
+  color: inherit; /* Inherit color */
   text-decoration: none;
   font-size: var(--main-website-footer-social-media-link-font-size);
   margin: 0 calc(var(--main-website-footer-social-media-icons-gap) / 2);
@@ -1363,93 +1398,90 @@ figure img {
 }
 .social-icons a:hover {
   opacity: 1;
-  color: var(--main-theme-color);
+  color: var(--main-theme-color); /* Hover to theme color */
 }
 
 /* --- Responsive Design --- */
-@media (max-width: 991px) {
+@media (max-width: 991px) { /* Tablet and smaller */
     .homepage-layout-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Stack main content and sidebar */
     }
-    .recent-news-area {
+    .recent-news-area { /* Papr's right column on homepage */
         margin-top: var(--papr-theme-homepage-grid-gap);
     }
     .additional-posts-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet */
     }
     .main-navigation {
-        display: none;
+        display: none; /* Hide main nav for mobile toggle */
     }
     .mobile-menu-toggle-button {
-        display: block;
+        display: block; /* Show hamburger icon */
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px) { /* Mobile */
   .hero-title {
-    font-size: var(--papr-theme-homepage-featured-post-title-font-size);
+    font-size: var(--papr-theme-homepage-featured-post-title-font-size); /* Scale down hero title */
   }
   .hero-subtitle {
-     font-size: var(--papr-theme-homepage-recent-post-title-font-size);
+     font-size: var(--papr-theme-homepage-recent-post-title-font-size); /* Scale down hero subtitle */
   }
 
-  .top-bar-left .current-date {
+  .top-bar-left .current-date { /* Example: hide date on mobile */
       display: none;
   }
-  .top-bar-navigation {
+  .top-bar-navigation { /* Hide top bar nav items on mobile */
       display: none;
   }
   .top-bar-container {
-      justify-content: flex-end;
+      justify-content: flex-end; /* Align remaining top bar items (e.g., social) */
   }
   .header-container {
-    flex-direction: row;
-    justify-content: space-between;
+    /* flex-direction: row; Default is row */
+    justify-content: space-between; /* Ensure logo and toggle are spaced */
     gap: 15px;
   }
   .posts-list:not(.recent-posts-list):not(.additional-posts-grid) {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Single column for generic post lists */
   }
   .additional-posts-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Single column for additional posts grid */
   }
-  .site-sidebar {
+  .site-sidebar { /* If a generic sidebar exists */
     border-left: none;
     border-right: none;
     padding-left: 0;
     padding-right: 0;
-    margin-top: var(--general-content-grid-gap);
+    margin-top: var(--general-content-grid-gap); /* Add space if stacked under content */
   }
   .footer-container {
-    flex-direction: column;
+    flex-direction: column; /* Stack footer items */
     text-align: center;
   }
   .footer-navigation ul {
-    justify-content: center;
+    justify-content: center; /* Center footer nav links */
   }
-  .post-featured-image {
+  .post-featured-image { /* Adjust margins if container padding changes */
     margin-left: calc(-1 * var(--container-padding-mobile));
     margin-right: calc(-1 * var(--container-padding-mobile));
   }
 }
 
 /* RTL Specific Adjustments */
-[dir="rtl"] .site-logo {
+[dir="rtl"] .site-logo-area .site-logo-image { /* Example, assuming .site-logo-area */
   margin-right: 0;
   margin-left: var(--website-logo-image-margin-right);
 }
-[dir="rtl"] .site-navigation li {
-  margin-left: 0;
-  margin-right: 25px; /* Assuming a default if the specific Papr var isn't active */
-}
+/* [dir="rtl"] .site-navigation li { Redundant if using .main-navigation specific styles */
+/*  margin-left: 0; */
+/*  margin-right: 25px; */
+/*} */
 [dir="rtl"] .post-card-tags a {
   margin-left: 0;
   margin-right: 5px;
 }
-[dir="rtl"] .main-navigation .menu-item-has-children > a::after {
-    margin-left: 0;
-    margin-right: 5px;
-}
+/* .main-navigation .menu-item-has-children > a::after RTL handled above */
 
 /* Redirect page specific styles */
 body.redirect-page {
@@ -1463,10 +1495,10 @@ body.redirect-page {
     min-height: 100vh;
     margin: 0;
     text-align: center;
-    padding: 20px;
+    padding: 20px; /* Padding for the whole page */
     box-sizing: border-box;
 }
-.redirect-page .container {
+.redirect-page .container { /* Specific container for redirect page content */
     background-color: var(--page-for-redirects-content-box-background-color);
     padding: var(--page-for-redirects-content-box-padding);
     border-radius: var(--page-for-redirects-content-box-border-radius);
@@ -1502,7 +1534,7 @@ body.redirect-page {
     animation: spin 1s linear infinite;
     margin: 20px auto;
 }
-.redirect-page .footer-text {
+.redirect-page .footer-text { /* Text at the bottom of the redirect page */
     margin-top: 30px;
     font-size: var(--page-for-redirects-footer-text-font-size);
     color: var(--page-for-redirects-footer-text-color);
@@ -1511,7 +1543,4 @@ body.redirect-page {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
-
-
-/* --- END FULL style.css --- */
 /* Generated by Gitut CMS - End */
