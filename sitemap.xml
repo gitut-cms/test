@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://gitut-cms.github.io/test/</loc>
-        <lastmod>2025-05-20</lastmod>
+        <lastmod>2025-05-24</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
@@ -44,7 +44,7 @@
     </url>
     <url>
         <loc>https://gitut-cms.github.io/test/gzip-vs-other-compression-techniques-which-is-better-for-website-performance/</loc>
-        <lastmod>2023-05-12</lastmod>
+        <lastmod>2025-05-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
