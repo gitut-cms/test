@@ -234,7 +234,7 @@
   --post-body-blockquote-size: 1.1em;
   --post-body-blockquote-style: italic;
   --post-body-blockquote-weight: var(--post-body-text-weight);
-  --post-body-code-background: var(--code-block-inside-the-post-background-color);
+  --post-body-code-background: var(--code-block-background-color);
   --post-body-code-bg: #f9f2f4;
   --post-body-code-color: #c7254e;
   --post-body-code-family: var(--code-font-family);
